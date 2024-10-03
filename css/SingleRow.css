@@ -1,0 +1,21 @@
+.sal th{
+border:1px #000000 solid;
+border-top-style:none;
+border-left-style:none;
+padding-right:2px;
+
+}
+
+.sal tr td{
+border:1px #000000 solid;
+border-top-style:none;
+border-left-style:none;
+padding-right:2px;
+
+}
+
+.sal{
+border:1px #000000 solid;
+   border-bottom-style: none;
+   border-right-style: none;
+   }

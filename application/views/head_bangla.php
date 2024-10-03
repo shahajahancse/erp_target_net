@@ -1,0 +1,2 @@
+<div style="font-size:14px; font-weight:bold; text-align:center;"><a style="text-decoration:none; color:#0066FF;" href="http://www.mysoftheaven.net" target="_blank"><?php echo $company_name_bangla = $this->common_model->company_information("company_name_bangla"); ?></a></div>
+<div style="font-size:12px; font-weight:bold; text-align:center;"> <?php echo $company_add_bangla = $this->common_model->company_information("company_add_bangla"); ?></div>
