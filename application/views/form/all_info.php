@@ -58,26 +58,26 @@ if($validation_errors != '')
 
 
 <tr>
-  <td>Name(English)</td>
+  <td>Name(Eng)</td>
   <td><input  type='text' style="width:170px;" id='name' name="name" value="<?php echo set_value('name'); ?>"></td>
-  <td>Name(Bangla)</td>
- <td><input  style="width:170px;"  type='text' id='bname' name="bname" value="<?php echo set_value('bname'); ?>"></td>
+  <td>Name(Bng)</td>
+ <td><input  style="width:170px;font-family:SUtonnyMJ"  type='text' id='bname' name="bname" value="<?php echo set_value('bname'); ?>"></td>
 </tr>
 
-<tr><td>Mother's Name(English)</td>
+<tr><td>Mother's Name(Eng)</td>
 <td><input type='text' style="width:170px;" id='mname' name="mname" value="<?php echo set_value('mname'); ?>"></td>
-<td>Mother's Name(Bangla)</td>
-<td><input type='text' style="width:170px;font-family:SutonnyMJ" id='m_name_bn' name="m_name_bn" value="<?php echo set_value('m_name_bn'); ?>"></td>
+<td>Mother's Name(Bng)</td>
+<td><input type='text' style="width:170px;font-family:SUtonnyMJ" id='m_name_bn' name="m_name_bn" value="<?php echo set_value('m_name_bn'); ?>"></td>
 </tr>
-<tr><td>Father's Name(English)</td>
+<tr><td>Father's Name(Eng)</td>
 <td><input type='text' style="width:170px;" id='fname' name="fname" value="<?php echo set_value('fname'); ?>"></td>
-<td>Father's Name(Bangla)</td>
-<td><input type='text' style="width:170px;" id='f_name_bn' name="f_name_bn" value="<?php echo set_value('f_name_bn'); ?>"></td>
+<td>Father's Name(Bng)</td>
+<td><input type='text' style="width:170px;font-family:SUtonnyMJ" id='f_name_bn' name="f_name_bn" value="<?php echo set_value('f_name_bn'); ?>"></td>
 </tr>
-<tr><td>Spouse Name(English)</td>
+<tr><td>Spouse Name(Eng)</td>
 <td><input type='text' style="width:170px;" id='spouse_name' name="spouse_name" value="<?php echo set_value('spouse_name'); ?>"></td>
-<td>Spouse Name(Bangla)</td>
-<td><input type='text' style="width:170px;" id='spouse_name_bn' name="spouse_name_bn" value="<?php echo set_value('spouse_name_bn'); ?>"></td>
+<td>Spouse Name(Bng)</td>
+<td><input type='text' style="width:170px;font-family:SUtonnyMJ" id='spouse_name_bn' name="spouse_name_bn" value="<?php echo set_value('spouse_name_bn'); ?>"></td>
 </tr>
 <tr>
 <td>No.of Children</td>
@@ -164,27 +164,37 @@ if($validation_errors != '')
 </td>
 </tr>
 <tr>
-	<td>Education</td>
+	<td>Education(Eng)</td>
   	<td><input  type='text' style="width:170px;" id='education' name="education" value="<?php echo set_value('education'); ?>"></td>
-	<td>NID</td>
-  	<td><input  type='text' style="width:170px;" id='nid' name="nid" value="<?php echo set_value('nid'); ?>"></td>
+	<td>Education(Bng)</td>
+  	<td><input  type='text' style="width:170px;font-family:SUtonnyMJ" id='edu_bn' name="edu_bn" value="<?php echo set_value('edu_bn'); ?>"></td>
 </tr>
 <tr>
+	<td>NID</td>
+  	<td><input  type='text' style="width:170px;" id='nid' name="nid" value="<?php echo set_value('nid'); ?>"></td>
+
 	<td>Personal Phone</td>
   	<td><input  type='text' style="width:170px;" id='personal_phone' name="personal_phone" value="<?php echo set_value('personal_phone'); ?>"></td>
-	<td>Emergency Phone</td>
-  	<td><input  type='text' style="width:170px;" id='emergency_phone' name="emergency_phone" value="<?php echo set_value('emergency_phone'); ?>"></td>
+	
 </tr>
-
+<tr>
+<td>Emergency Phone</td>
+<td><input  type='text' style="width:170px;" id='emergency_phone' name="emergency_phone" value="<?php echo set_value('emergency_phone'); ?>"></td>
+</tr>
 <tr>
 	<td colspan="4" style="text-align:left"><h3>Present Address</h3></td>
 </tr>
 
 <tr>
-  <td>Village</td>
+  <td>Village(Eng)</td>
   <td><input  type='text' style="width:170px;" id='pre_vill' name="pre_vill" value="<?php echo set_value('pre_vill'); ?>"></td>
-  
- <td>District</td>
+  <td>Village(Bng)</td>
+  <td><input  type='text' style="width:170px;font-family:SUtonnyMJ" id='pre_vill_bn' name="pre_vill_bn" value="<?php echo set_value('pre_vill_bn'); ?>"></td>
+</tr>
+
+<tr>
+	  
+<td>District</td>
  <td>
 	<select  id='pre_district' name="pre_district" style="width:175px;">
 		<option value="">Select Distict</option>	
@@ -200,9 +210,6 @@ if($validation_errors != '')
 	</select>
 
  </td>
-</tr>
-
-<tr>
 	 <td>Upazila</td>
 	<td>
 		<select class="pre_upazilaa" id='pre_upazila' name="pre_upazila" style="width:175px;">
@@ -220,7 +227,12 @@ if($validation_errors != '')
 
 	</td>
 
-  <td>Post Office</td>
+
+
+
+</tr>
+<tr>
+<td>Post Office</td>
   	<td>
 		<select class='pre_postt' id='pre_post' name="pre_post" style="width:175px;">
 		<option value="">Select Post Office</option>	
@@ -235,10 +247,7 @@ if($validation_errors != '')
 		<?php } ?>	
 	</select>
 	</td>
-
-
 </tr>
-
 
 
 
@@ -247,10 +256,16 @@ if($validation_errors != '')
 </tr>
 
 <tr>
-  <td>Village</td>
+  <td>Village(Eng)</td>
   <td><input  type='text' style="width:170px;" id='per_vill' name="per_vill" value="<?php echo set_value('per_vill'); ?>"></td>
+  <td>Village(Bng)</td>
+  <td><input  type='text' style="width:170px;" id='per_vill_bn' name="per_vill_bn" value="<?php echo set_value('per_vill_bn'); ?>"></td>
   
- <td>District</td>
+
+</tr>
+
+<tr>
+<td>District</td>
  <td>
 	<select  id='per_district' name="per_district" style="width:175px;">
 		<option value="">Select Distict</option>	
@@ -266,9 +281,6 @@ if($validation_errors != '')
 	</select>
 
  </td>
-</tr>
-
-<tr>
 	 <td>Upazila</td>
 	<td>
 		<select class="per_upazilaa" id='per_upazila' name="per_upazila" style="width:175px;">
@@ -285,8 +297,9 @@ if($validation_errors != '')
 	</select>
 
 	</td>
-
-  <td>Post Office</td>
+</tr>
+<tr>
+<td>Post Office</td>
   	<td>
 		<select class='per_postt' id='per_post' name="per_post" style="width:175px;">
 		<option value="">Select Post Office</option>	
@@ -302,7 +315,6 @@ if($validation_errors != '')
 	</select>
 	</td>
 </tr>
-
 
 
 
@@ -609,14 +621,20 @@ if($validation_errors != '')
 	<td colspan="4" style="text-align:left"><h3><b>Nominee Information</b></h3></td>
 </tr>
     <tr>
-        <td  width="92px">Nominee Name</td>
+        <td  width="92px">Nominee Name(Eng)</td>
         <td width="250px"><input name="nomi_name" type='text' id='nomi_name' style="width:170px;"  value="<?php echo set_value('nomi_name'); ?>" required/></td>
-        <td width="135px">Rel. with Nominee</td>
-        <td ><input name="nomi_relation" type='text' id='nomi_relation'  style="width:170px;"  value="<?php echo set_value('nomi_relation'); ?>"/></td>
+		<td  width="92px">Nominee Name(Bng)</td>
+        <td width="250px"><input name="nomi_name_bn" type='text' id='nomi_name_bn' style="width:170px;"  value="<?php echo set_value('nomi_name_bn'); ?>" required/></td>
     </tr>
+	<tr>
+	<td width="135px">Rel. with Nominee</td>
+	<td ><input name="nomi_relation" type='text' id='nomi_relation'  style="width:170px;"  value="<?php echo set_value('nomi_relation'); ?>"/></td>
+	</tr>
 <tr>
-  <td>Village</td>
+  <td>Village(Eng)</td>
   <td><input  type='text' style="width:170px;" id='nomi_vill' name="nomi_vill" value="<?php echo set_value('nomi_vill'); ?>"></td>
+  <td>Village(Bng)</td>
+  <td><input  type='text' style="width:170px;" id='nomi_vill_bn' name="nomi_vill_bn" value="<?php echo set_value('nomi_vill_bn'); ?>"></td>
   
  <td>District</td>
  <td>

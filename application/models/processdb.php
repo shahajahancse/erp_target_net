@@ -83,6 +83,27 @@ class Processdb extends CI_Model{
 						'nid'			=> $this->input->post('nid'),
 						'personal_phone'	=> $this->input->post('personal_phone'),
 						'emergency_phone'	=> $this->input->post('emergency_phone'),
+
+
+						'm_name_bn'		 => $this->input->post('m_name_bn'),
+						'f_name_bn'		 => $this->input->post('f_name_bn'),
+						'spouse_name_bn' => $this->input->post('spouse_name_bn'),
+						'edu_bn'		 => $this->input->post('edu_bn'),
+						'pre_vill_bn'	 => $this->input->post('pre_vill_bn'),
+						'per_vill_bn'	 => $this->input->post('per_vill_bn'),
+						'nomi_name_bn'	 => $this->input->post('nomi_name_bn'),
+						'nomi_vill_bn'	 => $this->input->post('nomi_vill_bn'),
+
+
+						'm_name_bn'		 => $this->input->post('m_name_bn'),
+						'f_name_bn'		 => $this->input->post('f_name_bn'),
+						'spouse_name_bn' => $this->input->post('spouse_name_bn'),
+						'edu_bn'		 => $this->input->post('edu_bn'),
+						'pre_vill_bn'	 => $this->input->post('pre_vill_bn'),
+						'per_vill_bn'	 => $this->input->post('per_vill_bn'),
+						'nomi_name_bn'	 => $this->input->post('nomi_name_bn'),
+						'nomi_vill_bn'	 => $this->input->post('nomi_vill_bn'),
+
 						);
 				}
 			}
@@ -124,6 +145,15 @@ class Processdb extends CI_Model{
 						'nid'			=> $this->input->post('nid'),
 						'personal_phone'	=> $this->input->post('personal_phone'),
 						'emergency_phone'	=> $this->input->post('emergency_phone'),
+
+						'm_name_bn'		 => $this->input->post('m_name_bn'),
+						'f_name_bn'		 => $this->input->post('f_name_bn'),
+						'spouse_name_bn' => $this->input->post('spouse_name_bn'),
+						'edu_bn'		 => $this->input->post('edu_bn'),
+						'pre_vill_bn'	 => $this->input->post('pre_vill_bn'),
+						'per_vill_bn'	 => $this->input->post('per_vill_bn'),
+						'nomi_name_bn'	 => $this->input->post('nomi_name_bn'),
+						'nomi_vill_bn'	 => $this->input->post('nomi_vill_bn'),
 					);
 			}
 			//print_r(data);
@@ -1663,6 +1693,14 @@ function com_info_search1($emp_id)
 				'nid'					=> $row->nid,
 				'personal_phone'		=> $row->personal_phone,
 				'emergency_phone'		=> $row->emergency_phone,
+				'm_name_bn' 			=> $row->m_name_bn,
+				'f_name_bn' 			=> $row->f_name_bn,
+				'spouse_name_bn' 		=> $row->spouse_name_bn,
+				'edu_bn' 				=> $row->edu_bn,
+				'pre_vill_bn' 			=> $row->pre_vill_bn,
+				'per_vill_bn' 			=> $row->per_vill_bn,
+				'nomi_name_bn' 			=> $row->nomi_name_bn,
+				'nomi_vill_bn' 			=> $row->nomi_vill_bn,
 				
 				
 					

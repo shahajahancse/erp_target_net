@@ -2376,7 +2376,7 @@ ajaxRequest.onreadystatechange = function(){
 		alldata = resp.split("-*-");
 		//alert(alldata);
 		otherinfo= alldata[0].split("=*=") ;
-		console.log(otherinfo);
+		// console.log(otherinfo);
 		document.cominfo.name.value = otherinfo[0];
 		document.cominfo.bname.value = otherinfo[1];
 
@@ -2415,6 +2415,15 @@ ajaxRequest.onreadystatechange = function(){
 		document.cominfo.nid.value 	= otherinfo[32];
 		document.cominfo.personal_phone.value 	= otherinfo[33];
 		document.cominfo.emergency_phone.value 	= otherinfo[34];
+
+		document.cominfo.m_name_bn.value 		= otherinfo[35];
+		document.cominfo.f_name_bn.value 		= otherinfo[36];
+		document.cominfo.spouse_name_bn.value 	= otherinfo[37];
+		document.cominfo.edu_bn.value 			= otherinfo[38];
+		document.cominfo.pre_vill_bn.value 		= otherinfo[39];
+		document.cominfo.per_vill_bn.value 		= otherinfo[40];
+		document.cominfo.nomi_name_bn.value 	= otherinfo[41];
+		document.cominfo.nomi_vill_bn.value 	= otherinfo[42];
 
 		com_info = alldata[1].split("=*=");
 

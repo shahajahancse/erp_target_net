@@ -88,7 +88,7 @@ class Grid_model extends CI_Model{
 					$present_check = $this->present_check($day, $emp_id);
 					if($present_check == true)
 					{
-						$this->db->select('in_time, out_time');
+						$this->db->select('in_time, out_time,holiday_allowance,night_allowance');
 						$this->db->from('pr_emp_shift_log');	
 						$this->db->where("emp_id", $emp_id);
 						$this->db->where("shift_log_date", $day);
@@ -100,11 +100,13 @@ class Grid_model extends CI_Model{
 							$in_time = $this->get_formated_in_time($emp_id, $in_time, $emp_shift_check);
 							$out_time = $row->out_time;
 							$out_time = $this->get_formated_out_time($emp_id, $out_time, $emp_shift_check);
-							
+							// $holiday_allowance = $rows->holiday_allowance;
+							// $night_allowance = $rows->night_allowance;
 						}
 						
 					}
 				}
+				// dd($query1);
 				
 				$data["emp_id"][] 		= $rows->emp_id;
 				$data["proxi_id"][] 	= $rows->proxi_id;
@@ -120,6 +122,8 @@ class Grid_model extends CI_Model{
 					$data["in_time"][] = $in_time;
 					$data["out_time"][] = $out_time;
 				}
+				$data["holiday_allowance"][] =0;
+				$data["night_allowance"][] = 0;
 				$data["status"][] = $status;
 				
 			}
@@ -1752,7 +1756,7 @@ class Grid_model extends CI_Model{
 			$emp_id = $row->emp_id;
 			
 			$this->db->distinct();
-			$this->db->select('pr_emp_per_info.emp_full_name,pr_designation.desig_name,pr_dept.dept_name,pr_section.sec_name,pr_line_num.line_name,pr_emp_com_info.emp_join_date,pr_emp_com_info.proxi_id');
+			$this->db->select('pr_emp_shift.shift_name,pr_emp_per_info.emp_full_name,pr_designation.desig_name,pr_dept.dept_name,pr_section.sec_name,pr_line_num.line_name,pr_emp_com_info.emp_join_date,pr_emp_com_info.proxi_id');
 			$this->db->from('pr_emp_per_info');
 			$this->db->from('pr_emp_com_info');
 			$this->db->from('pr_attn_monthly');
@@ -1761,17 +1765,19 @@ class Grid_model extends CI_Model{
 			$this->db->from('pr_section');
 			$this->db->from('pr_line_num');
 			$this->db->from('pr_designation');
+			$this->db->from('pr_emp_shift');
 			$this->db->where('pr_emp_com_info.emp_desi_id = pr_designation.desig_id');
 			$this->db->where('pr_emp_com_info.emp_dept_id = pr_dept.dept_id');
 			$this->db->where('pr_emp_com_info.emp_sec_id = pr_section.sec_id');
 			$this->db->where('pr_emp_com_info.emp_line_id = pr_line_num.line_id');
 			$this->db->where('pr_emp_per_info.emp_id = pr_emp_com_info.emp_id');
-			// $this->db->where('pr_id_proxi.emp_id = pr_emp_com_info.emp_id');
+			$this->db->where('pr_emp_shift.shift_id = pr_emp_com_info.emp_shift');
 			$this->db->where('pr_emp_per_info.emp_id', $emp_id);
 			
 			$query = $this->db->get();
 			foreach($query->result() as $row)
 			{
+				// dd($row);
 				$data["emp_id"][] = $emp_id;
 				
 				$data["emp_full_name"][] = $row->emp_full_name;
@@ -1783,6 +1789,7 @@ class Grid_model extends CI_Model{
 				$data["line_name"][] = $row->line_name;
 				
 				$data["desig_name"][] = $row->desig_name;
+				$data["emp_shift"][] = $row->shift_name;
 				
 				$emp_join_date = $row->emp_join_date;
 				$emp_join_date_year=trim(substr($emp_join_date,0,4));

@@ -4,156 +4,119 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Daily
 <?php 
-if ($daily_status == "A")
-{
-	echo "Absent";
+if ($daily_status == "A") {
+    echo "Absent";
+} elseif ($daily_status == "P") {
+    echo "Present";
+} elseif ($daily_status == "L") {
+    echo "Leave";
 }
-elseif($daily_status == "P")
-{
-	echo "Present";
-}
-elseif($daily_status == "L")
-{
-	echo "Leave";
-}
-  
 ?> 
  Report</title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/print.css" media="print" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/SingleRow.css" />
-
+<style>
+    .sal {
+        width: 100%; /* Set a fixed width */
+        border-collapse: collapse; /* Collapse borders */
+    }
+    .sal th, .sal td {
+        padding: 8px; /* Add padding */
+        border: 1px solid #000; /* Ensure border is consistent */
+        text-align: left; /* Align text to the left */
+    }
+    .sal th {
+        background-color: #f2f2f2; /* Optional: add background color to headers */
+    }
+</style>
 </head>
 
 <body>
-<?php //print_r($values); 
-//echo $daily_status;
+<?php 
 $base_url = base_url();
 $url = $base_url."index.php/payroll_con/daily_report_export/$year/$month/$date/$daily_status/$col_desig/$col_line/$col_section/$col_dept/$col_all";
 ?>
-<div style=" margin:0 auto;  width:800px;">
-<div id="no_print" style="float:right;">
-<!--<a href="<?php //echo $url ?>"><img height="30px" width="30px" src="<?php //echo $base_url.'images/xls.jpg'; ?>" align="" /></a>-->
-</div>
+<div style="margin: 0 auto; width: 1100px;">
+<div id="no_print" style="float:right;"></div>
 <?php 
 $this->load->view("head_english"); 
 ?>
-<!--Report title goes here-->
-<div align="center" style=" margin:0 auto;  overflow:hidden; font-family: 'Times New Roman', Times, serif;"><span style="font-size:13px; font-weight:bold;">
-Daily 
-<?php 
-if ($daily_status == "A")
-{
-	echo "Absent";
-}
-elseif($daily_status == "P")
-{
-	echo "Present";
-}
-elseif($daily_status == "L")
-{
-	echo "Leave";
-}
-  
-?> Report of <?php echo "$date/$month/$year"; ?></span>
-<br />
-<br />
 
+<div align="center" style="margin: 0 auto; overflow: hidden; font-family: 'Times New Roman', Times, serif;">
+    <span style="font-size: 13px; font-weight: bold;">
+    Daily 
+    <?php 
+    if ($daily_status == "A") {
+        echo "Absent";
+    } elseif ($daily_status == "P") {
+        echo "Present";
+    } elseif ($daily_status == "L") {
+        echo "Leave";
+    }
+    ?> 
+    Report of <?php echo "$date/$month/$year"; ?></span>
+    <br /><br />
 
-<table class="sal" border="1" cellpadding="0" cellspacing="0" align="center" style="font-size:12px;">
-<th>SL</th><th>Emp ID</th><th>Punch Card No.</th><th>Employee Name</th> <!--<th>DOJ</th>--> <th>Department</th> <th>Section</th> <th>Line No. </th> <th>Designation</th> <!--<th>Shift</th>-->
-<?php
-	if($daily_status == "P")
-	{
-		echo "<th>IN Time</th> ";
-		echo "<th>OUT Time</th> ";
-	}
-?>
-<th>Status</th>
+    <?php
+    $count = count($values["emp_id"]);
+    $current_section = ''; // To keep track of the current section
 
-<?php
-$count = count($values["emp_id"]);
-for($i=0; $i<$count; $i++ )
-{
-	echo "<tr>";
-	
-	echo "<td>";
-	echo $k = $i+1;
-	echo "</td>";
-	
-	echo "<td>";
-	echo $values["emp_id"][$i];
-	echo "</td>";
-	
-	echo "<td>";
-	echo "&nbsp;";
-	echo $values["proxi_id"][$i];
-	echo "</td>";
-	
-	echo "<td >";
-	echo $values["emp_name"][$i];
-	echo "</td>";
-	
-	/*echo "<td>";
-	$year= trim(substr($values["doj"][$i],0,4));
-	$month = trim(substr($values["doj"][$i],5,2));
-	$tarik = trim(substr($values["doj"][$i],8,2));
-	$date_format = date("d-M-y", mktime(0, 0, 0, $month, $tarik, $year));
-	echo $date_format;
-	echo "</td>";*/
-	
-	echo "<td >";
-	echo $values["dept_name"][$i];
-	echo "</td>";
-	
-	echo "<td >";
-	echo $values["sec_name"][$i];
-	echo "</td>";
-	
-	echo "<td >";
-	echo $values["line_name"][$i];
-	echo "</td>";
-	
-	echo "<td >";
-	echo $values["desig_name"][$i];
-	echo "</td>";
-	
-	//echo "<td >";
-	//echo $values["emp_shift"][$i];
-	//echo "</td>";
-	
-	if($daily_status == "P")
-	{
-		echo "<td width='80' align='center'>";
-		echo $in_time =  $values["in_time"][$i];
-		echo "</td>";
-		
-		echo "<td width='80' align='center'>";
-		if($values["out_time"][$i]=='')
-		{
-			echo "P(Error)";
-		}
-		elseif($values["out_time"][$i]== "12:00:00 AM")
-		{
-			echo "P(Error)";
-		}
-		else
-		{
-			echo $values["out_time"][$i];
-		}
-		echo "</td>";
-	}
-	
-	echo "<td style='text-align:center'>";
-	echo $values["status"][$i];
-	echo "</td>";
-	
-	
-	echo "</tr>";
-}
+    for ($i = 0; $i < $count; $i++) {
+        // Check if we're in a new section
+        if ($values["sec_name"][$i] != $current_section) {
+            // If this isn't the first section, close the previous section
+            if ($current_section != '') {
+                echo "</table><br />"; // Optional: end the previous section
+            }
+            
+            // Update current section
+            $current_section = $values["sec_name"][$i];
 
-?>
+            // Start a new table for the new section
+            echo "<table class='sal'>";
+            echo "<tr><th colspan='13' style='text-align: center;'>Section: $current_section</th></tr>"; // Adjust the colspan number
+            echo "<tr><th>SL</th><th style='white-space:nowrap'>Emp ID</th><th style='white-space:nowrap'>Punch Card No.</th><th>Employee Name</th>
+                   <th>Joining Date</th> <th>Department</th><th>Designation</th><th>Shift</th>";
+            if ($daily_status == "P") {
+                echo "<th>IN Time</th><th>OUT Time</th>";
+            }
+            echo "<th>Weekend</th>";
+            echo "<th>Night</th>";
+            echo "<th>Status</th></tr>";
+        }
 
-</table>
+        // Populate the table rows
+        echo "<tr>";
+        echo "<td>".($i + 1)."</td>";
+        echo "<td>".$values["emp_id"][$i]."</td>";
+        echo "<td>&nbsp;".$values["proxi_id"][$i]."</td>";
+        echo "<td style='white-space:nowrap'>".$values["emp_name"][$i]."</td>";
+        echo "<td>".date("d M Y",strtotime($values["doj"][$i]))."</td>";
+        echo "<td>".$values["dept_name"][$i]."</td>";
+        echo "<td>".$values["desig_name"][$i]."</td>";
+        echo "<td>".$values["emp_shift"][$i]."</td>";
+
+        if ($daily_status == "P") {
+            echo "<td style='white-space:nowrap' align='center'>".$values["in_time"][$i]."</td>";
+            echo "<td style='white-space:nowrap' align='center'>";
+            if ($values["out_time"][$i] == '' || $values["out_time"][$i] == "12:00:00 AM") {
+                echo "P(Error)";
+            } else {
+                echo $values["out_time"][$i];
+            }
+            echo "</td>";
+        }
+
+        echo "<td style='text-align:center'>".$values["holiday_allowance"][$i]."</td>";
+        echo "<td style='text-align:center'>".$values["night_allowance"][$i]."</td>";
+        echo "<td style='text-align:center'>".$values["status"][$i]."</td>";
+        echo "</tr>";
+    }
+    // Close the last section table
+    if ($current_section != '') {
+        echo "</table><br />";
+    }
+    ?>
 </div>
 </div>
 </body>
