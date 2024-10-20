@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'msh@123';
+// $db['default']['password'] = 'msh@123';
 $db['default']['database'] = 'erp_target_net';
 //$db['default']['database'] = 'erp_target_210626';
 $db['default']['dbdriver'] = 'mysql';
