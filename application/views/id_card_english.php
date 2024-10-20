@@ -1,129 +1,184 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ID Card English</title>
-<link  rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/id_card_style_english.css" />
-<style type="text/css">
-.bangla{
-font-family:SolaimanLipi;
-}
-.bijoy{
-font-family:SutonnyMJ;
-font-size:13px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card English</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 5mm; /* Reduced padding to fit extra space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .id-card {
+            display: flex;
+            gap: 20px;
+            /* border: 1px solid #000; */
+            padding: 10px;
+            height: calc(95mm + 6.6mm); /* Adjusted height to include extra 25px */
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+        }
+
+        .left-section {
+            border: 2px solid #000;
+        }
+
+        p {
+            font-size: 11px;
+        }
+
+        .right-section {
+            border: 2px solid #000;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #000;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .company-name {
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+        }
+
+        .photo-box {
+            width: 70px;
+            height: 75px;
+            border: 1px solid #000;
+            display: inline-block;
+        }
+
+        .details p, .additional-details p {
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .worker-sign, .authority-sign {
+            text-align: center;
+        }
+
+        .duration, .return-info {
+            margin-bottom: 20px;
+        }
+
+        .return-info {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Page break after 3 cards */
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+        }
+    </style>
 </head>
-
 <body>
+
 <?php
-//print_r($values);
+$per_page = 3;
 $i = 0;
-$k = 0;
-//for($k=0; $k<=100; $k++)
-$count = $values->num_rows();
-$div_loop = ceil($count/6);
-$data = $values->result_array();
-
-for($j=1; $j<= $div_loop; $j++)
-{
+foreach($values as $key => $value) {
+    if($i % $per_page == 0) {
+        if($i > 0) {
+            echo '</div>';
+        }
+        echo '<div class="page">';
+    }
 ?>
-<div style="width:8in; height:11.5in; overflow:hidden;">
-	<table align="left" border="0" cellpadding="0" cellspacing="0">
-	<tr>
-	<?php
-	//echo "Start".$k."<br>";
-	//echo "End".$end = $k + 5;
-	//echo "<br>";
-	$end = $k + 5;
-	$l = 0;
-	if($j == $div_loop)
-	{
-		$end = $count - $div_loop;
-	}
-	
-	for($k; $i <= $end; $i++)
-	{
-		//echo $i." | ";
-		//echo $l;
-		if($l % 2 == 0)
-		{
-			?>
-			</tr><tr>
-			<?php
-		}
-		?>
-		<td style="width:4in; height:3.5in; "valign='top' align='center'>
-	  <div id="container">
-	  
-		 <div id="text">
-		 <div class="vText">
-		   <p style="text-align:center; font-weight:bold;">If Found Please Return to:<br/>
-		   </p>
-		   <p style="text-align:center;"><?php echo $company_name_english = $this->common_model->company_information("company_name_english"); ?><br/>
-		   </p>
-		   <p><?php echo $company_add_english = $this->common_model->company_information("company_add_english"); ?></p>
-		   <p>Phone : <?php echo $company_phone = $this->common_model->company_information("company_phone"); ?> </p>
-		   </div>
-		 </div>
-	
-	
-		 
-		 <div id="id" align="center">	
-		 
-		  <div id="logo"> 
-			<img src="<?php  echo base_url();?>images/<?php echo $company_logo = $this->common_model->company_information("company_logo"); ?>" width="48" alt="LOGO" /><br />
-			<!--<img src="<?php  echo base_url();?>images/company_name.jpg" height="15" width="160" /><br />-->
-			<div style=" margin:0 auto; width:100%; height:auto;font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold;"><?php echo $company_name_english = $this->common_model->company_information("company_name_english"); ?>
-			</div>
-		  </div>
-		  <div id="image"  >
-			<img border="1" src="<?php echo base_url();?>uploads/photo/<?php echo $data[$i]["img_source"];?>" height="85" width="75" />
-		  </div>
-		  
-		  <div id="profile" align="left">
-		  <table cellpadding="1" cellspacing="0">
-		  <tr>
-		  <td><b>Name</b> </td><td>:</td><td class="bangla"> <?php echo $data[$i]["emp_full_name"]; ?></td></tr>
-			<tr>
-		  <td><b>Card No.</b> </td><td>:</td><td > <?php echo $data[$i]["emp_id"] ?></td></tr>
-		  
-			<tr><td><b>Designation</b> </td><td>:</td><td> <?php echo $data[$i]["desig_name"]; ?></td></tr>
-			<tr><td><b>Section</b> </td><td>:</td><td> <?php echo $data[$i]["sec_name"]; ?></td></tr>
-			<tr><td><b>DOJ</b> </td><td>:</td><td><?php 
-					$join_date = $data[$i]["emp_join_date"]; 
-					$year=trim(substr($join_date,0,4));
-					$month=trim(substr($join_date,5,2));
-					$day=trim(substr($join_date,8,2));
-					echo " ".$date_format = date("d-m-y", mktime(0, 0, 0, $month, $day, $year));
-				?>	</td></tr>
-				<br/><br/><br/><br/><br/>
-				</table>
-		  </div>
-		  
-		  <div id="sign"> 
-			<span><img src="<?php echo base_url();?>images/<?php echo $company_signature = $this->common_model->company_information("company_signature"); ?>" width="100" height="auto" /></span>
-			<br />
-			<span>Authority Signature</span>
-		  </div>
-		  
-		</div>
-	   
-	  </div>
-	  </td>
-	  <?php
-	$k =$i+1;
-	$l++;
-	}
-	?>
-	</tr>
-</table>
-
-</div>
-<br />
+    <div class="id-card">
+        <div class="left-section" style="width: 207.36px;height: 321.6px;">
+            <div class="header">
+                <div class="logo"><img style="width: 100%; height: 100%" src="<?= base_url('images/f0006-TARGET-PAPER.jpg') ?>" alt=""></div>
+                <div class="company-name">টার্গেট ফাইন-নীট ইন্ডাস্ট্রিজ লিমিটেড.</div>
+            </div>
+            <div style="padding: 10px">
+                <div class="photo-placeholder">
+                    <div class="photo-box"><img style="width: 100%; height: 100%" src="<?= base_url('uploads/photo/').'/'.$value->img_source ?>" alt=""></div>
+                </div>
+                <div class="details" style="margin-top:15px;">
+                    <p style="line-height:18px">আইডি নংঃ  <?= "<span style='font-family:SutonnyMJ;font-size:15px'>".$value->proxi_id."</span>" ?></p>
+                    <p style="line-height:18px"> ইস্যু তারিখঃ <?= "<span style='font-family:SutonnyMJ;font-size:15px'>".$value->emp_join_date."</span>"?> </p>
+                    <p style="line-height:18px"> নামঃ  <?= $value->emp_name_bn?></p>
+                    <p style="line-height:18px"> পদবীঃ <?= $value->desig_bangla?> </p>
+                    <p style="line-height:18px"> সেকশনঃ <?= $value->sec_bangla?></p>
+                    <p style="line-height:18px"> যোগদানের তারিখঃ <?= "<span style='font-family:SutonnyMJ;font-size:15px'>".$value->emp_join_date."</span>"?> </p>
+                    <p style="line-height:18px"> কাজের ধরণঃ<?= $value->work_type==1?" ফিক্সড":" প্রোডাকশন"?> </p>
+                </div>
+                <div class="signatures" style="margin-top:30px">
+                    <div class="worker-sign">
+                        <p style="border-top:1px solid black;width: fit-content"> শ্রমিকের স্বাক্ষর</p>
+                    </div>
+                    <div class="authority-sign">
+                        <p style="border-top:1px solid black;width: fit-content"> কর্তৃপক্ষের স্বাক্ষর</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-section" style="padding: 10px;width: 207.36px;height: 321.6px;">
+            <div class="return-info">
+                <p>উক্ত পরিচয় পত্র পাওয়া গেলে তাৎক্ষণিক যোগাযোগ করুনঃ</p>
+            </div>
+            <div class="duration">
+                <p>ঠিকানা: বাঁশহাটি,খামারগাঁও,নান্দাইল,ময়মনসিংহ</p>
+            </div>
+            <br>
+            <div class="additional-details">
+                <p> রক্তের গ্রুপঃ <?= $value->blood_name?> </p>
+                <p> গ্রামঃ <?= $value->per_vill_bn?> </p>
+                <p> পোস্ট অফিসঃ  <?= $value->emp_post_offices_name_bn?></p>
+                <p> উপজেলাঃ <?= $value->emp_upazilas_name_bn?> </p>
+                <p> বিভাগঃ <?= $value->emp_districts_name_bn ?> </p>
+                <p style="font-family:SutonnyMJ;"> জরুরী ফোন নংঃ <?=  '<span style="font-size:15px">'.$value->emergency_phone.'</span>' ?> </p>
+                <p style="font-family:SutonnyMJ;"> ফোন নংঃ <?=  '<span style="font-size:15px">'.$value->personal_phone.'</span>' ?>  </p>
+                <p style="font-family:SutonnyMJ;"> এন.আই.ডি/জন্মনিবন্ধন নংঃ: <?=  '<span style="font-size:15px">'.$value->nid.'</span>' ?> </p>
+            </div>
+        </div>
+    </div>
 <?php
+    $i++;
 }
 ?>
-
 </body>
 </html>
+
+

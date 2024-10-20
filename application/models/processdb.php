@@ -83,6 +83,27 @@ class Processdb extends CI_Model{
 						'nid'			=> $this->input->post('nid'),
 						'personal_phone'	=> $this->input->post('personal_phone'),
 						'emergency_phone'	=> $this->input->post('emergency_phone'),
+
+
+						'm_name_bn'		 => $this->input->post('m_name_bn'),
+						'f_name_bn'		 => $this->input->post('f_name_bn'),
+						'spouse_name_bn' => $this->input->post('spouse_name_bn'),
+						'edu_bn'		 => $this->input->post('edu_bn'),
+						'pre_vill_bn'	 => $this->input->post('pre_vill_bn'),
+						'per_vill_bn'	 => $this->input->post('per_vill_bn'),
+						'nomi_name_bn'	 => $this->input->post('nomi_name_bn'),
+						'nomi_vill_bn'	 => $this->input->post('nomi_vill_bn'),
+
+
+						'm_name_bn'		 => $this->input->post('m_name_bn'),
+						'f_name_bn'		 => $this->input->post('f_name_bn'),
+						'spouse_name_bn' => $this->input->post('spouse_name_bn'),
+						'edu_bn'		 => $this->input->post('edu_bn'),
+						'pre_vill_bn'	 => $this->input->post('pre_vill_bn'),
+						'per_vill_bn'	 => $this->input->post('per_vill_bn'),
+						'nomi_name_bn'	 => $this->input->post('nomi_name_bn'),
+						'nomi_vill_bn'	 => $this->input->post('nomi_vill_bn'),
+
 						);
 				}
 			}
@@ -124,6 +145,15 @@ class Processdb extends CI_Model{
 						'nid'			=> $this->input->post('nid'),
 						'personal_phone'	=> $this->input->post('personal_phone'),
 						'emergency_phone'	=> $this->input->post('emergency_phone'),
+
+						'm_name_bn'		 => $this->input->post('m_name_bn'),
+						'f_name_bn'		 => $this->input->post('f_name_bn'),
+						'spouse_name_bn' => $this->input->post('spouse_name_bn'),
+						'edu_bn'		 => $this->input->post('edu_bn'),
+						'pre_vill_bn'	 => $this->input->post('pre_vill_bn'),
+						'per_vill_bn'	 => $this->input->post('per_vill_bn'),
+						'nomi_name_bn'	 => $this->input->post('nomi_name_bn'),
+						'nomi_vill_bn'	 => $this->input->post('nomi_vill_bn'),
 					);
 			}
 			//print_r(data);
@@ -156,6 +186,7 @@ class Processdb extends CI_Model{
 					'gross_sal'  		=> $this->input->post('text8'),
 					'com_gross_sal'  		=> $this->input->post('com_gross_sal'),
 					'account'  			=> $this->input->post('account'),
+					'work_type'  			=> $this->input->post('work_type'),
 					'ot_entitle'  		=> $this->input->post('otentitle'),
 					'transport'  		=> $this->input->post('transport'),
 					'lunch'  			=> $this->input->post('lunch'),
@@ -693,6 +724,7 @@ class Processdb extends CI_Model{
 						'gross_sal'  		=> $this->input->post('text8'),
 						'com_gross_sal'     => $this->input->post('com_gross_sal'),
 						'account'           => $this->input->post('account'),
+						'work_type'  		=> $this->input->post('work_type'),
 						'ot_entitle'  		=> $this->input->post('otentitle'),
 						'transport'  		=> $this->input->post('transport'),
 						'lunch'  			=> $this->input->post('lunch'),
@@ -1541,7 +1573,7 @@ function com_info_search1($emp_id)
 	
 	//$emp_id = $this->input->post('empid');
 
-	$this->db->select('pr_emp_com_info.emp_id as emp_id,pr_emp_com_info.proxi_id as proxi_id,pr_dept.dept_name as dept_name,pr_section.sec_name as sec_name,pr_line_num.line_name as line_name,pr_designation.desig_name as desig_name, pr_emp_operation.ope_name as ope_name, pr_emp_position.posi_name as posi_name, pr_grade.gr_name as gr_name,pr_emp_status.stat_type as stat_type, pr_emp_com_info.gross_sal as gross_sal,pr_emp_com_info.com_gross_sal as com_gross_sal, pr_emp_com_info.emp_join_date as emp_join_date,pr_emp_com_info.ot_entitle as ot_entitle,pr_emp_com_info.transport as transport,pr_emp_com_info.lunch as lunch,pr_emp_com_info.att_bonus as att_bonus, pr_emp_com_info.salary_draw as salary_draw, pr_emp_com_info.salary_type as salary_type, pr_emp_shift.shift_name as shift_name, pr_emp_com_info.account');
+	$this->db->select('pr_emp_com_info.emp_id as emp_id,pr_emp_com_info.work_type as work_type,pr_emp_com_info.proxi_id as proxi_id,pr_dept.dept_name as dept_name,pr_section.sec_name as sec_name,pr_line_num.line_name as line_name,pr_designation.desig_name as desig_name, pr_emp_operation.ope_name as ope_name, pr_emp_position.posi_name as posi_name, pr_grade.gr_name as gr_name,pr_emp_status.stat_type as stat_type, pr_emp_com_info.gross_sal as gross_sal,pr_emp_com_info.com_gross_sal as com_gross_sal, pr_emp_com_info.emp_join_date as emp_join_date,pr_emp_com_info.ot_entitle as ot_entitle,pr_emp_com_info.transport as transport,pr_emp_com_info.lunch as lunch,pr_emp_com_info.att_bonus as att_bonus, pr_emp_com_info.salary_draw as salary_draw, pr_emp_com_info.salary_type as salary_type, pr_emp_shift.shift_name as shift_name, pr_emp_com_info.account');
 	//$this->db->select('pr_emp_com_info.emp_id as emp_id,pr_id_proxi.proxi_id as proxi_id,pr_dept.dept_name as dept_name,pr_section.sec_name as sec_name,pr_line_num.line_name as line_name,pr_designation.desig_name as desig_name');
 	$this->db->from('pr_emp_com_info');
 	// $this->db->from('pr_id_proxi');
@@ -1589,6 +1621,7 @@ function com_info_search1($emp_id)
 					'gross_sal'  	=> $row->gross_sal,
 					'com_gross_sal' => $row->com_gross_sal,
 					'account'  		=> $row->account,
+					'work_type'  	=> $row->work_type,
 					'ot_entitle'  	=> $row->ot_entitle,
 					'transport'  	=> $row->transport,
 					'lunch'  		=> $row->lunch,
@@ -1600,7 +1633,7 @@ function com_info_search1($emp_id)
 			 
 		}
 		//return $data;
-		//print_r($data);
+		// dd($data);
 		
 		//GET DEPARTMENT ID BY EMP ID
 		$this->db->select('emp_dept_id');
@@ -1663,6 +1696,14 @@ function com_info_search1($emp_id)
 				'nid'					=> $row->nid,
 				'personal_phone'		=> $row->personal_phone,
 				'emergency_phone'		=> $row->emergency_phone,
+				'm_name_bn' 			=> $row->m_name_bn,
+				'f_name_bn' 			=> $row->f_name_bn,
+				'spouse_name_bn' 		=> $row->spouse_name_bn,
+				'edu_bn' 				=> $row->edu_bn,
+				'pre_vill_bn' 			=> $row->pre_vill_bn,
+				'per_vill_bn' 			=> $row->per_vill_bn,
+				'nomi_name_bn' 			=> $row->nomi_name_bn,
+				'nomi_vill_bn' 			=> $row->nomi_vill_bn,
 				
 				
 					

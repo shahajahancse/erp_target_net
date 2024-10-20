@@ -108,7 +108,7 @@ for($i = 0; $i<$count;$i++)
 	
 	$count1 = count($values[$emp_id]["shift_log_date"]);
 	
-	echo "<table class='sal' border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' style='text-align:center; font-size:13px; '> <th>Date</th><th>In Time</th><th>Out Time</th><th>Attn.Status</th><th>OT</th><th>EOT</th><th>Lunch Out Time</th><th>Lunch IN Time</th><th>Remarks</th>";
+	echo "<table class='sal' border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' style='text-align:center; font-size:13px; '> <th>Date</th><th>Day</th><th>Shift</th><th>In Time</th><th>Out Time</th><th>Attn.Status</th><th>OT</th><th>EOT</th><th>Weekend</th><th>Night</th><th>Remarks</th>";
 	for($k = 0; $k<$count1;$k++)
 	{
 		//echo $values[$emp_id]["shift_log_date"][$k];
@@ -118,6 +118,14 @@ for($i = 0; $i<$count;$i++)
 	
 		echo "<td>&nbsp;";
 		echo $values[$emp_id]["shift_log_date"][$k];
+		echo "</td>";
+
+		echo "<td>&nbsp;";
+		echo date('l',strtotime($values[$emp_id]["shift_log_date"][$k]));
+		echo "</td>";
+
+		echo "<td>&nbsp;";
+		echo $values[$emp_id]["emp_shift"][$k];
 		echo "</td>";
 		
 		echo "<td>&nbsp;";
@@ -195,12 +203,20 @@ for($i = 0; $i<$count;$i++)
 		echo "</td>";
         $total_eot_hour = $total_eot_hour + $values[$emp_id]["extra_ot_hour"][$k];
 		
-		echo "<td>&nbsp;";
-		echo $values[$emp_id]["lunch_out"][$k];
-		echo "</td>";
+		// echo "<td>&nbsp;";
+		// echo $values[$emp_id]["lunch_out"][$k];
+		// echo "</td>";
 		
+		// echo "<td>&nbsp;";
+		// echo $values[$emp_id]["lunch_in"][$k];
+		// echo "</td>";
+
 		echo "<td>&nbsp;";
-		echo $values[$emp_id]["lunch_in"][$k];
+		echo 0;
+		echo "</td>";
+
+		echo "<td>&nbsp;";
+		echo 0;
 		echo "</td>";
 		
 		echo "<td>&nbsp;";
@@ -247,6 +263,10 @@ for($i = 0; $i<$count;$i++)
 	echo "<td width='75' style='border-bottom:#000000 1px solid;'>";
 	echo "OVERTIME";
 	echo "</td>";
+
+	echo "<td width='75' style='border-bottom:#000000 1px solid;'>";
+	echo "TOTAL PAY DAY";
+	echo "</td>";
 			
 	echo "</tr>";
 			
@@ -284,7 +304,11 @@ for($i = 0; $i<$count;$i++)
 	echo "<td>";
 	echo $total_ot_hour+$total_eot_hour;
 	echo "</td>";
-	
+
+	echo "<td>";
+	echo $present_count+$leave_count+$wk_off_count+$holiday_count+$perror_count;
+	echo "</td>";
+
 	echo "</tr>";
 	echo "</table>";
 	echo "<br /><br />";

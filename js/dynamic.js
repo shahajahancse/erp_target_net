@@ -2380,8 +2380,8 @@ ajaxRequest.onreadystatechange = function(){
 		document.cominfo.name.value = otherinfo[0];
 		document.cominfo.bname.value = otherinfo[1];
 
-		document.cominfo.mname.value = otherinfo[2];
-		document.cominfo.fname.value = otherinfo[3];
+		document.cominfo.fname.value = otherinfo[2];
+		document.cominfo.mname.value = otherinfo[3];
 		document.cominfo.spouse_name.value = otherinfo[4];
 		document.cominfo.no_child.value = otherinfo[5];
 		document.cominfo.dob.value = otherinfo[6];
@@ -2416,13 +2416,27 @@ ajaxRequest.onreadystatechange = function(){
 		document.cominfo.personal_phone.value 	= otherinfo[33];
 		document.cominfo.emergency_phone.value 	= otherinfo[34];
 
+		document.cominfo.m_name_bn.value 		= otherinfo[35];
+		document.cominfo.f_name_bn.value 		= otherinfo[36];
+		document.cominfo.spouse_name_bn.value 	= otherinfo[37];
+		document.cominfo.edu_bn.value 			= otherinfo[38];
+		document.cominfo.pre_vill_bn.value 		= otherinfo[39];
+		document.cominfo.per_vill_bn.value 		= otherinfo[40];
+		document.cominfo.nomi_name_bn.value 	= otherinfo[41];
+		document.cominfo.nomi_vill_bn.value 	= otherinfo[42];
+
 		com_info = alldata[1].split("=*=");
 
 		console.log(com_info);
 		document.cominfo.empid.value = com_info[0];
 		document.cominfo.idcard.value = com_info[1];
-		document.cominfo.cgsal.value = com_info[12];
+		document.cominfo.cgsal.value = com_info[11];
+		document.cominfo.gsal.value = com_info[12];
 		document.cominfo.account.value = com_info[13];
+		document.cominfo.work_type.value = com_info[14];
+		document.cominfo.ejd.value = com_info[19];
+		document.cominfo.saldraw.value = com_info[20];
+		document.cominfo.saltype.value = com_info[21];
 		
 		
 		dept_id_name = alldata[2].split("===");
@@ -2681,7 +2695,7 @@ ajaxRequest.onreadystatechange = function(){
 		
 		
 		
-		document.getElementById('ejd').value = com_info[16];
+		document.getElementById('ejd').value = com_info[19];
 		//alert(com_info[11]) ;
 		document.getElementById('gsal').value = com_info[11];
 		var gsal = com_info[11];
@@ -3109,7 +3123,7 @@ ajaxRequest.onreadystatechange = function(){
 		
 		
 		
-		document.getElementById('ejd').value = com_info[16];
+		document.getElementById('ejd').value = com_info[19];
 		//alert(com_info[11]) ;
 		document.getElementById('gsal').value = com_info[11];
 		var gsal = com_info[11];
@@ -3532,7 +3546,7 @@ ajaxRequest.onreadystatechange = function(){
 		
 		
 		
-		document.getElementById('ejd').value = com_info[16];
+		document.getElementById('ejd').value = com_info[19];
 		//alert(com_info[11]) ;
 		document.getElementById('gsal').value = com_info[11];
 		var gsal = com_info[11];
@@ -3867,7 +3881,7 @@ ajaxRequest.onreadystatechange = function(){
 			
 		}
 		
-		document.getElementById('ejd').value = companyinfo[16];
+		document.getElementById('ejd').value = companyinfo[19];
 		
 		var sdname=new Array(); 
 		var sdid=new Array(); 
