@@ -268,6 +268,25 @@ class Import extends CI_Controller {
 		return $ab_id = $row->ab_id;
 	}
 
+	function add_phonessss(){
+		date_default_timezone_set('Asia/Dhaka');
+		$file_name = "import/bkash.txt";
+		if (file_exists($file_name)){
+			$lines = file($file_name);
+			foreach(array_values($lines)  as $line) {
+				list($id, $amt) = preg_split('/\s+/',$line);
+				$data = array(
+					'emp_id' 	=> $id,
+					'account'	=> $amt,
+				);
+				// dd($data);
+				$this->db->where('emp_id', $id);
+				$this->db->update('pr_emp_com_info', $data);
+				}
+				echo "Upload successfully done";
+		}
+	}
+
 }
 
 ?>

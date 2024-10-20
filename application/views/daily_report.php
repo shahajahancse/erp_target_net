@@ -74,9 +74,9 @@ $this->load->view("head_english");
 
             // Start a new table for the new section
             echo "<table class='sal'>";
-            echo "<tr><th colspan='13' style='text-align: center;'>Section: $current_section</th></tr>"; // Adjust the colspan number
-            echo "<tr><th>SL</th><th style='white-space:nowrap'>Emp ID</th><th style='white-space:nowrap'>Punch Card No.</th><th>Employee Name</th>
-                   <th>Joining Date</th> <th>Department</th><th>Designation</th><th>Shift</th>";
+            echo "<tr style='text-align:center'><th colspan='13' style='text-align: center;'>Section: $current_section</th></tr>"; // Adjust the colspan number
+            echo "<tr><th>SL</th><th style='white-space:nowrap'>Emp ID</th><th style='white-space:nowrap'>Punch Card No.</th><th style='white-space:nowrap'>Employee Name</th>
+                   <th style='white-space:nowrap'>Joining Date</th> <th style='white-space:nowrap'>Department</th><th>Designation</th><th>Shift</th>";
             if ($daily_status == "P") {
                 echo "<th>IN Time</th><th>OUT Time</th>";
             }
@@ -87,22 +87,22 @@ $this->load->view("head_english");
 
         // Populate the table rows
         echo "<tr>";
-        echo "<td>".($i + 1)."</td>";
-        echo "<td>".$values["emp_id"][$i]."</td>";
-        echo "<td>&nbsp;".$values["proxi_id"][$i]."</td>";
+        echo "<td style='text-align:center'>".($i + 1)."</td>";
+        echo "<td style='text-align:center'>".$values["emp_id"][$i]."</td>";
+        echo "<td style='text-align:center'>&nbsp;".$values["proxi_id"][$i]."</td>";
         echo "<td style='white-space:nowrap'>".$values["emp_name"][$i]."</td>";
-        echo "<td>".date("d M Y",strtotime($values["doj"][$i]))."</td>";
-        echo "<td>".$values["dept_name"][$i]."</td>";
-        echo "<td>".$values["desig_name"][$i]."</td>";
-        echo "<td>".$values["emp_shift"][$i]."</td>";
+        echo "<td style='text-align:center'>".date("d M Y",strtotime($values["doj"][$i]))."</td>";
+        echo "<td style='text-align:center'>".$values["dept_name"][$i]."</td>";
+        echo "<td style='text-align:center;white-space:nowrap'>".$values["desig_name"][$i]."</td>";
+        echo "<td style='text-align:center'>".($values["emp_shift"][$i]=="General"?"G":"-") ."</td>";
 
         if ($daily_status == "P") {
-            echo "<td style='white-space:nowrap' align='center'>".$values["in_time"][$i]."</td>";
+            echo "<td style='white-space:nowrap' align='center'>". date("H:i A",strtotime($values["in_time"][$i]))."</td>";
             echo "<td style='white-space:nowrap' align='center'>";
             if ($values["out_time"][$i] == '' || $values["out_time"][$i] == "12:00:00 AM") {
                 echo "P(Error)";
             } else {
-                echo $values["out_time"][$i];
+                echo date("H:i A",strtotime($values["out_time"][$i]));
             }
             echo "</td>";
         }

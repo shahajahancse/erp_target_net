@@ -1284,8 +1284,27 @@ var year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
 	provident_fund.moveTo(0,0);
 }
 
-function grid_id_card()
+function grid_id_card_english()
 {
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	
+	try{
+	  // Opera 8.0+, Firefox, Safari
+	  ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	  // Internet Explorer Browsers
+	  try{
+		 ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	  }catch (e) {
+		 try{
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		 }catch (e){
+			// Something went wrong
+			alert("Your browser broke!");
+			return false;
+		 }
+	  }
+	}
 	var grid_start = document.getElementById('grid_start').value;
 	if(grid_start =='Select')
 	{
@@ -1304,14 +1323,38 @@ function grid_id_card()
 		return;
 	}
 	
-	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_id_card/"+spl;
+	// hostname = window.location.hostname;
+	// url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_id_card/"+;
 	
-	id_card = window.open(url,'id_card',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
-	id_card.moveTo(0,0);	
+	// id_card = window.open(url,'id_card',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
+	// id_card.moveTo(0,0);	
+
+	hostname = window.location.hostname;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_id_card/";
+	
+	/*extra_ot = window.open(url,'extra_ot',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
+	extra_ot.moveTo(0,0);*/
+	
+	var queryString="emp_id="+spl;
+	// var queryString="firstdate="+firstdate+"&seconddate="+seconddate+"&manual_time="+manual_time+"&spl="+spl;
+   
+    ajaxRequest.open("POST", url, true);
+ 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ 	ajaxRequest.send(queryString);
+ 
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+			a = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1200,height=800');
+			a.document.write(resp);
+		}
+	}
+
+
+
 }
 
-function grid_id_card_english()
+function grid_id_card()
 {
 	var grid_start = document.getElementById('grid_start').value;
 	if(grid_start =='Select')

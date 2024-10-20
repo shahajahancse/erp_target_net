@@ -607,7 +607,7 @@ class Grid_con extends CI_Controller {
 	
 	function grid_id_card()
 	{
-		$grid_data = $this->uri->segment(3);
+		$grid_data = $_POST['emp_id'];
 		$grid_emp_id = explode('xxx', trim($grid_data));
 			
 		$query['values'] = $this->grid_model->grid_id_card($grid_emp_id);
@@ -626,8 +626,8 @@ class Grid_con extends CI_Controller {
 		$grid_data = $this->uri->segment(3);
 		$grid_emp_id = explode('xxx', trim($grid_data));
 			
-		$query['values'] = $this->grid_model->grid_id_card_english($grid_emp_id);
-		dd($query['values']->result());
+		$query['values'] = $this->grid_model->grid_id_card($grid_emp_id);
+		// dd($query['values']->result());
 		if(is_string($query['values']))
 		{
 			echo $query['values'];

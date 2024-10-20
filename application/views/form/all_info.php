@@ -170,7 +170,7 @@ if($validation_errors != '')
   	<td><input  type='text' style="width:170px;font-family:SUtonnyMJ" id='edu_bn' name="edu_bn" value="<?php echo set_value('edu_bn'); ?>"></td>
 </tr>
 <tr>
-	<td>NID</td>
+	<td>NID/Birth Certificate</td>
   	<td><input  type='text' style="width:170px;" id='nid' name="nid" value="<?php echo set_value('nid'); ?>"></td>
 
 	<td>Personal Phone</td>
@@ -564,6 +564,21 @@ if($validation_errors != '')
 <tr>
 	<td width="135px">Accounnt Number</td>
   	<td width="250px"><input name="account" type='text' id='account' style="width:170px;"  value="<?php echo set_value('account'); ?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57" /></td>
+	<td width="135px">Worke Type</td>
+	<td>
+	<select style="width:174px;" id='work_type' name='work_type' >
+		<?php $salary_type_name = $this->processdb->get_salary_type_name();
+		foreach($salary_type_name->result() as $rows) { 
+			if($this->input->post('work_type') == $rows->sal_type_id) {?>
+				<option value="<?php echo $rows->sal_type_id; ?>" selected="selected"><?php echo $rows->sal_type_name; ?></option>
+			<?php } else { ?>	
+				<option value="<?php echo $rows->sal_type_id; ?>"><?php echo $rows->sal_type_name; ?></option>	
+			<?php } ?>	
+			
+		<?php } ?>	    	
+  	</select>
+	</td>
+
 </tr>
 
 <!-- <tr><td width="135px">Emp Last Dgree</td>
