@@ -55,7 +55,7 @@ class Salary_process_model extends CI_Model{
 		} else {
 			$all_emp_id = $this->pd_process_model->get_all_emp_id_log($process_start_date,$process_end_date);
 		}
-		// dd($process_start_date .' = '. $process_end_date);
+		dd($all_emp_id);
 		foreach($all_emp_id->result() as $rows)
 		{
 			$salary_process_eligibility = $this->salary_process_eligibility_model->salary_process_eligibility_fixed($rows->emp_id,$process_start_date,$process_end_date);

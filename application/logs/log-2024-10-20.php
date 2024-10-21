@@ -4461,3 +4461,1720 @@ ERROR - 2024-10-20 19:01:35 --> Severity: Notice  --> Undefined index: A333 C:\x
 ERROR - 2024-10-20 19:02:18 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-09-01]
 DEBUG - 2024-10-20 19:02:18 --> Final output sent to browser
 DEBUG - 2024-10-20 19:02:18 --> Total execution time: 44.0629
+DEBUG - 2024-10-20 15:12:36 --> Config Class Initialized
+DEBUG - 2024-10-20 15:12:36 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:12:36 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:12:36 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:12:36 --> URI Class Initialized
+DEBUG - 2024-10-20 15:12:36 --> Router Class Initialized
+DEBUG - 2024-10-20 15:12:36 --> Output Class Initialized
+DEBUG - 2024-10-20 15:12:36 --> Security Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Input Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:12:37 --> Language Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:12:37 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:12:37 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:12:37 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:12:37 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Session Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:12:37 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Session routines successfully run
+DEBUG - 2024-10-20 15:12:37 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:12:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:12:37 --> Model Class Initialized
+ERROR - 2024-10-20 19:13:22 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-09-01]
+DEBUG - 2024-10-20 19:13:22 --> Final output sent to browser
+DEBUG - 2024-10-20 19:13:22 --> Total execution time: 45.0367
+DEBUG - 2024-10-20 15:14:07 --> Config Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:14:07 --> URI Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Router Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Output Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Security Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Input Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:14:07 --> Language Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:14:07 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:14:07 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:14:07 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:14:07 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Session Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:14:07 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Session routines successfully run
+DEBUG - 2024-10-20 15:14:07 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:14:07 --> Model Class Initialized
+DEBUG - 2024-10-20 19:14:07 --> Model Class Initialized
+DEBUG - 2024-10-20 19:14:08 --> Final output sent to browser
+DEBUG - 2024-10-20 19:14:08 --> Total execution time: 0.1923
+DEBUG - 2024-10-20 15:14:43 --> Config Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:14:43 --> URI Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Router Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Output Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Security Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Input Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:14:43 --> Language Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:14:43 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:14:43 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:14:43 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:14:43 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Session Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:14:43 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Session routines successfully run
+DEBUG - 2024-10-20 15:14:43 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:14:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:14:43 --> Model Class Initialized
+ERROR - 2024-10-20 19:15:31 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-09-01]
+DEBUG - 2024-10-20 19:15:31 --> Final output sent to browser
+DEBUG - 2024-10-20 19:15:31 --> Total execution time: 47.4048
+DEBUG - 2024-10-20 15:15:55 --> Config Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:15:55 --> URI Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Router Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Output Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Security Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Input Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:15:55 --> Language Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:15:55 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:15:55 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:15:55 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:15:55 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Session Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:15:55 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Session routines successfully run
+DEBUG - 2024-10-20 15:15:55 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:15:55 --> Model Class Initialized
+DEBUG - 2024-10-20 19:15:55 --> Model Class Initialized
+DEBUG - 2024-10-20 19:15:55 --> Final output sent to browser
+DEBUG - 2024-10-20 19:15:55 --> Total execution time: 0.1900
+DEBUG - 2024-10-20 15:15:57 --> Config Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:15:57 --> URI Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Router Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Output Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Security Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Input Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:15:57 --> Language Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:15:57 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:15:57 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:15:57 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:15:57 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Session Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:15:57 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Session routines successfully run
+DEBUG - 2024-10-20 15:15:57 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Model Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Model Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Model Class Initialized
+DEBUG - 2024-10-20 15:15:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:15:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:15:57 --> Final output sent to browser
+DEBUG - 2024-10-20 19:15:57 --> Total execution time: 0.1389
+DEBUG - 2024-10-20 15:16:45 --> Config Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:16:45 --> URI Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Router Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Output Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Security Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Input Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:16:45 --> Language Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:16:45 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:16:45 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:16:45 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:16:45 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Session Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:16:45 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Session routines successfully run
+DEBUG - 2024-10-20 15:16:45 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:16:45 --> Model Class Initialized
+DEBUG - 2024-10-20 19:16:45 --> Model Class Initialized
+DEBUG - 2024-10-20 19:16:45 --> Final output sent to browser
+DEBUG - 2024-10-20 19:16:45 --> Total execution time: 0.1667
+DEBUG - 2024-10-20 15:16:56 --> Config Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:16:56 --> URI Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Router Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Output Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Security Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Input Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:16:56 --> Language Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:16:56 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:16:56 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:16:56 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:16:56 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Session Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:16:56 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Session routines successfully run
+DEBUG - 2024-10-20 15:16:56 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Model Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Model Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Model Class Initialized
+DEBUG - 2024-10-20 15:16:56 --> Model Class Initialized
+DEBUG - 2024-10-20 19:16:56 --> Model Class Initialized
+DEBUG - 2024-10-20 19:16:57 --> Final output sent to browser
+DEBUG - 2024-10-20 19:16:57 --> Total execution time: 0.9072
+DEBUG - 2024-10-20 15:17:01 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:01 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:01 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:01 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:01 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:01 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:01 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:01 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Session garbage collection performed.
+DEBUG - 2024-10-20 15:17:01 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:01 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:01 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:01 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:01 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:01 --> Total execution time: 0.3862
+DEBUG - 2024-10-20 15:17:05 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:05 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:05 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:05 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:05 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:05 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:05 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:05 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:05 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:06 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:06 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:06 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:06 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:06 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:06 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:06 --> Total execution time: 0.1532
+DEBUG - 2024-10-20 15:17:31 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:31 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:31 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:31 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:31 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:31 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:31 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:31 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:31 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:32 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:32 --> Total execution time: 0.8939
+DEBUG - 2024-10-20 15:17:36 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:36 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:36 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:36 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:36 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:36 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:36 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:36 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Session garbage collection performed.
+DEBUG - 2024-10-20 15:17:36 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:36 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:36 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:36 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:38 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:38 --> Total execution time: 1.4512
+DEBUG - 2024-10-20 15:17:41 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:41 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:41 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:41 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:41 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:41 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:41 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:41 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:41 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:41 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:41 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:42 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:42 --> Total execution time: 0.4405
+DEBUG - 2024-10-20 15:17:45 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:45 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:45 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:45 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:45 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:45 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:45 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:45 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:45 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:45 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:45 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:46 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:46 --> Total execution time: 0.7966
+DEBUG - 2024-10-20 15:17:49 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:49 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:49 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:49 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:49 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:49 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:49 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:49 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:49 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:49 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:49 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:50 --> Final output sent to browser
+DEBUG - 2024-10-20 19:17:50 --> Total execution time: 1.1140
+DEBUG - 2024-10-20 15:17:55 --> Config Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:17:55 --> URI Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Router Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Output Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Security Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Input Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:17:55 --> Language Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:17:55 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:17:55 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:17:55 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:17:55 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Session Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:17:55 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Session routines successfully run
+DEBUG - 2024-10-20 15:17:55 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:17:55 --> Model Class Initialized
+DEBUG - 2024-10-20 19:17:55 --> Model Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Config Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:18:45 --> URI Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Router Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Output Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Security Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Input Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:18:45 --> Language Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:18:45 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:18:45 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:18:45 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:18:45 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Session Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:18:45 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Session routines successfully run
+DEBUG - 2024-10-20 15:18:45 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 15:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 19:18:45 --> Model Class Initialized
+DEBUG - 2024-10-20 19:18:45 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:18:45 --> DB Transaction Failure
+ERROR - 2024-10-20 19:18:45 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS present, COALESCE(SUM(CASE WHEN log.present_status = 'A' THEN 1 ELSE 0 END ),' at line 1
+DEBUG - 2024-10-20 19:18:45 --> Language file loaded: language/english/db_lang.php
+ERROR - 2024-10-20 19:19:24 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-10-02]
+DEBUG - 2024-10-20 19:19:24 --> Final output sent to browser
+DEBUG - 2024-10-20 19:19:24 --> Total execution time: 88.4660
+DEBUG - 2024-10-20 15:19:29 --> Config Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:19:29 --> URI Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Router Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Output Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Security Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Input Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:19:29 --> Language Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:19:29 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:19:29 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:19:29 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:19:29 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Session Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:19:29 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Session routines successfully run
+DEBUG - 2024-10-20 15:19:29 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:19:29 --> Model Class Initialized
+DEBUG - 2024-10-20 19:19:29 --> Model Class Initialized
+ERROR - 2024-10-20 19:20:43 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-10-03]
+DEBUG - 2024-10-20 19:20:43 --> Final output sent to browser
+DEBUG - 2024-10-20 19:20:43 --> Total execution time: 73.7284
+DEBUG - 2024-10-20 15:20:51 --> Config Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:20:51 --> URI Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Router Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Output Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Security Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Input Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:20:51 --> Language Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:20:51 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:20:51 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:20:51 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:20:51 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Session Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:20:51 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Session routines successfully run
+DEBUG - 2024-10-20 15:20:51 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Model Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Model Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Model Class Initialized
+DEBUG - 2024-10-20 15:20:51 --> Model Class Initialized
+DEBUG - 2024-10-20 19:20:51 --> Model Class Initialized
+ERROR - 2024-10-20 19:22:05 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-10-04]
+DEBUG - 2024-10-20 19:22:05 --> Final output sent to browser
+DEBUG - 2024-10-20 19:22:05 --> Total execution time: 73.4913
+DEBUG - 2024-10-20 15:22:14 --> Config Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:22:14 --> URI Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Router Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Output Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Security Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Input Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:22:14 --> Language Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:22:14 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:22:14 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:22:14 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:22:14 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Session Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:22:14 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Session routines successfully run
+DEBUG - 2024-10-20 15:22:14 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Model Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Model Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Model Class Initialized
+DEBUG - 2024-10-20 15:22:14 --> Model Class Initialized
+DEBUG - 2024-10-20 19:22:14 --> Model Class Initialized
+ERROR - 2024-10-20 19:23:27 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-10-05]
+DEBUG - 2024-10-20 19:23:27 --> Final output sent to browser
+DEBUG - 2024-10-20 19:23:27 --> Total execution time: 72.7620
+DEBUG - 2024-10-20 15:26:06 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:06 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:06 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:06 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:06 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:06 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:06 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:06 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:06 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:06 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:06 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:37 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:37 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:37 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:37 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:37 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:37 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:37 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:37 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:37 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:37 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:37 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:37 --> File loaded: application/views/admin/login.php
+DEBUG - 2024-10-20 19:26:37 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:37 --> Total execution time: 0.1222
+DEBUG - 2024-10-20 15:26:41 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:41 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:41 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:41 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:41 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:41 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:41 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:41 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:41 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:41 --> Controller Class Initialized
+DEBUG - 2024-10-20 19:26:41 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:41 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:41 --> Model Class Initialized
+ERROR - 2024-10-20 19:26:41 --> LOGIN : IN  --> [USERNAME : admin, has Login  from ::1, USER_AGENT : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36]
+DEBUG - 2024-10-20 15:26:42 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:42 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> No URI present. Default controller set.
+DEBUG - 2024-10-20 15:26:42 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:42 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:42 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:42 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:42 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:42 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:42 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:42 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:42 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:42 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:42 --> File loaded: application/views/home.php
+DEBUG - 2024-10-20 19:26:42 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:42 --> Total execution time: 0.1018
+DEBUG - 2024-10-20 15:26:42 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:42 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:42 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:42 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:42 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:42 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:42 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:42 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:42 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:42 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:42 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:42 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:42 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:42 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:42 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:43 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:43 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:43 --> File loaded: application/views/footer.php
+DEBUG - 2024-10-20 19:26:43 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:43 --> Total execution time: 0.3667
+DEBUG - 2024-10-20 15:26:43 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:43 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 19:26:43 --> File loaded: application/views/header.php
+DEBUG - 2024-10-20 19:26:43 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:43 --> Total execution time: 0.4366
+DEBUG - 2024-10-20 15:26:43 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:43 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:43 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:43 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:43 --> File loaded: application/views/id_proxi_ins.php
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:43 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:43 --> Total execution time: 0.4978
+DEBUG - 2024-10-20 19:26:43 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:43 --> File loaded: application/views/utree.php
+DEBUG - 2024-10-20 19:26:43 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:43 --> Total execution time: 0.6158
+DEBUG - 2024-10-20 15:26:50 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:50 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:50 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:50 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:50 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:50 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:50 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:50 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:50 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:50 --> File loaded: application/views/grid.php
+DEBUG - 2024-10-20 19:26:50 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:50 --> Total execution time: 0.2364
+DEBUG - 2024-10-20 15:26:58 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:58 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:58 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:59 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:59 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:59 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Final output sent to browser
+DEBUG - 2024-10-20 19:26:59 --> Total execution time: 0.1114
+DEBUG - 2024-10-20 15:26:59 --> Config Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:26:59 --> URI Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Router Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Output Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Security Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Input Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:26:59 --> Language Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:26:59 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Session Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:26:59 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Session routines successfully run
+DEBUG - 2024-10-20 15:26:59 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 15:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+DEBUG - 2024-10-20 19:26:59 --> Model Class Initialized
+ERROR - 2024-10-20 19:27:26 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-10-06]
+DEBUG - 2024-10-20 19:27:26 --> Final output sent to browser
+DEBUG - 2024-10-20 19:27:26 --> Total execution time: 79.6464
+DEBUG - 2024-10-20 15:27:33 --> Config Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:27:33 --> URI Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Router Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Output Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Security Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Input Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:27:33 --> Language Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:27:33 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:27:33 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:27:33 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:27:33 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Session Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:27:33 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Session routines successfully run
+DEBUG - 2024-10-20 15:27:33 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:33 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:33 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Config Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:27:39 --> URI Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Router Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Output Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Security Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Input Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:27:39 --> Language Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:27:39 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:27:39 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:27:39 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:27:39 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Session Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:27:39 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Session routines successfully run
+DEBUG - 2024-10-20 15:27:39 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:39 --> File loaded: application/views/head_english.php
+DEBUG - 2024-10-20 19:27:39 --> File loaded: application/views/actual_job_card.php
+DEBUG - 2024-10-20 19:27:39 --> Final output sent to browser
+DEBUG - 2024-10-20 19:27:39 --> Total execution time: 0.2752
+DEBUG - 2024-10-20 15:27:57 --> Config Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:27:57 --> URI Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Router Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Output Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Security Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Input Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:27:57 --> Language Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:27:57 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:27:57 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:27:57 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:27:57 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Session Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:27:57 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Session routines successfully run
+DEBUG - 2024-10-20 15:27:57 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 15:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> Model Class Initialized
+DEBUG - 2024-10-20 19:27:57 --> File loaded: application/views/head_english.php
+DEBUG - 2024-10-20 19:27:57 --> File loaded: application/views/daily_report.php
+DEBUG - 2024-10-20 19:27:57 --> Final output sent to browser
+DEBUG - 2024-10-20 19:27:57 --> Total execution time: 0.2383
+DEBUG - 2024-10-20 15:28:03 --> Config Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:28:03 --> URI Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Router Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Output Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Security Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Input Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:28:03 --> Language Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:28:03 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:28:03 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:28:03 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:28:03 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Session Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:28:03 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Session routines successfully run
+DEBUG - 2024-10-20 15:28:03 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:03 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:03 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:28:03 --> DB Transaction Failure
+ERROR - 2024-10-20 19:28:03 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS present, COALESCE(SUM(CASE WHEN log.present_status = 'A' THEN 1 ELSE 0 END), ' at line 1
+DEBUG - 2024-10-20 19:28:03 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:28:11 --> Config Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:28:11 --> URI Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Router Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Output Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Security Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Input Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:28:11 --> Language Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:28:11 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:28:11 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:28:11 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:28:11 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Session Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:28:11 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Session routines successfully run
+DEBUG - 2024-10-20 15:28:11 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:11 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:11 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:11 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:12 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:12 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:12 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:12 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:12 --> File loaded: application/views/head_english.php
+DEBUG - 2024-10-20 19:28:12 --> File loaded: application/views/actual_job_card.php
+DEBUG - 2024-10-20 19:28:12 --> Final output sent to browser
+DEBUG - 2024-10-20 19:28:12 --> Total execution time: 0.3155
+DEBUG - 2024-10-20 15:28:19 --> Config Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:28:19 --> URI Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Router Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Output Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Security Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Input Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:28:19 --> Language Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:28:19 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:28:19 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:28:19 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:28:19 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Session Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:28:19 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Session routines successfully run
+DEBUG - 2024-10-20 15:28:19 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:19 --> Final output sent to browser
+DEBUG - 2024-10-20 19:28:19 --> Total execution time: 0.0934
+DEBUG - 2024-10-20 15:28:25 --> Config Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:28:25 --> URI Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Router Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Output Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Security Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Input Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:28:25 --> Language Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:28:25 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:28:25 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:28:25 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:28:25 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Session Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:28:25 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Session routines successfully run
+DEBUG - 2024-10-20 15:28:25 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:25 --> Final output sent to browser
+DEBUG - 2024-10-20 19:28:25 --> Total execution time: 0.1732
+DEBUG - 2024-10-20 15:28:31 --> Config Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:28:31 --> URI Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Router Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Output Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Security Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Input Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:28:31 --> Language Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:28:31 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:28:31 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:28:31 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:28:31 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Session Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:28:31 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Session routines successfully run
+DEBUG - 2024-10-20 15:28:31 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:31 --> File loaded: application/views/head_english.php
+DEBUG - 2024-10-20 19:28:31 --> File loaded: application/views/daily_report.php
+DEBUG - 2024-10-20 19:28:31 --> Final output sent to browser
+DEBUG - 2024-10-20 19:28:31 --> Total execution time: 0.2142
+DEBUG - 2024-10-20 15:28:44 --> Config Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:28:44 --> URI Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Router Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Output Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Security Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Input Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:28:44 --> Language Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:28:44 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:28:44 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:28:44 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:28:44 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Session Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:28:44 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Session routines successfully run
+DEBUG - 2024-10-20 15:28:44 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 15:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> Model Class Initialized
+DEBUG - 2024-10-20 19:28:44 --> File loaded: application/views/head_english.php
+DEBUG - 2024-10-20 19:28:44 --> File loaded: application/views/daily_report.php
+DEBUG - 2024-10-20 19:28:44 --> Final output sent to browser
+DEBUG - 2024-10-20 19:28:44 --> Total execution time: 0.1259
+ERROR - 2024-10-20 19:28:57 --> ATTENDANCE PROCESS --> [USERNAME : admin, PROCESS_DATE : 2024-10-07]
+DEBUG - 2024-10-20 19:28:57 --> Final output sent to browser
+DEBUG - 2024-10-20 19:28:57 --> Total execution time: 84.0917
+DEBUG - 2024-10-20 15:30:38 --> Config Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:30:38 --> URI Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Router Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Output Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Security Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Input Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:30:38 --> Language Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:30:38 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:30:38 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:30:38 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:30:38 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Session Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:30:38 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Session routines successfully run
+DEBUG - 2024-10-20 15:30:38 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 15:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 19:30:38 --> Model Class Initialized
+DEBUG - 2024-10-20 19:30:38 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:30:38 --> DB Transaction Failure
+ERROR - 2024-10-20 19:30:38 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS present, COALESCE(SUM(CASE WHEN log.present_status = 'A' THEN 1 ELSE 0 END), ' at line 1
+DEBUG - 2024-10-20 19:30:38 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:31:35 --> Config Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:31:35 --> URI Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Router Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Output Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Security Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Input Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:31:35 --> Language Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:31:35 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:31:35 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:31:35 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:31:35 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Session Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:31:35 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Session routines successfully run
+DEBUG - 2024-10-20 15:31:35 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 15:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 19:31:35 --> Model Class Initialized
+DEBUG - 2024-10-20 19:31:35 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:31:35 --> DB Transaction Failure
+ERROR - 2024-10-20 19:31:35 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'leave, SUM(log.ot_hour) AS ot_hour, SUM(CASE WHEN log.extra_ot_hour >= 2 THEN 2 ' at line 1
+DEBUG - 2024-10-20 19:31:35 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:32:07 --> Config Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:32:07 --> URI Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Router Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Output Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Security Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Input Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:32:07 --> Language Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:32:07 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:32:07 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:32:07 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:32:07 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Session Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:32:07 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Session routines successfully run
+DEBUG - 2024-10-20 15:32:07 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 19:32:07 --> Model Class Initialized
+DEBUG - 2024-10-20 19:32:07 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:32:07 --> DB Transaction Failure
+ERROR - 2024-10-20 19:32:07 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'leave, SUM(log.ot_hour) AS ot_hour, SUM(log.extra_ot_hour) AS extra_ot_hour, SUM' at line 1
+DEBUG - 2024-10-20 19:32:07 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:32:27 --> Config Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:32:27 --> URI Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Router Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Output Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Security Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Input Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:32:27 --> Language Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:32:27 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:32:27 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:32:27 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:32:27 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Session Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:32:27 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Session routines successfully run
+DEBUG - 2024-10-20 15:32:27 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 15:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 19:32:27 --> Model Class Initialized
+DEBUG - 2024-10-20 19:32:27 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:32:27 --> DB Transaction Failure
+ERROR - 2024-10-20 19:32:27 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'leave
+FROM (`pr_emp_com_info` info)
+INNER JOIN `pr_emp_shift_log` log ON `info`.' at line 1
+DEBUG - 2024-10-20 19:32:27 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:33:09 --> Config Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:33:09 --> URI Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Router Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Output Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Security Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Input Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:33:09 --> Language Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:33:09 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:33:09 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:33:09 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:33:09 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Session Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:33:09 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Session routines successfully run
+DEBUG - 2024-10-20 15:33:09 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:09 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:09 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Config Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:33:29 --> URI Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Router Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Output Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Security Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Input Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:33:29 --> Language Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:33:29 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:33:29 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:33:29 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:33:29 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Session Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:33:29 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Session routines successfully run
+DEBUG - 2024-10-20 15:33:29 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:29 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:29 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:33:29 --> DB Transaction Failure
+ERROR - 2024-10-20 19:33:29 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'leave, SUM(log.ot_hour) AS ot_hour, SUM(CASE WHEN log.extra_ot_hour >= 2 THEN 2 ' at line 1
+DEBUG - 2024-10-20 19:33:29 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:33:41 --> Config Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:33:41 --> URI Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Router Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Output Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Security Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Input Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:33:41 --> Language Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:33:41 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:33:41 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:33:41 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:33:41 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Session Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:33:41 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Session routines successfully run
+DEBUG - 2024-10-20 15:33:41 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:41 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:41 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Config Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:33:58 --> URI Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Router Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Output Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Security Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Input Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:33:58 --> Language Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:33:58 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:33:58 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:33:58 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:33:58 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Session Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:33:58 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Session routines successfully run
+DEBUG - 2024-10-20 15:33:58 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 15:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:58 --> Model Class Initialized
+DEBUG - 2024-10-20 19:33:58 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Config Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:34:11 --> URI Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Router Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Output Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Security Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Input Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:34:11 --> Language Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:34:11 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:34:11 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:34:11 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:34:11 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Session Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:34:11 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Session garbage collection performed.
+DEBUG - 2024-10-20 15:34:11 --> Session routines successfully run
+DEBUG - 2024-10-20 15:34:11 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 19:34:11 --> Model Class Initialized
+DEBUG - 2024-10-20 19:34:11 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:34:11 --> DB Transaction Failure
+ERROR - 2024-10-20 19:34:11 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'leave
+FROM (`pr_emp_com_info` as info)
+INNER JOIN `pr_emp_shift_log` as log ON `' at line 1
+DEBUG - 2024-10-20 19:34:11 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:34:30 --> Config Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:34:30 --> URI Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Router Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Output Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Security Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Input Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:34:30 --> Language Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:34:30 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:34:30 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:34:30 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:34:30 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:34:30 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Session Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:34:31 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Session routines successfully run
+DEBUG - 2024-10-20 15:34:31 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 15:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:34:31 --> Model Class Initialized
+DEBUG - 2024-10-20 19:34:31 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Config Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:35:09 --> URI Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Router Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Output Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Security Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Input Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:35:09 --> Language Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:35:09 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:35:09 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:35:09 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:35:09 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Session Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:35:09 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Session routines successfully run
+DEBUG - 2024-10-20 15:35:09 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 15:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 19:35:09 --> Model Class Initialized
+DEBUG - 2024-10-20 19:35:09 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 19:35:09 --> DB Transaction Failure
+ERROR - 2024-10-20 19:35:09 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS present, COALESCE(SUM(CASE WHEN log.present_status = 'A' THEN 1 ELSE 0 END), ' at line 1
+DEBUG - 2024-10-20 19:35:09 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2024-10-20 15:36:10 --> Config Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:36:10 --> URI Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Router Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Output Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Security Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Input Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:36:10 --> Language Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:36:10 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:36:10 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:36:10 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:36:10 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Session Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:36:10 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Session garbage collection performed.
+DEBUG - 2024-10-20 15:36:10 --> Session routines successfully run
+DEBUG - 2024-10-20 15:36:10 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 19:36:10 --> Model Class Initialized
+DEBUG - 2024-10-20 19:36:10 --> Form Validation Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Config Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Hooks Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Utf8 Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> UTF-8 Support Enabled
+DEBUG - 2024-10-20 15:36:18 --> URI Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Router Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Output Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Security Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Input Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-20 15:36:18 --> Language Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Loader Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Helper loaded: url_helper
+DEBUG - 2024-10-20 15:36:18 --> Helper loaded: file_helper
+DEBUG - 2024-10-20 15:36:18 --> Helper loaded: form_helper
+DEBUG - 2024-10-20 15:36:18 --> Helper loaded: debug_helper
+DEBUG - 2024-10-20 15:36:18 --> Database Driver Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Session Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Helper loaded: string_helper
+DEBUG - 2024-10-20 15:36:18 --> Encrypt Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Session routines successfully run
+DEBUG - 2024-10-20 15:36:18 --> XML-RPC Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Controller Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 15:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 19:36:18 --> Model Class Initialized
+DEBUG - 2024-10-20 19:36:18 --> Form Validation Class Initialized
