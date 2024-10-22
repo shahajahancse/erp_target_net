@@ -132,7 +132,7 @@ class Entry_system_con extends CI_Controller {
 		return $query->result_array();
 	}
     function get_emp_id($emp_ids) {
-        $this->db->select('id,emp_id,proxi_id,emp_shift')->where_in("emp_id", $emp_ids);
+        $this->db->select('emp_id,proxi_id,emp_shift')->where_in("emp_id", $emp_ids);
         $ids = $this->db->get("pr_emp_com_info")->result();
         return $ids;
     }

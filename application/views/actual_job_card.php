@@ -106,10 +106,23 @@ for($i = 0; $i<$count;$i++)
 	echo "</tr>";
 	echo "<table>";
 	
-	$count1 = count($values[$emp_id]["shift_log_date"]);
+	$count1 = count($values[$emp_id]["shift_log_date"]); ?>
 	
-	echo "<table class='sal' border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' style='text-align:center; font-size:13px; '> <th>Date</th><th>Day</th><th>Shift</th><th>In Time</th><th>Out Time</th><th>Attn.Status</th><th>OT</th><th>EOT</th><th>Weekend</th><th>Night</th><th>Remarks</th>";
-	for($k = 0; $k<$count1;$k++)
+	<table class='sal' border='1' bordercolor='#000000' cellspacing='0' cellpadding='0' style='text-align:center; font-size:13px; '> 
+		<tr>
+			<th>Date</th>
+			<th>Day</th>
+			<th>Shift</th>
+			<th>In Time</th>
+			<th>Out Time</th>
+			<th>Attn.Status</th>
+			<th>OT</th>
+			<th>EOT</th>
+			<th>Weekend</th>
+			<th>Night</th>
+			<th>Remarks</th>
+		</tr>
+	<?php for($k = 0; $k<$count1;$k++)
 	{
 		//echo $values[$emp_id]["shift_log_date"][$k];
 		//echo "<br>";
@@ -135,7 +148,7 @@ for($i = 0; $i<$count;$i++)
 		}
 		else
 		{
-			echo $values[$emp_id]["in_time"][$k];
+			echo date('H:i A', strtotime($values[$emp_id]["in_time"][$k]));
 		}
 		echo "</td>";
 				
@@ -146,7 +159,7 @@ for($i = 0; $i<$count;$i++)
 		}
 		else
 		{
-			echo $values[$emp_id]["out_time"][$k];
+			echo date('H:i A', strtotime($values[$emp_id]["out_time"][$k]));
 		}
 		echo "</td>";
 		

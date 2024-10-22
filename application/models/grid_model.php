@@ -21,15 +21,22 @@ class Grid_model extends CI_Model{
 		// dd($grid_emp_id);
 		$day = $year."-".$month."-".$date;
 		$att_month  = $year."-".$month."-00";
-		$date_field = "date_$date";
+		$date_field = "pr_attn_monthly.date_$date";
 		
 		$this->db->distinct();
-		$this->db->select("emp_id, $date_field");
+		$this->db->select("pr_attn_monthly.emp_id, $date_field");
 		$this->db->from("pr_attn_monthly");
-		$this->db->where_in("emp_id", $grid_emp_id);
+		$this->db->from('pr_emp_com_info');
+		$this->db->from('pr_section');
+
+		$this->db->where('pr_emp_com_info.emp_id = pr_attn_monthly.emp_id');
+		$this->db->where('pr_emp_com_info.emp_sec_id = pr_section.sec_id');
+		
+		$this->db->where_in("pr_attn_monthly.emp_id", $grid_emp_id);
 		$this->db->where($date_field, $status);
-		$this->db->where("att_month", $att_month);
-		$this->db->order_by("emp_id");
+		$this->db->where("pr_attn_monthly.att_month", $att_month);
+		$this->db->order_by("pr_section.sec_id");
+		// $this->db->order_by("emp_id");
 		$query = $this->db->get();
 		// dd($att_month);
 		// dd($query->result());
@@ -60,6 +67,7 @@ class Grid_model extends CI_Model{
 			$this->db->where('pr_emp_com_info.emp_id = pr_id_proxi.emp_id');
 			$this->db->where('pr_emp_shift.shift_id = pr_emp_com_info.emp_shift');
 			$this->db->where("pr_emp_per_info.emp_id = '$emp_id'");
+			$this->db->order_by("pr_section.sec_id");
 			$this->db->group_by("pr_section.sec_name");
 			$query = $this->db->get();
 			
