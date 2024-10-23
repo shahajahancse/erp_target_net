@@ -166,6 +166,7 @@ if(!in_array(10,$acl))
 <fieldset style='width:95%;'><legend><font size='+1'><b>Other Reports</b></font></legend>
 <table  width="100%"  style="font-size:11px; ">
 <tr>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Generate Employee List" onclick="get_employee_list()"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="App. Latter" onClick="grid_app_letter()"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="ID Card Bangla" onClick="grid_id_card()"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="ID Card English" onClick="grid_id_card_english()"></td>
@@ -190,6 +191,10 @@ if(!in_array(10,$acl))
 <?php } ?>
 </td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Earn Leave Report" onClick="grid_earn_leave()"></td>
+
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Pitch Rate Letter" onClick="new_join_letter_report(1)"></td>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Stuff Appoinment Letter" onClick="new_join_letter_report(2)"></td>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Fixed Appoinment Letter" onClick="new_join_letter_report(3)"></td>
 <td style="width:20%;"></td>
 <td style="width:20%;"></td>
 </tr>
@@ -255,6 +260,19 @@ if(!in_array(10,$acl))
 		grid_actual_job_card_window.focus(); // Bring the window to focus
 	}
 
+</script>
+
+
+<script>
+	function get_employee_list()
+{
+
+	hostname = window.location.hostname;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/get_employee_list/";
+	
+	app_letter = window.open(url,'app_letter',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
+	app_letter.moveTo(0,0);
+}
 </script>
 </body>
 </html>

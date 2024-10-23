@@ -73,7 +73,7 @@ class Attn_process_model extends CI_Model{
 			}
 			else
 			{	
-			$j++;	
+				$j++;	
 				
 				//GET CURRENT SHIFT INFORMATION
 				$shift_duty = $rows->shift_duty;
@@ -83,13 +83,13 @@ class Attn_process_model extends CI_Model{
 				
 				// $machine_data = $this->insert_monthly_machine_data_to_temp_table($emp_id, $process_date);
 						
-			//===================================================	
-			$temp_table = "att_".date('Y_m',strtotime($process_date));
-			$temp_table = strtolower($temp_table);
-			//===================================================	
-			
-			//CREATE A ROW INTO pr_attn_monthly TABLE IF NOT EXIST
-			$this->create_row_for_attendance_monthly($emp_id, $process_date);
+				//===================================================	
+				$temp_table = "att_".date('Y_m',strtotime($process_date));
+				$temp_table = strtolower($temp_table);
+				//===================================================	
+				
+				//CREATE A ROW INTO pr_attn_monthly TABLE IF NOT EXIST
+				$this->create_row_for_attendance_monthly($emp_id, $process_date);
 			
 				$ot_hour = 0;
 				//sleep(1);
@@ -207,52 +207,52 @@ class Attn_process_model extends CI_Model{
 				if ($process_date == $weekend || $process_date == $holiday )
 				{
 					//=============================Extra OT Calculation=============================
-						$weekend_eot_calculation = $this->weekend_holday_eot_calculation($emp_id, $att_date);
+					$this->weekend_holday_eot_calculation($emp_id, $att_date, $proxi_id);
 					//=============================Extra OT Calculation=============================
-					
-					
-					
-				}
-				else{
-			//=====================No Working Day===================	
-			if($result[$emp_id]=="P")
-			{
-				$no_work_day = $this->get_no_work_day($emp_id,$att_date);
-			}
-		//===========================OT CALCULATION=============================================
-				//echo $emp_id."=>";
-				$ot_hour_calcultation = $this->ot_hour_calcultation($emp_id, $att_date,$proxi_id);
-				// dd($ot_hour_calcultation);
-				//echo "<br>";
-				if($ot_hour_calcultation["ot_hour"] !='')
-				{
-					if($ot_hour_calcultation["ot_hour"] > 2)
+				} else {
+					//=====================No Working Day===================	
+					if($result[$emp_id]=="P")
 					{
-						$extra_ot_hour = $ot_hour_calcultation["ot_hour"] - 2 ;
-						$ot_hour_calcultation["ot_hour"] = 2;
-						
-						//echo "EMP***EX-OT=$extra_ot_hour----------";
-						
+						$no_work_day = $this->get_no_work_day($emp_id,$att_date);
+					}
+					//===========================OT CALCULATION=============================================
+					//echo $emp_id."=>";
+					$ot_hour_calcultation = $this->ot_hour_calcultation($emp_id, $att_date,$proxi_id);
+					// dd($ot_hour_calcultation);
+					//echo "<br>";
+					if($ot_hour_calcultation["ot_hour"] !='')
+					{
+						if($ot_hour_calcultation["ot_hour"] > 2)
+						{
+							$extra_ot_hour = $ot_hour_calcultation["ot_hour"] - 2 ;
+							$ot_hour_calcultation["ot_hour"] = 2;
+							
+							//echo "EMP***EX-OT=$extra_ot_hour----------";
+							
+						}
+						else
+						{
+							$extra_ot_hour = 0;
+						}
 					}
 					else
 					{
+						$ot_hour_calcultation["ot_hour"] = 0;
 						$extra_ot_hour = 0;
 					}
-				}
-				else
-				{
-					$ot_hour_calcultation["ot_hour"] = 0;
-					$extra_ot_hour = 0;
-				}
 								
-				$insert_ot_hour = $this->insert_ot_hour($emp_id, $att_date, $ot_hour_calcultation);
-				if($extra_ot_hour >= 0){
-					$insert_extra_ot_hour = $this->insert_extra_ot_hour($emp_id, $att_date, $extra_ot_hour);
-				}
-				$insert_deduction_hour = $this->deduction_hour_process($emp_id,$att_date);
+					$insert_ot_hour = $this->insert_ot_hour($emp_id, $att_date, $ot_hour_calcultation);
+					if($extra_ot_hour > 0){
+						$insert_extra_ot_hour = $this->insert_extra_ot_hour($emp_id, $att_date, $extra_ot_hour);
+					}
+					$insert_deduction_hour = $this->deduction_hour_process($emp_id,$att_date);
 					//===========================OT CALCULATION=============================================	
 				}
-		}
+			}
+			$adata = array(
+				'present_status' => $result[$emp_id]
+			);
+			$this->db->where('emp_id',$emp_id)->where('shift_log_date',$att_date)->update('pr_emp_shift_log', $adata);
 		}
 		return $result;
 	
@@ -437,7 +437,7 @@ class Attn_process_model extends CI_Model{
 		}
 	}
 	
-	function weekend_holday_eot_calculation($emp_id, $date){
+	function weekend_holday_eot_calculation($emp_id, $date, $proxi_id){
 		$holiday_allowance_check = 0;
 		$table = "att_".date('Y_m',strtotime($date));
 		$table = strtolower($table);
@@ -511,15 +511,14 @@ class Attn_process_model extends CI_Model{
 			$out_date = $date;
 		}
 		
+		$in_time  = $this->time_check_in($date, $start_time, $end_time, $table, $proxi_id);
+		$in_time_date=  $date." ".$in_time;
+		$out_start_time = "$in_date $out_start_time";
+		$out_end_time = "$out_date $out_end_time";
 		
-			$in_time  = $this->time_check_in($date, $start_time, $end_time, $table);
-			$in_time_date=  $date." ".$in_time;
-			$out_start_time = "$in_date $out_start_time";
-			$out_end_time = "$out_date $out_end_time";
-			
-			$out_time_date = $this->time_check_out2($out_start_time, $out_end_time, $table);
-			$workoff_eot_out_date = trim(substr($out_time_date,0,10));
-			$out_time = trim(substr($out_time_date,11,19));
+		$out_time_date = $this->time_check_out2($date, $out_start_time, $out_end_time, $table, $proxi_id);
+		$workoff_eot_out_date = trim(substr($out_time_date,0,10));
+		$out_time = trim(substr($out_time_date,11,19));
 
 		if($in_time == '' or $out_time == '')
 		{
@@ -565,7 +564,6 @@ class Attn_process_model extends CI_Model{
 		}
 		else
 		{
-			
 			$data = array(
 						'emp_id' => $emp_id,
 						'in_time' => $in_time,
@@ -576,7 +574,7 @@ class Attn_process_model extends CI_Model{
 						'ot_hour' => 0,
 						'extra_ot_hour' => $weekend_holiday_eot_hour,
 						'holiday_allowanc'=>$holiday_allowance_check
-						);
+					);
 			$this->db->insert("pr_emp_shift_log", $data);
 		}
 		return true;
@@ -2081,7 +2079,7 @@ class Attn_process_model extends CI_Model{
 		$this->db->from('pr_emp_com_info');
 		$this->db->from('pr_designation');
 		$this->db->from('pr_emp_shift');
-		// $this->db->where("pr_emp_per_info.emp_id",'A005');
+		$this->db->where("pr_emp_per_info.emp_id",'A005');
 		$this->db->where("pr_emp_per_info.emp_id = pr_emp_com_info.emp_id");
 		$this->db->where("pr_emp_com_info.emp_desi_id = pr_designation.desig_id");
 		$this->db->where("pr_emp_com_info.emp_shift = pr_emp_shift.shift_id");

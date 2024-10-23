@@ -9,6 +9,19 @@ class Pd_process_model extends CI_Model{
 		/* Standard Libraries */
 	}
 
+	function leave_status_cal($start_date, $end_date, $emp_id)
+	{
+		$this->db->select("
+			SUM(CASE WHEN leave_type = 'cl' THEN 1 ELSE 0 END) AS cl,
+			SUM(CASE WHEN leave_type = 'sl' THEN 1 ELSE 0 END) AS sl,
+			SUM(CASE WHEN leave_type = 'el' THEN 1 ELSE 0 END) AS el,
+			SUM(CASE WHEN leave_type = 'ml' THEN 1 ELSE 0 END) AS ml,
+		");
+		$this->db->from('pr_leave_trans');
+		$this->db->where("emp_id", $emp_id);
+        $this->db->where("start_date BETWEEN '$start_date' AND '$end_date'");
+		return $this->db->get()->row();
+	}
 	function get_all_emp_id_log($start_date,$end_date)
 	{
 		$this->db->select("
@@ -28,7 +41,7 @@ class Pd_process_model extends CI_Model{
 			SUM(CASE WHEN log.present_status = 'H' THEN 1 ELSE 0 END) AS holiday,
 			SUM(CASE WHEN log.present_status = 'L' THEN 1 ELSE 0 END) AS tleave,
 			SUM(log.ot_hour) AS ot_hour,
-			SUM(CASE WHEN log.extra_ot_hour >= 2 THEN 2 ELSE log.extra_ot_hour END) AS 9ot,
+			SUM(CASE WHEN log.extra_ot_hour >= 2 THEN 2 ELSE log.extra_ot_hour END) AS four_ot,
 			SUM(log.extra_ot_hour) AS extra_ot_hour,
 			SUM(CASE WHEN log.late_status = '1' THEN 1 ELSE 0 END) AS late_status,
 			SUM(CASE WHEN log.extra_fri = '1' THEN 1 ELSE 0 END) AS extra_fri,
@@ -40,6 +53,7 @@ class Pd_process_model extends CI_Model{
 		$this->db->from('pr_emp_shift_log log');
 		$this->db->where("info.salary_type",1);
 		$this->db->where("info.emp_id = log.emp_id");
+		// $this->db->where("info.emp_id", "A005");
         $this->db->where("log.shift_log_date BETWEEN '$start_date' AND '$end_date'");
 		$this->db->group_by("info.emp_id");
 		$this->db->order_by("info.emp_id");
@@ -53,6 +67,7 @@ class Pd_process_model extends CI_Model{
 		$process_close_date = $this->get_setup('process_close_date');
 		$data['start_date'] =date("Y-m-d", strtotime("-1 month", strtotime(date("Y-m-d", mktime(0, 0, 0, $month, $process_start_date, $year)))));
 		$data['end_date'] = date("Y-m-d", mktime(0, 0, 0, $month, $process_close_date, $year));
+		$data['salary_month'] = date("Y-m-01", mktime(0, 0, 0, $month, $process_close_date, $year));
 		return $data;
 	}
 	function get_all_pd_emp_id()

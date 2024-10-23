@@ -250,6 +250,127 @@ First Date: <input type="text" name="firstdate" id="firstdate" style="width:100p
 		</fieldset>
 	</div>
 
+
+	<div style="margin:0 auto; width:100%; overflow:hidden; float:left;">
+		<fieldset style='width:95%;'><legend><font size='+1'><b>Maternity Entry</b></font></legend>
+			<form name='manual_attendance' id="maternity_entry_form">
+			
+			<table style="margin:0 auto; width:70%;">
+				<tr>
+					<td width="30%"><label>Prenatal notice<span style="color: red;">*</span> </label></td>
+					<td>
+						<input name="inform_date" id="inform_date" class="form-control input-sm date"
+							required>
+							<script language="JavaScript">
+								var o_cal = new tcal ({
+									// form name
+									'formname': 'maternity_entry_form',
+									// input name
+									'controlname': 'inform_date'
+								});
+								// individual template parameters can be modified via the calendar variable
+								o_cal.a_tpl.yearscroll = false;
+								o_cal.a_tpl.weekstart = 6;
+							</script>
+						</td>
+				</tr>
+				<tr>
+					<td><label>Probable delivery date<span style="color: red;">*</span> </label></td>
+					<td><input name="probability" onChange="change_date_ml()" onkeyup="change_date_ml()" onclick="change_date_ml()" onblur="change_date_ml()" id="probability"
+							class="form-control input-sm date" required>
+							<script language="JavaScript">
+
+								var o_cal = new tcal ({
+									// form name
+									'formname': 'maternity_entry_form',
+									// input name
+									'controlname': 'probability'
+								});
+								// individual template parameters can be modified via the calendar variable
+								o_cal.a_tpl.yearscroll = false;
+								o_cal.a_tpl.weekstart = 6;
+
+								
+
+								
+							</script>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Leave start date<span style="color: red;">*</span> </label></td>
+					<td><input name="start_date" id="start_date" class="form-control input-sm" readonly></td>
+				</tr>
+				<tr>
+					<td><label>Leave end date<span style="color: red;">*</span> </label></td>
+					<td><input name="end_date" id="end_date" class="form-control input-sm" readonly></td>
+				</tr>
+				<tr>
+					<td><label>First Payment Date <span style="color: red;">*</span> </label></td>
+					<td>
+						<input name="first_pay" id="first_pay" class="form-control input-sm date" required>
+						<script language="JavaScript">
+								var o_cal = new tcal ({
+									// form name
+									'formname': 'maternity_entry_form',
+									// input name
+									'controlname': 'first_pay'
+								});
+								// individual template parameters can be modified via the calendar variable
+								o_cal.a_tpl.yearscroll = false;
+								o_cal.a_tpl.weekstart = 6;
+							</script>
+				
+				</td>
+				</tr>
+				<tr>
+					<td><label>Second Payment Date <span style="color: red;">*</span> </label></td>
+					<td>
+						<input name="second_pay" id="second_pay" class="form-control input-sm date" required>
+						<script language="JavaScript">
+								var o_cal = new tcal ({
+									// form name
+									'formname': 'maternity_entry_form',
+									// input name
+									'controlname': 'second_pay'
+								});
+								// individual template parameters can be modified via the calendar variable
+								o_cal.a_tpl.yearscroll = false;
+								o_cal.a_tpl.weekstart = 6;
+							</script>
+				</td>
+				</tr>
+				<tr>
+					<td><label>Payment day<span style="color: red;">*</span> </label></td>
+					<td><input type="number" name="pay_day" id="pay_day" class="form-control input-sm" required>
+					<script language="JavaScript">
+								var o_cal = new tcal ({
+									// form name
+									'formname': 'maternity_entry_form',
+									// input name
+									'controlname': 'probability'
+								});
+								// individual template parameters can be modified via the calendar variable
+								o_cal.a_tpl.yearscroll = false;
+								o_cal.a_tpl.weekstart = 6;
+							</script>
+				</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input onclick="save(event)" type='button' name='' onclick='' value='Insert' />
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><span style="font-size:12px;"></span></td>
+				</tr>
+			<tr><td></td><td><span style="font-size:12px;"></span></td></tr>
+			</table>
+			</form>
+		</fieldset>
+	</div>
+
+
 </div>
 
 </fieldset>
@@ -541,3 +662,152 @@ First Date: <input type="text" name="firstdate" id="firstdate" style="width:100p
 
 	});
 </script>
+
+
+
+
+
+<script>
+    function change_date_ml() {
+        var probability = $('#probability').val();
+        // var start_date = $('#start_date').val();
+        // var end_date = $('#end_date').val();
+        // var unit_id = $('#unit_id').val();
+
+
+		hostname = window.location.hostname;
+		pathname = window.location.pathname;
+		var folder_name = pathname.split("/");
+		folder = folder_name[1];
+		url = "http://"+hostname+"/"+folder+"/index.php/entry_system_con/change_date_ml/";
+
+
+
+		
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+                probability: probability
+            },
+            success: function(data) {
+                var d = JSON.parse(data);
+                $('#start_date').val(d.start_date);
+                $('#end_date').val(d.end_date);
+            }
+        })
+    }
+</script>
+
+
+<script>
+
+
+ function save (e) {
+	e.preventDefault();
+	var inform_date   = $('#inform_date').val();
+        var probability   = $('#probability').val();
+        var start_date    = $('#start_date').val();
+        var end_date      = $('#end_date').val();
+        var first_pay     = $('#first_pay').val();
+        var second_pay    = $('#second_pay').val();
+        var unit_id       = $('#unit_id').val();
+        var pay_day       = $('#pay_day').val();
+        if (unit_id == '') {
+            alert('Please select Unit');
+            return false;
+        }
+
+        var checkboxes = document.getElementsByClassName('cbox');
+        var sql = "";
+        var count = 0;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                count++;
+				console.log(checkboxes[i]);
+                sql = checkboxes[i].name.split("_")[2];
+            }
+        }
+        if (count > 1) {
+            alert('Select only one employee');
+            return false;
+        } else if (count == 0) {
+            alert('Please select at least one employee');
+            return false;
+        }
+        if (sql == '') {
+            alert('Please select employee Id');
+            $("#loader").hide();
+            return false;
+        }
+
+
+
+        if (pay_day == '') {
+            alert('Please enter the pay day of the month');
+            $("#loader").hide();
+            return false;
+        }
+        if (second_pay == '') {
+            alert('Please select second pay date');
+            $("#loader").hide();
+            return false;
+        }
+        if (first_pay == '') {
+            alert('Please select first pay date');
+            $("#loader").hide();
+            return false;
+        }
+        if (inform_date == '') {
+            alert('Please select information date');
+            $("#loader").hide();
+            return false;
+        }
+        if (probability == '') {
+            alert('Please select probability date child born');
+            $("#loader").hide();
+            return false;
+        }
+        $("#loader").show();
+
+
+
+
+		hostname = window.location.hostname;
+		pathname = window.location.pathname;
+		var folder_name = pathname.split("/");
+		folder = folder_name[1];
+		url = "http://"+hostname+"/"+folder+"/index.php/entry_system_con/save_maternity/";
+
+        $.ajax({
+            type: "POST",
+            url:url,
+            data: {
+                pay_day      : pay_day,
+                inform_date  : inform_date,
+                probability  : probability,
+                start_date   : start_date,
+                end_date     : end_date,
+                first_pay    : first_pay,
+                second_pay   : second_pay,
+                unit_id      : unit_id,
+                sql          : sql
+            },
+            success: function(data) {
+                alert(data);
+                
+            },
+            error: function(data) {
+                $("#loader").hide();
+                alert(data);
+            },
+            complete: function(data) {
+                $("#loader").hide();
+            }
+        })
+
+}
+
+
+</script>
+

@@ -497,6 +497,12 @@
 		  <div class="document">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/blank.gif">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/bullet.gif">
+            <a class="header" href="<?php echo base_url();?>index.php/entry_system_con/final_satalment" title="Final Satalment" target="right" id="dp13022" onClick="MakeColoredBack('13022');">Final Satalment</a>
+      </div>
+		  
+		  <div class="document">
+            <img src="<?php echo base_url();?>/images/tree_image/utree_data/blank.gif">
+            <img src="<?php echo base_url();?>/images/tree_image/utree_data/bullet.gif">
             <a class="header" href="<?php echo base_url();?>index.php/entry_system_con/advance_loan" title="Advance Loan" target="right" id="dp13003" onClick="MakeColoredBack('13003');">Advance Loan</a>
           </div>
 		  

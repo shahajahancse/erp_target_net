@@ -12,25 +12,21 @@ class Salary_process_model extends CI_Model{
 		$this->load->model('salary_process_eligibility_model');
 	}
 	
-	function pay_sheet($year,$month,$process_check)
+	function pay_sheet($process_date,$process_check)
 	{
-		// echo "<pre>";print_r($year);exit;
-		 //==================Get Process Date=========================================
-		$process_date 		= $this->pd_process_model->get_start_end_date($month,$year);
-		$process_start_date = $process_date['start_date'] ;
-		$process_end_date 	= $process_date['end_date'] ;
+		//==================Get Process Date=========================================
+		$process_start_date = $process_date['start_date'];
+		$process_end_date 	= $process_date['end_date'];
 		
 		// ==================Get Process Month (Needs for Join check)==================
 		$process_start_month 	= date('Y-m', strtotime($process_start_date));
 		$process_end_month 		= date('Y-m', strtotime($process_end_date));
-
 		
 		$second_half_search_start_date 		= date("Y-m-01", strtotime($process_end_date));
 		//=====================Check Deduct Status (Yes Or No)=====================
 		
 		//======================Get No. of Days And Working Days  Between Process Dates==========
 		$num_of_days = $this->get_no_of_days($process_start_date,$process_end_date);
-
 		//==================Salary Block Check==========================
 		$num_row = $this->db->like('block_month',$process_end_month)->get('pr_salary_block_fixed')->num_rows();
 		// if($num_row > 0)
@@ -49,13 +45,428 @@ class Salary_process_model extends CI_Model{
 		//==============================================================
 		
 		//============================Get All Production Employee===============================
-		if ($second_half_search_start_date < '2024-10-01') {
-			// dd('ddd');
-			$all_emp_id = $this->pd_process_model->get_all_pr_emp_id($second_half_search_start_date);
-		} else {
-			$all_emp_id = $this->pd_process_model->get_all_emp_id_log($process_start_date,$process_end_date);
+		$all_emp_id = $this->pd_process_model->get_all_emp_id_log($process_start_date,$process_end_date);
+		// dd($all_emp_id->result());
+		foreach($all_emp_id->result() as $rows)
+		{
+			$salary_eligibility = $this->salary_process_eligibility_model->salary_process_eligibility_fixed($rows->emp_id,$process_start_date,$process_end_date);
+
+			if($salary_eligibility == true)
+			{ 
+
+				$emp_id 		= $rows->emp_id;
+				$emp_dept_id 	= $rows->emp_dept_id;
+				$emp_sec_id 	= $rows->emp_sec_id;
+				$emp_floor_id 	= $rows->emp_position_id; 
+				$emp_block_id 	= $rows->emp_line_id;  
+				$emp_desi_id 	= $rows->emp_desi_id; 
+				$emp_status_id	= $rows->emp_cat_id;
+				$doj 			= $rows->emp_join_date;
+				$salary_type 	= $rows->salary_type;
+				$gross_sal 		= $rows->gross_sal;
+				$ot_hour 		= $rows->ot_hour;
+				$four_ot 		= $rows->four_ot;
+				$extra_ot_hour 	= $rows->extra_ot_hour;
+
+				$join_month		= date('Y-m', strtotime($doj));
+				
+				//==============================For Increment,promotion,===============================
+				$where = "trim(substr(effective_month,1,7)) = '$process_end_month'";
+				$gross_sal	= $this->check_increment_salary($emp_id, $where, $gross_sal);
+				//============================================End Increment,promotion ======================
+				
+				//==================================LOCAL Salary Rule===================================
+				$salary_structure 		= $this->common_model->salary_structure($gross_sal);
+				$madical_allo 			= $salary_structure['medical_allow'];
+				$basic_sal 				= $salary_structure['basic_sal'];
+				$house_rent 			= $salary_structure['house_rent'];
+				$ot_rate 				= $salary_structure['ot_rate'];
+				
+				$total_sal = $basic_sal + $house_rent + $madical_allo; 
+				$sec_sl = $this->sec_id_wise_sec_type($emp_sec_id);
+				$data["emp_id"] 		= $emp_id;
+				$data["dept_id"] 		= $emp_dept_id;
+				$data["sec_id"] 		= $emp_sec_id;
+				$data["sec_sl"] 		= $sec_sl;
+				$data["desig_id"] 		= $emp_desi_id;
+				$data["floor_id"] 		= $emp_floor_id;
+				$data["block_id"] 		= $emp_block_id;
+				$data["status_id"] 		= $emp_status_id;
+				$data["sal_type"] 		= $salary_type;
+				$data["basic_sal"] 		= $basic_sal;
+				$data["house_r"] 		= $house_rent;
+				$data["medical_a"] 		= $madical_allo;
+				$data["gross_sal"] 		= $gross_sal;
+				$data["com_gross_sal"] 	= $gross_sal;
+				$data["total_days"] 	= $num_of_days;
+				
+				//===================For Manual Attendance===============
+				$holiday 				= isset($rows->holiday) ? $rows->holiday:0;
+				$weekend		 		= isset($rows->weekend) ? $rows->weekend:0;
+				$attend 				= isset($rows->present) ? $rows->present:0;
+				$absent 				= isset($rows->absent) ? $rows->absent:0;
+				$friday 				= isset($rows->extra_fri) ? $rows->extra_fri:0;
+				$holiday_allowance_no	= isset($rows->holiday_allowance) ? $rows->holiday_allowance:0;
+				$total_leave 			= isset($rows->tleave) ? $rows->tleave:0;
+				$night_allowance_no 	= isset($rows->night_allowance) ? $rows->night_allowance:0;
+				$friday_allowance_no	= isset($rows->holiday_allowance) ? $rows->holiday_allowance:0;
+				$no_work				= isset($rows->no_work) ? $rows->no_work:0;
+				//=========================Calculate Payable Days=========================================
+				$total_holiday 				= $weekend + $holiday;
+				$pay_days 					= $attend + $total_holiday + $total_leave;
+				$absent 					= $num_of_days - $pay_days;
+				
+				$data["no_working_days"] 	= $num_of_days;
+				$data["holiday"] 			= $holiday;
+				$data["weekend"] 			= $weekend;
+				$data["att_days"] 			= $attend;
+				$data["absent_days"] 		= $absent;
+				$data["friday"] 			= $weekend;
+				
+				$ls = $this->pd_process_model->leave_status_cal($process_start_date,$process_end_date,$emp_id);
+				$data["c_l"] 				= isset($ls->cl)? $ls->cl : 0;
+				$data["s_l"] 				= isset($ls->sl)? $ls->sl : 0;
+				$data["e_l"] 				= isset($ls->el)? $ls->el : 0;
+				$data["m_l"] 				= isset($ls->ml)? $ls->ml : 0;
+				$data["total_leave"] 		= $total_leave;
+				$data["holiday_or_weekend"] = $total_holiday;
+				$data["pay_days"] 			= $pay_days;
+				//DEDUCTION
+				
+				//============================== Start Calculate Payable Basic Salary And Absent Deduction======
+				//==============================================================================================
+				$abs_deduction = round(($gross_sal / $num_of_days) * $absent);
+				//ADV DEDUCTION
+				$advance_deduct = $this->advance_loan_deduction($emp_id, $process_end_month);
+	
+				$stamp = 10;
+				if($attend ==0 || $gross_sal==0)
+				{
+					$stamp = 0;
+				}
+				
+				$total_deduction = $abs_deduction + $advance_deduct + $stamp;
+				
+				$data["abs_deduction"] 	= $abs_deduction;
+				$data["adv_deduct"] 	= $advance_deduct;
+				$data["stamp"] 			= $stamp;
+				$data["total_deduction"]= $total_deduction;
+				
+				//========================== End Calculate Payable Total Salary=============================
+				
+				//ALLOWANCES
+				//==========================Calculate Attendance Bonus============================
+				$pay_days_attn_bonus 		= $attend + $total_holiday;
+				if($pay_days_attn_bonus == $num_of_days)
+				{
+					$att_bouns = $this->att_bouns_cal($emp_id);
+				}
+				else
+				{
+					$att_bouns = 0;
+				}
+				
+				$night_allowance_rules 	= $this->get_night_allowance_rules($emp_desi_id);
+				if($night_allowance_rules != "0")
+				{
+					$night_allowance_rate 	= 	$this->night_allowance_rules_amount($night_allowance_rules);
+					$night_allowance_amount =	$night_allowance_rate * $night_allowance_no;
+				}
+				else
+				{
+					$night_allowance_rate  	= 0;
+					$night_allowance_amount = 0;
+				}
+			
+				//===================================Friday Allowance===================================
+				$friday_allowance_rules 	= $this->get_holiday_allowance_rules($emp_desi_id);
+				if($friday_allowance_rules != "0")
+				{
+					$friday_allowance_rate 		= 	$this->holiday_allowance_rules_amount($friday_allowance_rules);
+					$friday_allowance_amount 	=	$friday_allowance_rate * $friday_allowance_no;
+				}
+				else
+				{
+					$friday_allowance_rate  	= 0;
+					$friday_allowance_amount 	= 0;
+				}				
+			
+				//$holiday_allowance_no 	= 0;
+				$holiday_allowance_rate  = 0;
+				$holiday_allowance_amount = 0;
+
+				// ==================No Work Allowance================
+				$no_work_rate = round($gross_sal/$num_of_days);
+				$no_work_amount = $no_work * $no_work_rate;
+				
+				$total_allowance = $att_bouns + $night_allowance_amount + $friday_allowance_amount + $no_work_amount;
+				
+				$data["att_bonus"] 				= $att_bouns;
+				
+				$data["friday_allowance_no"] 	= $friday_allowance_no;
+				$data["friday_allowance_rate"] 	= $friday_allowance_rate;
+				$data["friday_allowance"] 		= $friday_allowance_amount;
+				
+				$data["holiday_allowance_no"] 	= $holiday_allowance_no;
+				$data["holiday_allowance_rate"] = $holiday_allowance_rate;
+				$data["holiday_allowance"] 		= $holiday_allowance_amount;
+				
+				$data["night_allowance_no"] 	= $night_allowance_no;
+				$data["night_allowance_rate"] 	= $night_allowance_rate;
+				$data["night_allowance"] 		= $night_allowance_amount;
+				
+				$data["no_work"] 				= $no_work;
+				$data["no_work_rate"] 			= $no_work_rate;
+				$data["no_work_amount"] 		= $no_work_amount;
+				
+				$data["total_allowance"] 		= $total_allowance;
+				
+				//========================================= Over Time Calculation ============================
+				
+				$data["ot_hour"] 	= $ot_hour;
+				$data["four_ot"] 	= $four_ot;
+				$data["eot_hour"] 	= $extra_ot_hour;
+				$data["ot_rate"] 	= $ot_rate;
+				$data["ot_amount"] 	= round($ot_rate * $ot_hour, 2);
+				$data["fot_amount"] = round($ot_rate * $four_ot, 2);
+				$data["eot_amount"] = round($ot_rate * $extra_ot_hour, 2);
+				
+				//============================Festival bonus====================================
+				$effective_date = $this->get_bonus_effective_date($process_end_month);
+				if($effective_date != false){ 
+					$service_month = $this->common_model->get_service_month($effective_date,$doj);
+					if($service_month >= 0)
+					{
+						$festival_bonus_rule = $this->get_festival_bonus_rule($service_month);
+						$festival_bonus = $this->get_festival_bonus($festival_bonus_rule,$gross_sal,$basic_sal);
+					}
+				} else { 
+					$festival_bonus = 0; 
+				}
+			}else{
+				$festival_bonus = 0;
+			}
+
+			$data["festival_bonus"] = $festival_bonus;
+			
+			$net_pay = $gross_sal + $total_allowance - $total_deduction;
+			if($attend ==0 || $gross_sal==0)
+			{
+				$net_pay = 0;
+			}
+			$data["net_pay"] = $net_pay;
+			$data["com_net_pay"] = $net_pay;
+			$data["salary_month"] 	= $second_half_search_start_date;
+			// dd($data);
+
+			$this->db->select("emp_id");
+			$this->db->where("emp_id", $emp_id);
+			$this->db->where("salary_month", $second_half_search_start_date);
+			$query = $this->db->get("pr_pay_scale_sheet");
+			// dd($query->result());
+			if($query->num_rows() > 0 )
+			{
+				$this->db->where("emp_id",$emp_id);
+				$this->db->where("salary_month", $second_half_search_start_date);
+				$this->db->update("pr_pay_scale_sheet",$data);
+			}
+			else
+			{
+				$this->db->insert("pr_pay_scale_sheet",$data);
+			}
 		}
-		dd($all_emp_id);
+		return "Process completed successfully";
+	}
+
+	//===================Earn Leave proccess ============================
+	function earn_leave_process($month_year){   
+
+		$current_year_month= date("Y-m-01");
+		if($month_year > $current_year_month){
+			return false;
+		}
+        // $current_date = $date."-01";
+        $current_date = date('Y-m-t',strtotime($month_year));
+		// dd($current_date);
+	    $past_year_date = date("Y-m-d",strtotime("-1 year",strtotime($current_date)));
+		$results = $this->db->select('
+			emp_id, 
+			emp_join_date,
+			emp_dept_id,
+			emp_sec_id,
+			emp_line_id,
+			emp_desi_id,
+			gross_sal,
+			com_gross_sal,
+		')
+		->where('emp_cat_id',1)
+		->where('emp_join_date <=',$past_year_date)
+		->get('pr_emp_com_info')->result();
+
+		if(!empty($results)){
+			foreach ($results as $key => $row) {
+				$emp_id = $row->emp_id;
+				$emp_join_date = $row->emp_join_date;
+				$gross_sal = $row->gross_sal;
+				$com_gross_sal = isset($row->com_gross_sal)?$row->com_gross_sal:0;
+				$d1=new DateTime($current_date); 
+				$d2=new DateTime($emp_join_date);                                  
+				$working_month = $d2->diff($d1); 
+				$year  = $working_month->y;
+				$month = $working_month->m;
+				$day = $working_month->d;
+				if($month == 0){
+					$first_year =  date("Y-m-d",strtotime("- $day days",strtotime($current_date)));
+					$last_year =  date("Y-m-d",strtotime("+ $day days",strtotime($past_year_date)));
+					$cl = $sl = $el =$ml = 0;	
+					$leaves = $this->all_leave_cal($first_year, $last_year, $emp_id);
+					if (!empty($leaves)) {
+						$cl = ($leaves->cl != null || $leaves->ml != '') ? $leaves->cl:0;
+						$sl = ($leaves->sl != null || $leaves->sl != '') ? $leaves->sl:0;
+						$el = ($leaves->el != null || $leaves->el != '') ? $leaves->el:0;
+						$ml = ($leaves->ml != null || $leaves->ml !=  '') ? $leaves->ml:0;
+					}
+					$present = $this->count_earn_leave($first_year, $last_year, $row->emp_id); 
+					$total_earn_leave = round($present->present/18);
+					// dd($present);
+					if ($year > 1) {
+						$last_leave = $this->db->select('el, earn_leave, pay_leave')
+											->where('emp_id',$emp_id)
+											->where('earn_month <',$current_date)
+											->order_by('earn_month', 'DESC')
+											->get('pr_leave_earn')->row();	
+						if (!empty($last_leave)) {
+							$total_earn_leave = $total_earn_leave + ($last_leave->earn_leave - $last_leave->el); 
+						}
+					}					
+					$num_row = $this->db->where('emp_id',$emp_id)->where('earn_month',$current_date)->get('pr_leave_earn')->num_rows();
+					if($num_row == 0){
+						$data = array(
+							'emp_id'     => $emp_id,
+							'gross_sal'  => $gross_sal,
+							'com_gross_sal'  => $com_gross_sal,
+							'basic_sal'  => round(($gross_sal-2450)/1.5,2),
+							'unit_id'    => isset($row->unit_id)? $row->unit_id:0,
+							'line_id'    => $row->emp_line_id,
+							'P' 	 	 => isset($present->present)?$present->present:0,
+							'A' 	 	 => isset($present->absent)?$present->absent:0,
+							'H' 	 	 => isset($present->holiday)?$present->holiday:0,
+							'W' 	 	 => isset($present->weekend)?$present->weekend:0,
+							'cl' 		 => $cl,
+							'sl' 		 => $sl,
+							'el' 	 	 => $el,
+							'ml' 	  	 => $ml,
+							't_days' 	 => 365,
+							'w_days' 	 => $present->present,
+							'net_pay'  => round($gross_sal/30,2)*$total_earn_leave,
+							'earn_leave' => $total_earn_leave,
+							'jod' 	 	 => $emp_join_date,
+							'earn_month' => $current_date,
+						);
+						$this->db->insert('pr_leave_earn', $data);
+					}else{			
+						$data = array(
+							'com_gross_sal'  => $com_gross_sal,
+							'basic_sal'  => round(($gross_sal-2450)/1.5,2),
+							'unit_id'    => $row->unit_id,
+							'line_id'    => $row->emp_line_id,
+							'P' 	 	 => isset($present->present)?$present->present:0,
+							'A' 	 	 => isset($present->absent)?$present->absent:0,
+							'H' 	 	 => isset($present->holiday)?$present->holiday:0,
+							'W' 	 	 => isset($present->weekend)?$present->weekend:0,
+							'cl' 		 => $cl,
+							'sl' 		 => $sl,
+							'el' 	 	 => $el,
+							'ml' 	  	 => $ml,
+							't_days' 	 => 365,
+							'w_days' 	 => $present->present,
+							'net_pay'  => round($gross_sal/30,2)*$total_earn_leave,
+							'earn_leave' => $total_earn_leave,
+						);
+						$this->db->where('emp_id', $emp_id)->where('earn_month', $current_date);
+						$this->db->update('pr_leave_earn', $data);
+					}
+				}
+			}
+			return "Earn Leave Process Completed Succesfully !";
+		}
+	}
+
+	function all_leave_cal($first_year, $last_year, $emp_id){
+	//  echo "<pre>"; print_r($emp_id.' '.$last_year.' '.$first_year); exit; 
+		$this->db->select("
+				SUM(CASE WHEN leave_type = 'cl' THEN 1 ELSE 0 END ) AS cl,
+				SUM(CASE WHEN leave_type = 'sl' THEN 1 ELSE 0 END ) AS sl,
+				SUM(CASE WHEN leave_type = 'el' THEN 1 ELSE 0 END ) AS el,
+				SUM(CASE WHEN leave_type = 'ml' THEN 1 ELSE 0 END ) AS ml
+			");
+
+		$this->db->from('pr_leave_trans');
+		$this->db->where("emp_id",$emp_id);
+		$this->db->where("start_date BETWEEN '$last_year' AND '$first_year' ");
+		return $query = $this->db->get()->row(); 
+		// echo "<pre>"; print_r($query->result()->el); exit; 
+	}
+
+	function count_earn_leave($current_date, $past_year_date, $emp_id){
+		// dd(gettype($past_year_date).'==='.$current_date);
+		$this->db->select("
+			SUM(CASE WHEN present_status = 'P' THEN 1 ELSE 0 END ) AS present,
+			SUM(CASE WHEN present_status = 'A' THEN 1 ELSE 0 END ) AS absent,
+			SUM(CASE WHEN present_status = 'H' THEN 1 ELSE 0 END ) AS holiday,
+			SUM(CASE WHEN present_status = 'W' THEN 1 ELSE 0 END ) AS weekend,
+		");
+		$this->db->from('pr_emp_shift_log');
+		$this->db->where('emp_id',$emp_id);
+		$this->db->where("shift_log_date BETWEEN '$past_year_date' and '$current_date'");
+		//  $this->db->get()->row();
+		//  dd($this->db->last_query());  
+		return $this->db->get()->row();  
+
+	}
+	//===================Earn Leave proccess ============================
+
+
+
+
+
+	function pay_sheet_old($process_date,$process_check)
+	{
+		// echo "<pre>";print_r($year);exit;
+		 //==================Get Process Date=========================================
+		$process_start_date = $process_date['start_date'];
+		$process_end_date 	= $process_date['end_date'];
+		
+		// ==================Get Process Month (Needs for Join check)==================
+		$process_start_month 	= date('Y-m', strtotime($process_start_date));
+		$process_end_month 		= date('Y-m', strtotime($process_end_date));
+
+		
+		$second_half_search_start_date 		= date("Y-m-01", strtotime($process_end_date));
+		//=====================Check Deduct Status (Yes Or No)=====================
+		
+		//======================Get No. of Days And Working Days  Between Process Dates==========
+		$num_of_days = $this->get_no_of_days($process_start_date,$process_end_date);
+
+		//==================Salary Block Check==========================
+		$num_row = $this->db->like('block_month',$process_end_month)->get('pr_salary_block_fixed')->num_rows();
+		if($num_row > 0)
+		{
+			return "This Month Already Finally Processed.";
+		}
+		
+		if($process_check == "2")
+		{
+		  $block_year_month = "$process_end_month-01";
+		  $data_1['block_month'] 	= $block_year_month;
+		  $data_1['username'] 		=  $this->session->userdata('username');
+		  $data_1['date_time'] 	= date("Y-m-d H:i:s");
+		  $this->db->insert('pr_salary_block_fixed', $data_1); 
+		}
+		//==============================================================
+		
+		//============================Get All Production Employee===============================
+		$all_emp_id = $this->pd_process_model->get_all_pr_emp_id($second_half_search_start_date);
 		foreach($all_emp_id->result() as $rows)
 		{
 			$salary_process_eligibility = $this->salary_process_eligibility_model->salary_process_eligibility_fixed($rows->emp_id,$process_start_date,$process_end_date);
@@ -111,7 +522,7 @@ class Salary_process_model extends CI_Model{
 				$absent 				= isset($rows->a_day) ? $rows->a_day:0;
 				$friday 				= isset($rows->friday) ? $rows->friday:0;
 				$holiday_allowance_no	= isset($rows->h_day) ? $rows->h_day:0;
-				$total_leave 			= isset($rows->leave) ? $rows->leave:0;
+				$total_leave 			= isset($rows->tleave) ? $rows->tleave:0;
 				$night_allowance_no 	= isset($rows->night) ? $rows->night:0;
 				$friday_allowance_no	= isset($rows->extra_fri) ? $rows->extra_fri:0;
 				$no_work				= isset($rows->no_work) ? $rows->no_work:0;
@@ -174,7 +585,6 @@ class Salary_process_model extends CI_Model{
 				{
 					$att_bouns = 0;
 				}
-								
 				
 				$night_allowance_rules 	= $this->get_night_allowance_rules($emp_desi_id);
 				if($night_allowance_rules != "0")
@@ -247,40 +657,38 @@ class Salary_process_model extends CI_Model{
 					{
 						$festival_bonus_rule = $this->get_festival_bonus_rule($service_month);
 						$festival_bonus = $this->get_festival_bonus($festival_bonus_rule,$gross_sal,$basic_sal);
-						}
 					}
-					else { $festival_bonus = 0; }
-				}else{
-					$festival_bonus = 0;
+				} else { 
+					$festival_bonus = 0; 
 				}
-				$data["festival_bonus"] = $festival_bonus;
+			}else{
+				$festival_bonus = 0;
+			}
+			$data["festival_bonus"] = $festival_bonus;
 				
+			$net_pay = $gross_sal + $total_allowance - $total_deduction + $data["ot_hour"];
+			if($attend ==0 || $gross_sal==0)
+			{
+				$net_pay = 0;
+			}
+			$data["net_pay"] = $net_pay;
+			$data["salary_month"] 	= $second_half_search_start_date;
+			// dd($data);
 
-				
-				$net_pay = $gross_sal + $total_allowance - $total_deduction + $data["ot_hour"];
-				if($attend ==0 || $gross_sal==0)
-				{
-					$net_pay = 0;
-				}
-				$data["net_pay"] = $net_pay;
-				$data["salary_month"] 	= $second_half_search_start_date;
-				// dd($data);
-
-				$this->db->select("emp_id");
-				$this->db->where("emp_id", $emp_id);
+			$this->db->select("emp_id");
+			$this->db->where("emp_id", $emp_id);
+			$this->db->where("salary_month", $second_half_search_start_date);
+			$query = $this->db->get("pr_pay_scale_sheet");
+			if($query->num_rows() > 0 )
+			{
+				$this->db->where("emp_id",$emp_id);
 				$this->db->where("salary_month", $second_half_search_start_date);
-				$query = $this->db->get("pr_pay_scale_sheet");
-				if($query->num_rows() > 0 )
-				{
-					$this->db->where("emp_id",$emp_id);
-					$this->db->where("salary_month", $second_half_search_start_date);
-					$this->db->update("pr_pay_scale_sheet",$data);
-				}
-				else
-				{
-					$this->db->insert("pr_pay_scale_sheet",$data);
-				}
-
+				$this->db->update("pr_pay_scale_sheet",$data);
+			}
+			else
+			{
+				$this->db->insert("pr_pay_scale_sheet",$data);
+			}
 		}
 		return "Process completed successfully";
 	}

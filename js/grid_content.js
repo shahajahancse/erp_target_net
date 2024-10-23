@@ -1,3 +1,127 @@
+function grid_daily_leave_report()
+{
+	
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	
+	try{
+	   // Opera 8.0+, Firefox, Safari
+	   ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	   // Internet Explorer Browsers
+	   try{
+	      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	   }catch (e) {
+	      try{
+	         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	      }catch (e){
+	         // Something went wrong
+	         alert("Your browser broke!");
+	         return false;
+	      }
+	   }
+	}
+
+	var firstdate = document.getElementById('firstdate').value;
+	if(firstdate =='')
+	{
+		alert("Please select First date");
+		return;
+	}
+	
+	var grid_start = document.getElementById('grid_start').value;
+	if(grid_start =='Select')
+	{
+		alert("Please select Category options");
+		return;
+	}
+	
+	$grid  = $("#list1");
+	var id_array = $grid.getGridParam('selarrrow');
+	var selected_id_list = new Array();
+	var spl = (id_array.join('xxx'));
+	var status = "L";
+	
+	if(spl =='')
+	{
+		alert("Please select Employee ID");
+		return;
+	}
+
+	var queryString="firstdate="+firstdate+"&status="+status+"&spl="+spl;
+	hostname = window.location.hostname;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_daily_report/";
+
+   
+    ajaxRequest.open("POST", url, true);
+ 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ 	ajaxRequest.send(queryString);
+ 
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+          var resp = ajaxRequest.responseText;
+          a = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1200,height=800');
+          a.document.write(resp);
+		}
+	}
+}
+function grid_earn_leave()
+{
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	
+	try{
+	   // Opera 8.0+, Firefox, Safari
+	   ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	   // Internet Explorer Browsers
+	   try{
+	      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	   }catch (e) {
+	      try{
+	         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	      }catch (e){
+	         // Something went wrong
+	         alert("Your browser broke!");
+	         return false;
+	      }
+	   }
+	}
+	
+	var grid_start = document.getElementById('grid_start').value;
+	if(grid_start =='Select')
+	{
+		alert("Please select Category options");
+		return;
+	}
+
+	$grid  = $("#list1");
+	var id_array = $grid.getGridParam('selarrrow');
+	var selected_id_list = new Array();
+	var spl = (id_array.join('xxx'));
+		
+	if(spl =='')
+	{
+		alert("Please select Employee ID");
+		return;
+	}
+
+	var queryString="spl="+spl;
+	hostname = window.location.hostname;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_earn_leave_report/";
+   
+    ajaxRequest.open("POST", url, true);
+ 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ 	ajaxRequest.send(queryString);
+ 
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+          var resp = ajaxRequest.responseText;
+          a = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1200,height=800');
+          a.document.write(resp);
+		}
+	}
+}
+
+
 function grid_get_all_data()
 {
 
@@ -461,74 +585,6 @@ function grid_daily_absent_report()
 	var selected_id_list = new Array();
 	var spl = (id_array.join('xxx'));
 	var status = "A";
-	
-	if(spl =='')
-	{
-		alert("Please select Employee ID");
-		return;
-	}
-
-	var queryString="firstdate="+firstdate+"&status="+status+"&spl="+spl;
-	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_daily_report/";
-
-   
-    ajaxRequest.open("POST", url, true);
- 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- 	ajaxRequest.send(queryString);
- 
-	ajaxRequest.onreadystatechange = function(){
-		if(ajaxRequest.readyState == 4){
-          var resp = ajaxRequest.responseText;
-          a = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1200,height=800');
-          a.document.write(resp);
-		}
-	}
-
-}
-
-function grid_daily_leave_report()
-{
-	
-	var ajaxRequest;  // The variable that makes Ajax possible!
-	
-	try{
-	   // Opera 8.0+, Firefox, Safari
-	   ajaxRequest = new XMLHttpRequest();
-	}catch (e){
-	   // Internet Explorer Browsers
-	   try{
-	      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-	   }catch (e) {
-	      try{
-	         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-	      }catch (e){
-	         // Something went wrong
-	         alert("Your browser broke!");
-	         return false;
-	      }
-	   }
-	}
-
-	var firstdate = document.getElementById('firstdate').value;
-	if(firstdate =='')
-	{
-		alert("Please select First date");
-		return;
-	}
-	
-	var grid_start = document.getElementById('grid_start').value;
-	if(grid_start =='Select')
-	{
-		alert("Please select Category options");
-		return;
-	}
-	
-	$grid  = $("#list1");
-	var id_array = $grid.getGridParam('selarrrow');
-	var selected_id_list = new Array();
-	var spl = (id_array.join('xxx'));
-	var status = "L";
 	
 	if(spl =='')
 	{
@@ -1526,8 +1582,7 @@ function grid_extra_ot()
 	extra_ot.moveTo(0,0);
 }
 
-function grid_earn_leave()
-{
+function new_join_letter_report(r){
 	
 	
 	var grid_start = document.getElementById('grid_start').value;
@@ -1548,7 +1603,7 @@ function grid_earn_leave()
 		return;
 	}
 	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_earn_leave_report/"+spl;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/new_join_letter_report/"+spl+"/"+r;
 	
 	grid_earn_leave_report = window.open(url,'grid_earn_leave_report',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
 	grid_earn_leave_report.moveTo(0,0);
@@ -3101,11 +3156,10 @@ function grid_maternity_benefit()
     //var sal_year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
 		
 	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net_me/index.php/salary_report_con/grid_maternity_benefit/"+spl;
+	url =  "http://"+hostname+"/erp_target_net/index.php/salary_report_con/grid_maternity_benefit/"+spl;
 	
 	maternity_sheet = window.open(url,'maternity_sheet',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
 	maternity_sheet.moveTo(0,0);
-
 
 }
 
