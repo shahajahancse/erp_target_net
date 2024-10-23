@@ -3753,6 +3753,101 @@ class Grid_model extends CI_Model{
 			return "Requested list is empty";
 		}
 	}
+	function new_join_letter_report($grid_emp_id)
+	{
+		$data = array();
+		$this->db->select('pr_emp_com_info.emp_id,pr_emp_per_info.emp_full_name,pr_designation.desig_name,pr_emp_com_info.emp_join_date, pr_dept.dept_name, pr_section.sec_name, pr_line_num.line_name, pr_id_proxi.proxi_id, pr_emp_shift.shift_name,pr_emp_com_info.emp_cat_id, pr_emp_com_info.gross_sal,pr_leave_earn.old_earn_balance,pr_leave_earn.current_earn_balance,pr_leave_earn.last_update');
+		$this->db->from('pr_emp_per_info');
+		$this->db->from('pr_emp_com_info');
+		$this->db->from('pr_designation');
+		$this->db->from('pr_dept');
+		$this->db->from('pr_section');
+		$this->db->from('pr_line_num');
+		$this->db->from('pr_id_proxi');
+		$this->db->from('pr_emp_shift');
+		$this->db->from('pr_leave_earn');
+		$this->db->where_in("pr_emp_com_info.emp_id", $grid_emp_id);
+		//$this->db->where_in("pr_leave_earn.emp_id", $grid_emp_id);
+		$this->db->where('pr_emp_com_info.emp_id = pr_leave_earn.emp_id');
+		$this->db->where('pr_emp_per_info.emp_id = pr_emp_com_info.emp_id');
+		$this->db->where('pr_emp_com_info.emp_desi_id = pr_designation.desig_id');
+		$this->db->where('pr_emp_com_info.emp_dept_id = pr_dept.dept_id');
+		$this->db->where('pr_emp_com_info.emp_sec_id = pr_section.sec_id');
+		$this->db->where('pr_emp_com_info.emp_line_id = pr_line_num.line_id');
+		$this->db->where('pr_emp_com_info.emp_id = pr_id_proxi.emp_id');
+		$this->db->where('pr_emp_shift.shift_id = pr_emp_com_info.emp_shift');
+		$this->db->order_by("pr_emp_com_info.emp_id","ASC");
+		$query = $this->db->get();
+		
+		foreach($query->result() as $rows)
+		{
+			$emp_id = $rows->emp_id;
+			$gross_sal = $rows->gross_sal;
+			$data["emp_id"][] 		= $emp_id;
+			$data["proxi_id"][] 	= $rows->proxi_id;
+			$data["emp_name"][] 	= $rows->emp_full_name;
+			$data["doj"][] 			= $rows->emp_join_date;
+			$data["dept_name"][] 	= $rows->dept_name;
+			$data["sec_name"][] 	= $rows->sec_name;
+			$data["desig_name"][] 	= $rows->desig_name;
+			$data["line_name"][]	= $rows->line_name;
+			$data["gross_sal"][] 	= $rows->gross_sal;
+			$data["emp_shift"][] 	= $rows->shift_name;
+			$data["old_earn_balance"][]		= $rows->old_earn_balance;
+			$data["current_earn_balance"][] = $rows->current_earn_balance;
+			$data["last_update"][] 			= $rows->last_update;
+			
+			/*$this->db->select("*");
+			$this->db->where("emp_id", $emp_id);
+			$query1 = $this->db->get('pr_leave_earn');
+			foreach($query1->result() as $rows)
+			{
+				
+				$data["old_earn_balance"][]		= $rows->old_earn_balance;
+				$data["current_earn_balance"][] = $rows->current_earn_balance;
+				$data["last_update"][] 			= $rows->last_update;
+			}*/
+			
+			$prev_month_info = $this->get_prev_month_info($emp_id);
+			foreach($prev_month_info->result() as $rows)
+			{
+				$data["total_days"][]= $rows->total_days;
+				$data["pay_wages"][] = $rows->pay_wages;
+				$data["pay_days"][] = $rows->pay_days;
+			}
+		
+		}
+		$current_year = date("Y");
+		$start_date = "$current_year-01-01";
+		$end_date = date("Y-m-d");
+		
+		// caculate number of days between dates
+		$days = $this->get_days($start_date, $end_date);
+		
+		// calculate number of weekends
+		$weekend = $this->common_model->get_setup_attributes(5);
+		//echo $weekend;
+		//$weekend = "Fri";
+		$weekend_days = $this->get_weekend_days($weekend,$days,$start_date);
+		
+		// calculate number of holyday between dates
+		$holy_day = $this->get_holyday($start_date,$end_date);
+		$actual_working_days = $days - $weekend_days - $holy_day;
+		
+		$data["actual_working_days"] = $actual_working_days;
+		
+		
+		//print_r($data);
+		if($data)
+		{
+			
+			return $data;
+		}
+		else
+		{
+			return "Requested list is empty";
+		}
+	}
 	
 	function grid_pf_statement($year, $month, $grid_emp_id)
 	{

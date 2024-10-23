@@ -8,12 +8,66 @@ class Pd_process_model extends CI_Model{
 		
 		/* Standard Libraries */
 	}
+
+	function leave_status_cal($start_date, $end_date, $emp_id)
+	{
+		$this->db->select("
+			SUM(CASE WHEN leave_type = 'cl' THEN 1 ELSE 0 END) AS cl,
+			SUM(CASE WHEN leave_type = 'sl' THEN 1 ELSE 0 END) AS sl,
+			SUM(CASE WHEN leave_type = 'el' THEN 1 ELSE 0 END) AS el,
+			SUM(CASE WHEN leave_type = 'ml' THEN 1 ELSE 0 END) AS ml,
+		");
+		$this->db->from('pr_leave_trans');
+		$this->db->where("emp_id", $emp_id);
+        $this->db->where("start_date BETWEEN '$start_date' AND '$end_date'");
+		return $this->db->get()->row();
+	}
+	function get_all_emp_id_log($start_date,$end_date)
+	{
+		$this->db->select("
+			info.emp_id,
+			info.emp_dept_id,
+			info.emp_sec_id,
+			info.emp_position_id,
+			info.emp_line_id,
+			info.emp_desi_id,
+			info.emp_cat_id,
+			info.emp_join_date,
+			info.salary_type,
+			info.gross_sal,
+			SUM(CASE WHEN log.present_status = 'P' THEN 1 ELSE 0 END) AS present,
+			SUM(CASE WHEN log.present_status = 'A' THEN 1 ELSE 0 END) AS absent,
+			SUM(CASE WHEN log.present_status = 'W' THEN 1 ELSE 0 END) AS weekend,
+			SUM(CASE WHEN log.present_status = 'H' THEN 1 ELSE 0 END) AS holiday,
+			SUM(CASE WHEN log.present_status = 'L' THEN 1 ELSE 0 END) AS tleave,
+			SUM(log.ot_hour) AS ot_hour,
+			SUM(CASE WHEN log.extra_ot_hour >= 2 THEN 2 ELSE log.extra_ot_hour END) AS four_ot,
+			SUM(log.extra_ot_hour) AS extra_ot_hour,
+			SUM(CASE WHEN log.late_status = '1' THEN 1 ELSE 0 END) AS late_status,
+			SUM(CASE WHEN log.extra_fri = '1' THEN 1 ELSE 0 END) AS extra_fri,
+			SUM(CASE WHEN log.pd_no_work_check = '1' THEN 1 ELSE 0 END) AS no_work,
+			SUM(CASE WHEN log.night_allowance = '1' THEN 1 ELSE 0 END) AS night_allowance,
+			SUM(CASE WHEN log.holiday_allowance = '1' THEN 1 ELSE 0 END) AS holiday_allowance
+		");
+		$this->db->from('pr_emp_com_info info');
+		$this->db->from('pr_emp_shift_log log');
+		$this->db->where("info.salary_type",1);
+		$this->db->where("info.emp_id = log.emp_id");
+		// $this->db->where("info.emp_id", "A005");
+        $this->db->where("log.shift_log_date BETWEEN '$start_date' AND '$end_date'");
+		$this->db->group_by("info.emp_id");
+		$this->db->order_by("info.emp_id");
+		$query = $this->db->get();
+		return $query;
+	}
+
 	public function get_start_end_date($month,$year)
 	{
 		$process_start_date = $this->get_setup('process_start_date');
 		$process_close_date = $this->get_setup('process_close_date');
 		$data['start_date'] =date("Y-m-d", strtotime("-1 month", strtotime(date("Y-m-d", mktime(0, 0, 0, $month, $process_start_date, $year)))));
 		$data['end_date'] = date("Y-m-d", mktime(0, 0, 0, $month, $process_close_date, $year));
+		$data['salary_month'] = date("Y-m-01", mktime(0, 0, 0, $month, $process_close_date, $year));
 		return $data;
 	}
 	function get_all_pd_emp_id()
@@ -34,14 +88,36 @@ class Pd_process_model extends CI_Model{
 	function get_all_pr_emp_id($second_half_search_start_date)
 	{
 		//echo $second_half_search_start_date;
-		$this->db->select('*');
-		$this->db->from('pr_emp_com_info');
-		$this->db->from('pr_manual_attandence');
-		$this->db->where("pr_emp_com_info.salary_type",1);
-		//$this->db->where("pr_emp_com_info.emp_id","JA003");
-		$this->db->where("pr_emp_com_info.emp_id =  pr_manual_attandence.emp_id");
-		$this->db->where("pr_manual_attandence.date",$second_half_search_start_date);
-		$this->db->order_by("pr_emp_com_info.emp_id");
+		$this->db->select('				
+				info.emp_id,
+				info.emp_dept_id,
+				info.emp_sec_id,
+				info.emp_position_id,
+				info.emp_line_id,
+				info.emp_desi_id,
+				info.emp_cat_id,
+				info.emp_join_date,
+				info.salary_type,
+				info.gross_sal,
+				m.total_working_day,
+				m.holiday,
+				m.weekend,
+				m.p_day,
+				m.a_day,
+				m.friday,
+				m.h_day,
+				m.leave,
+				m.night,
+				m.extra_fri,
+				m.no_work
+			');
+		$this->db->from('pr_emp_com_info as info');
+		$this->db->from('pr_manual_attandence as m');
+		$this->db->where("info.salary_type",1);
+		// $this->db->where_in("info.emp_id",array("JA003","A004","A005"));
+		$this->db->where("info.emp_id =  m.emp_id");
+		$this->db->where("m.date", $second_half_search_start_date);
+		$this->db->order_by("info.emp_id");
 		$query = $this->db->get();
 		//echo $query ->num_rows();
 		/*foreach($query->result() as $rows)
@@ -140,7 +216,7 @@ class Pd_process_model extends CI_Model{
 		$this->db->where("attributes",$setup_id);
 		$query = $this->db->get('pd_setups');
 		$rows = $query->row();
-		$setup_value = $rows ->value;
+		$setup_value = $rows->value;
 		return $setup_value;
 	}
 	function get_section_name($sec_id)

@@ -20,6 +20,7 @@ class Entry_system_con extends CI_Controller {
 	//--------------------------------------------------------------------------------------
 	function grid_entry_system()
 	{
+		
 		if($this->session->userdata('level')== 0 || $this->session->userdata('level')== 1)
 		{
 			$this->load->view('grid_entry_system');
@@ -29,6 +30,152 @@ class Entry_system_con extends CI_Controller {
 			$this->load->view('grid_entry_system_for_user');
 		}
 	}
+
+	public function change_date_ml()
+    {
+        $probability = $this->input->post('probability');
+        $half_ml = $this->db->select('lv_ml')->get('pr_leave')->row()->lv_ml / 2;
+        $mhl = $half_ml-1;
+        $start_date = date('d-m-Y', strtotime("-{$mhl} days", strtotime($probability)));
+        $end_date = date('d-m-Y', strtotime("+{$half_ml} days", strtotime($probability)));
+        echo json_encode(['start_date' => $start_date, 'end_date' => $end_date]);
+    }
+
+
+	public function save_maternity(){
+        // dd($_POST);
+        // if ($this->chack_ability($this->input->post('sql')) != true) {
+        //     echo 'Please check Emp information, Gender and Marital Status is not Match';
+        //     exit();
+        // }
+        $inform_date=date('Y-m-d', strtotime($this->input->post('inform_date')));
+        $probability=date('Y-m-d', strtotime($this->input->post('probability')));
+        $start_date=date('Y-m-d', strtotime($this->input->post('start_date')));
+        $end_date=date('Y-m-d', strtotime($this->input->post('end_date')));
+        $first_pay=date('Y-m-d', strtotime($this->input->post('first_pay')));
+        $second_pay=date('Y-m-d', strtotime($this->input->post('second_pay')));
+        $emp_id     = $this->input->post('sql');
+        $pay_day    = $this->input->post('pay_day');
+        $half_ml = $this->db->select('lv_ml')->get('pr_leave')->row()->lv_ml / 2;
+
+        $this->db->where('emp_id', $emp_id);
+        $this->db->where('salary_month', date('Y-m-01', strtotime("-1 month", strtotime($start_date))));
+        $payment = $this->db->get('pr_pay_scale_sheet')->row();
+
+		// dd($this->db->last_query());
+		//dd($payment);
+        if (empty($payment)) {
+            echo 'Previous Month salary not found';
+            exit();
+        }
+
+        $year=date('Y-m-d', strtotime($start_date));
+        // $balance = $this->leave_balance_ajax($emp_id, $year, 1);
+
+        // if ($balance['leave_balance_maternity'] <= 0) {
+        //     echo "This employee have not enough leave";
+        //     exit();
+        // }
+
+        // if ($balance['leave_balance_maternity'] < ($half_ml*2)) {
+        //     echo "This employee have not enough leave";
+        //     exit();
+        // }
+
+		ini_set('memory_limit', '-1'); // Increase memory limit to 256MB
+
+
+		$formArray = array();
+		$f=0;
+		$end_date_time = strtotime($end_date);
+		for($i =0; $i <= 112; $i++) {
+			$start_date1 = date('Y-m-d', strtotime("+$f day", strtotime($start_date)));
+			$formArray[] = array(
+				'emp_id' => $emp_id,
+				'start_date' => $start_date1,
+				'leave_type' => 'ml',
+			);
+			$f++;
+			unset($start_date1);
+		}
+        
+        if ($this->db->insert_batch('pr_leave_trans', $formArray)) {
+            $form_data=array(
+                'prev_month_salary'=> $payment->gross_sal? $payment->gross_sal: 0,
+                'attn_bonus' => $payment->att_bonus ? $payment->att_bonus: 0,
+                'festival_bonus'=>$payment->festival_bonus ? $payment->festival_bonus: 0,
+                'inform_date'=>$inform_date,
+                'probability'=>$probability,
+                'start_date'=>$start_date,
+                'end_date'=>$end_date,
+                'first_pay'=>$first_pay,
+                'second_pay'=>$second_pay,
+                'emp_id'=>$emp_id,
+                'total_day'=>$half_ml,
+                'pay_day'=>$pay_day,
+                'created_at'=>date('Y-m-d'),
+            );
+
+            if ($this->db->insert('pr_maternity_entry_histry', $form_data)) {
+                echo 'Record successfully Inserted';
+                exit();
+            } else {
+                echo 'Record Not Inserted';
+                exit();
+            }
+        } else {
+            echo 'Record Not Inserted';
+            exit();
+        }
+    }
+
+
+
+	function grid_maternity_benefit(){
+		// $firstdate = date('Y-m-d', strtotime($this->input->post('firstdate')));
+		// $seconddate = date('Y-m-d', strtotime($this->input->post('seconddate')));
+		$grid_data = $this->input->post('spl');
+		$emp_ids = explode(',', trim($grid_data));
+		$data["values"] = $this->grid_maternity_benefit_m($emp_ids);
+		$this->load->view('grid_maternity_benefit',$data);
+	}
+
+	function grid_maternity_benefit_m($emp_ids){
+		$this->db->select('
+					com.emp_join_date, 
+					per.name_en,
+					per.name_bn,
+					meh.*,
+					emp_designation.desig_bangla,
+					emp_line_num.line_name_bn,
+					emp_section.sec_name_bn,
+					pr_grade.gr_name'
+				);
+		$this->db->from('pr_maternity_entry_histry as meh');
+		$this->db->from('pr_emp_com_info as com');
+		$this->db->from('pr_emp_per_info as per');
+		$this->db->from('emp_section');
+		$this->db->from('emp_line_num');
+		$this->db->from('emp_designation');
+		$this->db->from('pr_grade');
+		$this->db->where("meh.emp_id = com.emp_id");
+		$this->db->where("com.emp_id = per.emp_id");
+		$this->db->where("com.emp_sec_id = emp_section.id");	
+		$this->db->where("com.emp_line_id = emp_line_num.id");	
+		$this->db->where("com.emp_desi_id = emp_designation.id");	
+		$this->db->where("com.emp_sal_gra_id = pr_grade.gr_id");
+		$this->db->where('per.gender', 'Female');
+		$this->db->where_in("meh.emp_id", $emp_ids);
+
+		// $this->db->where("meh.start_date >=", $firstdate);
+		// $this->db->where("meh.end_date <=", $seconddate);
+		// $this->db->where("substr(meh.start_date,1,4)='$grid_year'");	
+		$query = $this->db->get()->result();
+		return $query;
+	}
+
+
+
     public function present_entry()
     {
 		// dd($_POST);
@@ -383,6 +530,76 @@ class Entry_system_con extends CI_Controller {
 	//-------------------------------------------------------------------------------------------------------
 	// Advance Loan entry to the Database
 	//-------------------------------------------------------------------------------------------------------
+	function advance_entry()
+	{
+		$first_date  = date('Y-m-d', strtotime($_POST['first_date']));
+		$second_date = date('Y-m-d', strtotime($_POST['second_date']));
+		$pay_type 	 = $_POST['salary'];
+		$pay_month   = date('Y-m-01', strtotime($_POST['second_date']));
+		$sql         = $_POST['emp_id'];
+		$emp_ids     = explode(',', $sql);
+
+		$results = $this->db->where_in('emp_id', $emp_ids)->get('pr_emp_com_info')->result();
+		echo $this->advance_salary_insert($results, $first_date, $second_date, $pay_type, $pay_month);
+		exit;
+	}
+	function advance_salary_insert($results, $first_date, $second_date, $pay_type, $pay_month)
+	{
+		foreach ($results as $key => $row) {
+			$emp_id = $row->emp_id;
+			if ($pay_type == 'gross') {
+				$per_day = round(($row->gross_sal / 30), 2);
+			} else {
+				$salary_structure = $this->common_model->salary_structure($row->gross_sal);
+				$per_day 		  = round(($salary_structure['basic_sal'] / 30), 2);
+			}
+			$amt = $this->get_pay_log($emp_id, $first_date, $second_date, $per_day);
+
+				$data = array(
+						'emp_id'  		=> $emp_id,
+						'loan_amt' 		=> $amt,
+						'pay_amt' 		=> $amt,
+						'loan_date'		=> $pay_month,
+						'loan_status'	=> 1,
+					);
+
+			$this->db->where("emp_id", $emp_id);
+			$this->db->where("loan_date", $pay_month);
+			$this->db->where("loan_status", '1');
+			$query = $this->db->get("pr_advance_loan")->row;
+			
+			if(!empty($query))
+			{
+				$this->db->where("emp_id", $emp_id);
+				$this->db->where("loan_date", $pay_month);
+				$this->db->where("loan_status", '1');
+				$query = $this->db->update("pr_advance_loan", $data);
+			}
+			else
+			{
+				$this->db->insert("pr_advance_loan", $data);
+			}
+		}		
+		return "Advance loan inserted successfully";
+	}
+
+	function get_pay_log($emp_id, $first_date, $second_date, $per_day){
+		$this->db->select("
+			SUM(CASE WHEN present_status = 'P' THEN 1 ELSE 0 END) AS present,
+			SUM(CASE WHEN present_status = 'W' THEN 1 ELSE 0 END) AS weekend,
+			SUM(CASE WHEN present_status = 'H' THEN 1 ELSE 0 END) AS holiday,
+			SUM(CASE WHEN present_status = 'L' THEN 1 ELSE 0 END) AS tleave,
+		");
+		$this->db->from('pr_emp_shift_log');
+        $this->db->where("shift_log_date BETWEEN '$first_date' AND '$second_date'");
+		$this->db->where("emp_id", $emp_id);
+		$row = $this->db->get()->row();
+		return round((($row->present + $row->weekend + $row->holiday + $row->tleave) * $per_day), 2);
+	}
+
+	//-------------------------------------------------------------------------------------------------------
+	// Advance Loan entry to the Database
+	//-------------------------------------------------------------------------------------------------------
 	function advance_loan_insert()
 	{
 		$emp_id 	= $this->input->post('emp_id');
@@ -395,6 +612,7 @@ class Entry_system_con extends CI_Controller {
 		$data = $this->processdb->advance_loan_insert($emp_id, $loan_amt, $pay_amt, $loan_date);
 		echo $data;
 	}
+
 	//-------------------------------------------------------------------------------------------------------
 	// Form Display for Leave Transaction
 	//-------------------------------------------------------------------------------------------------------
@@ -406,6 +624,18 @@ class Entry_system_con extends CI_Controller {
 	//-------------------------------------------------------------------------------------------------------
 	// Leave entry to the Database
 	//-------------------------------------------------------------------------------------------------------
+	
+	//-------------------------------------------------------------------------------------------------------
+	// Form Display for final satalment
+	//-------------------------------------------------------------------------------------------------------
+	function final_satalment()
+	{
+		$this->load->view('form/final_satalment');
+	}
+	//-------------------------------------------------------------------------------------------------------
+	// end Final Satalment to the Database
+	//-------------------------------------------------------------------------------------------------------
+	
 	function save_leave_co()
 	{
 		$result = $this->leave_model->save_leave_db();

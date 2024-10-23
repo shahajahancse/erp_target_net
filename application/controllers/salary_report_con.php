@@ -57,6 +57,25 @@ class Salary_report_con extends CI_Controller {
 		
 		$this->load->view('salary_sheet_actual',$data);
 	}
+	function grid_buyer_monthly_salary_sheet()
+	{
+		$sal_year_month = $this->uri->segment(3);
+		$grid_status 	= $this->uri->segment(4);		
+		$grid_data 		= $this->uri->segment(5);
+		$grid_emp_id = explode('xxx', trim($grid_data));
+		$this->load->model('common_model');
+		//print_r($grid_emp_id);
+		$data["deduct_status"]= $this->common_model->get_setup_attributes(1);
+						
+		$data["value"] = $this->grid_model->grid_monthly_salary_sheet($sal_year_month, $grid_status, $grid_emp_id);
+		$data["salary_month"] = $sal_year_month;
+		$data["grid_status"]  = $grid_status;
+		
+		$data["start_date"]  	= date("Y-m-21", strtotime($sal_year_month));
+		$data["end_date"]  		= date("Y-m-20", strtotime($sal_year_month));
+		
+		$this->load->view('buyer_monthly_salary_sheet',$data);
+	}
 	
 	function grid_actual_monthly_salary_sheet_with_eot()
 	{
@@ -158,7 +177,7 @@ class Salary_report_con extends CI_Controller {
 		else
 		{
 			$this->load->view('pay_slip',$query);
-			//$this->load->view('pay_slip_old',$query);
+			// $this->load->view('pay_slip_old',$query);
 		}
 	}
 	function grid_provident_fund()
@@ -181,14 +200,57 @@ class Salary_report_con extends CI_Controller {
 		}
 	}
 	
-	function grid_maternity_benefit()
-	{
-		$grid_data = $this->uri->segment(3);
-		$grid_emp_id = explode('xxx', trim($grid_data));
+	// function grid_maternity_benefit()
+	// {
+	// 	$grid_data = $this->uri->segment(3);
+	// 	$grid_emp_id = explode('xxx', trim($grid_data));
 						
-		$data["values"] = $this->leave_model->grid_maternity_benefit($grid_emp_id);
+	// 	$data["values"] = $this->leave_model->grid_maternity_benefit($grid_emp_id);
 			
-		$this->load->view('maternity_benefit',$data);
+	// 	$this->load->view('maternity_benefit',$data);
+	// }
+
+
+
+
+	function grid_maternity_benefit(){
+		// $firstdate = date('Y-m-d', strtotime($this->input->post('firstdate')));
+		// $seconddate = date('Y-m-d', strtotime($this->input->post('seconddate')));
+		$grid_data = $this->uri->segment(3);
+		$emp_ids = explode('xxx', trim($grid_data));
+		// $emp_ids = ;
+		$data["values"] = $this->grid_maternity_benefit_m($emp_ids);
+		$this->load->view('grid_maternity_benefit',$data);
+	}
+
+	function grid_maternity_benefit_m($emp_ids){
+		$this->db->select('
+					com.emp_join_date, 
+					per.emp_full_name as name_bn,
+					per.bangla_nam,
+					meh.*,
+					pr_designation.desig_bangla,
+					pr_line_num.line_name as line_name_bn,
+					pr_section.sec_name as sec_name_bn,
+					pr_grade.gr_name'
+				);
+		$this->db->from('pr_maternity_entry_histry as meh');
+		$this->db->from('pr_emp_com_info as com');
+		$this->db->from('pr_emp_per_info as per');
+		$this->db->from('pr_section');
+		$this->db->from('pr_line_num');
+		$this->db->from('pr_designation');
+		$this->db->from('pr_grade');
+		$this->db->where("meh.emp_id = com.emp_id");
+		$this->db->where("com.emp_id = per.emp_id");
+		$this->db->where("com.emp_sec_id = pr_section.sec_id");	
+		$this->db->where("com.emp_line_id = pr_line_num.line_id");	
+		$this->db->where("com.emp_desi_id = pr_designation.desig_id");	
+		$this->db->where("com.emp_sal_gra_id = pr_grade.gr_id");
+		// $this->db->where('per.gender', 'Female');
+		$this->db->where_in("meh.emp_id", $emp_ids);
+		$query = $this->db->get()->result();
+		return $query;
 	}
 	
 	function grid_earn_leave()

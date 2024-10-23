@@ -18,8 +18,6 @@ class Salary_process_con extends CI_Controller {
 	
 	function salary_process_form()
 	{
-		
-		
 		if($this->session->userdata('logged_in')==FALSE)
 		$this->load->view('login_message');
 		else
@@ -37,29 +35,46 @@ class Salary_process_con extends CI_Controller {
 		$this->load->view('form/salary_process',$output);
 	}
 	
-	function salary_process()
+	function earn_leave_process()
 	{
-		//echo "Start Date = ".$start_date = microtime(true);
 		$month = $this->input->post('month');
 		$year = $this->input->post('year');
-		$process_check = $this->input->post('process_check');
 		$this->load->model('common_model');
-		
-		//$month = "08";
-		//$year = "2012";
-		$result = $this->salary_process_model->pay_sheet($year, $month, $process_check);
+		$process_date = $this->pd_process_model->get_start_end_date($month,$year);
+		$result = $this->salary_process_model->earn_leave_process($process_date['salary_month']);
 		if($result == "Process completed successfully")
 		{
-			// SALARY PROCESS LOG Generate
-			//$this->log_model->log_salary_process($year, $month);
 			echo $result;
 		}
 		else
 		{
 			echo $result;		
 		}
-		//echo "<br> End Date = ".$end_date = microtime(true);
-		//echo "<br> Duration = ".$time = $end_date - $start_date;
+	}
+	
+	function salary_process()
+	{
+		$month = $this->input->post('month');
+		$year = $this->input->post('year');
+		$process_check = $this->input->post('process_check');
+		$this->load->model('common_model');
+		
+		$process_date 		= $this->pd_process_model->get_start_end_date($month,$year);
+		$process_date['start_date'];
+		if ($process_date['start_date'] < '2024-09-01') {
+			$result = $this->salary_process_model->pay_sheet_old($process_date, $process_check);
+		} else {
+			$result = $this->salary_process_model->pay_sheet($process_date, $process_check);
+		}
+		if($result == "Process completed successfully")
+		{
+			// SALARY PROCESS LOG Generate
+			echo $result;
+		}
+		else
+		{
+			echo $result;		
+		}
 	}
 	
 	function test()
@@ -75,6 +90,5 @@ class Salary_process_con extends CI_Controller {
 		 echo '<br>';
 		 }
 	}
-	
 }
 

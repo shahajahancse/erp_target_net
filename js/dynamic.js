@@ -7046,87 +7046,128 @@ if(okyes==false) return;
 	}
 }
 
-function salary_process(i)
+function earn_leave_process()
 {
- var ajaxRequest;  
-	
- try{
-    ajaxRequest = new XMLHttpRequest();
- }catch (e){
-   try{
-      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-   }catch (e) {
-      try{
-         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-      }catch (e){
-         return false;
-      }
-   }
- }
-
- var okyes;
- okyes=confirm('Are you sure you want to start process?');
-if(okyes==false) return;
-  $("#loader").show();
-month= document.getElementById('report_month_sal').value;
-year= document.getElementById('report_year_sal').value;
-process_check = i;
-	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net/index.php/salary_process_con/salary_process/";
-	var queryString="year="+year+"&month="+month+"&process_check="+process_check;
-	
-	ajaxRequest.open("POST",url, true);
-	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	ajaxRequest.send(queryString);
-	ajaxRequest.onreadystatechange = function(){
-	if(ajaxRequest.readyState == 4){
-		var resp = ajaxRequest.responseText;
-		$("#loader").hide();
-		alert(resp);
+	var ajaxRequest;  
+		
+	try{
+		ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	try{
+		ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	}catch (e) {
+		try{
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}catch (e){
+			return false;
+		}
 	}
+	}
+
+	var okyes;
+	okyes=confirm('Are you sure you want to start process?');
+	if(okyes==false) return;
+		$("#loader").show();
+		month= document.getElementById('report_month_sal').value;
+		year= document.getElementById('report_year_sal').value;
+		hostname = window.location.hostname;
+		url =  "http://"+hostname+"/erp_target_net/index.php/salary_process_con/earn_leave_process/";
+		var queryString="year="+year+"&month="+month;
+		
+		ajaxRequest.open("POST",url, true);
+		ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		ajaxRequest.send(queryString);
+		ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+			$("#loader").hide();
+			alert(resp);
+		}
 	}
 }
 
+function salary_process(i)
+{
+	var ajaxRequest;  
+		
+	try{
+		ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	try{
+		ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	}catch (e) {
+		try{
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}catch (e){
+			return false;
+		}
+	}
+	}
+
+	var okyes;
+	okyes=confirm('Are you sure you want to start process?');
+	if(okyes==false) return;
+		$("#loader").show();
+		month= document.getElementById('report_month_sal').value;
+		year= document.getElementById('report_year_sal').value;
+		process_check = i;
+		hostname = window.location.hostname;
+		url =  "http://"+hostname+"/erp_target_net/index.php/salary_process_con/salary_process/";
+		var queryString="year="+year+"&month="+month+"&process_check="+process_check;
+		
+		ajaxRequest.open("POST",url, true);
+		ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		ajaxRequest.send(queryString);
+		ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+			$("#loader").hide();
+			alert(resp);
+		}
+	}
+}
+
+
 function production_salary_process(i)
 {
- var ajaxRequest;  
-	
- try{
-    ajaxRequest = new XMLHttpRequest();
- }catch (e){
-   try{
-      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-   }catch (e) {
-      try{
-         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-      }catch (e){
-         return false;
-      }
-   }
- }
-
- var okyes;
- okyes=confirm('Are you sure you want to start process?');
-if(okyes==false) return;
-  $("#loader_production").show();
-month= document.getElementById('report_month_sal').value;
-year= document.getElementById('report_year_sal').value;
-process_check = i;
-//alert(month);
-
-	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net/index.php/production_process_con/production_salary_process/";
-	var queryString="year="+year+"&month="+month+"&process_check="+process_check;
-	
-	ajaxRequest.open("POST",url, true);
-	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	ajaxRequest.send(queryString);
-	ajaxRequest.onreadystatechange = function(){
-	if(ajaxRequest.readyState == 4){
-		var resp = ajaxRequest.responseText;
-		$("#loader_production").hide();
-		alert(resp);
+	var ajaxRequest;  
+		
+	try{
+		ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	try{
+		ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	}catch (e) {
+		try{
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}catch (e){
+			return false;
+		}
 	}
+	}
+
+ 	var okyes;
+	okyes=confirm('Are you sure you want to start process?');
+	if(okyes==false) return;
+		$("#loader_production").show();
+		month= document.getElementById('report_month_sal').value;
+		year= document.getElementById('report_year_sal').value;
+		process_check = i;
+
+
+		hostname = window.location.hostname;
+		url =  "http://"+hostname+"/erp_target_net/index.php/production_process_con/production_salary_process/";
+		var queryString="year="+year+"&month="+month+"&process_check="+process_check;
+		
+		ajaxRequest.open("POST",url, true);
+		ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		ajaxRequest.send(queryString);
+		ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+			$("#loader_production").hide();
+			alert(resp);
+		}
 	}
 }
 

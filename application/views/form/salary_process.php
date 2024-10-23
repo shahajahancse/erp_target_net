@@ -31,9 +31,9 @@ a:hover
 
 <body bgcolor="#ECE9D8">
 
-<div align="center" style="margin:0 auto; width:100%; overflow:hidden; ">
+<div style="margin:0 auto; width:100%; overflow:hidden; display: flex; justify-content: center; ">
 
-<fieldset style='width:600px;'><legend><font size='+1'><b>Salary Process</b></font></legend>
+<fieldset style='width:600px;'><legend><font size='+1'><b>Salary And Earn Process </b></font></legend>
 
 <!--Select Month and Year :<select id='report_month_sal'><option value='01'>January</option><option value='02'>February</option><option value='03'>March</option><option value='04'>April</option><option value='05'>May</option><option value='06'>Jun</option><option value='07'>July</option><option value='08'>August</option><option value='09'>September</option><option value='10'>October</option><option value='11'>November</option><option value='12'>December</option></select><select id='report_year_sal'><option value='2011'>2011</option><option value='2012'>2012</option><option value='2013'>2013</option><option value='2014'>2014</option><option value='2015'>2015</option><option value='2016'>2016</option><option value='2017'>2017</option><option value='2018'>2018</option><option value='2019'>2019</option><option value='2020'>2020</option></select>-->
 
@@ -43,6 +43,10 @@ $final_salary_process = "2";
 ?>
 <input type='button' name='view' onclick='salary_process(<?php echo $salary_process; ?>)' value='Process'/>
 <input type='button' name='view' onclick='salary_process(<?php echo $final_salary_process; ?>)' value='Final Process'/>
+<br>
+<?php $this->load->view('month_year'); ?>
+<input type='button' name='view' onclick='earn_leave_process()' value='Earn Leave'/>
+
 </fieldset>
 
 </div>

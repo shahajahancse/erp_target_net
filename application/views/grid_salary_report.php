@@ -117,14 +117,19 @@ $(function() {
               <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" name='view' onclick='sal_summary_report()' value='Salary Summary Report'/></td>
                <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Production Salary Sheet" onClick="production_salary_sheet()"></td>
               <td style="width:30%;"><input type="button" style=" width:100%; font-size:100%;" value="PD Salary Summary Report" onClick="production_monthly_salary_summary()"></td>
-              <!--<td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Pay Slip" onClick="grid_pay_slip()"></td>-->
+              <!-- <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Pay Slip" onClick="grid_pay_slip()"></td> -->
              
             </tr>
+
             <tr>
              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Floor Wise Summary Report" onClick="grid_production_floor_wise()"></td>
             <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Block Wise Summary Report" onClick="grid_production_block_wise()"></td>
               <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Wages Card" onClick="grid_production_wages_card()"></td>
               <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Factory Summary" onClick="grid_factory_summary()"></td>
+            </tr>
+            <tr>
+              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Montly Salary Sheet" onClick="grid_buyer_monthly_salary_sheet()"></td>
+              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Pay Slip" onClick="grid_pay_slip()"></td>
             </tr>
           </table>
         </fieldset>

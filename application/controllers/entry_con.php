@@ -77,6 +77,39 @@ class Entry_con extends CI_Controller {
 			$result = $this->entry_model->GetImage($this->input->post($id));
 			echo $result;
 	}
+
+
+	function final_satalment_save(){
+		$start_resign_date=$this->input->post('start_resign_date');
+		$salary=$this->input->post('salary');
+		$total_days_year_month=$this->input->post('total_days_year_month');
+		$pay_day_year=$this->input->post('pay_day_year');
+		$total_days_leave=$this->input->post('total_days_leave');
+		$total_days_present=$this->input->post('total_days_present');
+		$total_amount_year=$this->input->post('total_amount_year');
+		$total_amount_leave=$this->input->post('total_amount_leave');
+		$total_amount_present=$this->input->post('total_amount_present');
+		$total_amount=$this->input->post('total_amount');
+		$empid=$this->input->post('empid');
+		$data = array(
+			'empid' => $empid,
+			'start_resign_date' => $start_resign_date,
+			'salary' => $salary,
+			'total_days_year_month' => $total_days_year_month,
+			'pay_day_year' => $pay_day_year,
+			'total_days_leave' => $total_days_leave,
+			'total_days_present' => $total_days_present,
+			'total_amount_year' => $total_amount_year,
+			'total_amount_leave' => $total_amount_leave,
+			'total_amount_present' => $total_amount_present,
+			'total_amount' => $total_amount,
+		);
+		if($this->db->insert('pd_final_satalment',$data)){
+			echo "Success. Saved.";
+		}else{
+			echo "Failed. There is an error.";
+		}
+	}
 	
 	
 }

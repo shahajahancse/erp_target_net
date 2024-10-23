@@ -26,6 +26,10 @@ class Grid_con extends CI_Controller {
 			$this->load->view('grid_for_user');
 		}
 	}
+
+	function get_employee_list(){
+		$this->load->view('employee');
+	}
 	
 	function grid_salary_report()
 	{
@@ -35,7 +39,6 @@ class Grid_con extends CI_Controller {
 	function grid_get_all_data()
 	{
 		
-				
 				$emp_cat_id = array ('0' => 1, '1' => 2, '2' => 5);
 				
 				$this->db->select('pr_emp_per_info.*');
@@ -83,6 +86,27 @@ class Grid_con extends CI_Controller {
 		  exit;
 	}
 	
+	function grid_left_letter(){
+
+		$mod = $this->input->post('sts');
+		$firstdate = $this->input->post('firstdate');
+		$seconddate= $this->input->post('seconddate');
+		$grid_emp_id = explode('xxx', trim($this->input->post('spl')));
+
+		$query['values'] = $this->grid_model->grid_left_letter($grid_emp_id,$firstdate,$seconddate,$mod);
+
+		if(is_string($query['values'])){
+			echo $query['values'];
+		}else{
+			if ($mod==1) {
+				$this->load->view('left_letter',$query);
+			}elseif ($mod==2) {
+				$this->load->view('left_letter2',$query);
+			}elseif ($mod==3) {
+				$this->load->view('left_letter3',$query);
+			}
+		}
+	}
 	
 	function grid_all_search()
 	{
@@ -1109,9 +1133,10 @@ class Grid_con extends CI_Controller {
 	
 	function grid_earn_leave_report()
 	{
-		$grid_data = $this->uri->segment(3);
+		$grid_data = $_POST['spl'];
 		$grid_emp_id = explode('xxx', trim($grid_data));
 		$data['values'] = $this->grid_model->grid_earn_leave_report($grid_emp_id);
+		dd($data['values']);
 		if(is_string($data['values']))
 		{
 			echo $data['values'];
@@ -1121,6 +1146,31 @@ class Grid_con extends CI_Controller {
 			$this->load->view('earn_leave_report',$data);
 		}
 	}
+	
+	function new_join_letter_report()
+	{
+		$grid_data = $this->uri->segment(3);
+		$type = $this->uri->segment(4);
+		$grid_emp_id = explode('xxx', trim($grid_data));
+		// dd($grid_emp_id);
+		// $grid_emp_ids = implode(',', trim($grid_emp_id));
+
+		$data['values'] = $this->grid_model->new_join_letter_report($grid_emp_id,$type);
+		if(is_string($data['values']))
+		{
+			echo $data['values'];
+		}
+		else
+		{
+			if($type==1){
+				$this->load->view('pitch',$data);
+			}elseif($type==2){
+				$this->load->view('staff',$data);
+			}else{
+				$this->load->view('fixed',$data);
+			}
+	}
+}
 	
 }
 ?>
