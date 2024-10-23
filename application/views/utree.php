@@ -503,7 +503,7 @@
 		  <div class="document">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/blank.gif">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/bullet.gif">
-            <a class="header" href="<?php echo base_url();?>index.php/entry_system_con/advance_loan" title="Advance Loan" target="right" id="dp13003" onClick="MakeColoredBack('13003');">Advance Loan</a>
+            <a class="header" href="<?php echo base_url();?>index.php/entry_system_con/advance_loan" title="Advance Loan" target="right" id="dp13003" onClick="MakeColoredBack('13003');">Advance Salary</a>
           </div>
 		  
 		   <div class="document">
@@ -538,17 +538,17 @@
             <a class="header" href="<?php echo base_url();?>index.php/emp_increment_con/increment_info" title="Increment Entry" target="right" id="dp13008" onClick="MakeColoredBack('13008');">Increment Entry</a>
           </div>
 		  
-		   <div class="document">
+		      <!-- <div class="document">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/blank.gif">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/bullet.gif">
             <a class="header" href="<?php echo base_url();?>index.php/emp_increment_con/promotion_info" title="Promotion Entry" target="right" id="dp13009" onClick="MakeColoredBack('13009');">Promotion Entry</a>
-          </div>
+          </div> -->
           
-          <div class="document">
+          <!-- <div class="document">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/blank.gif">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/bullet.gif">
             <a class="header" href="<?php echo base_url();?>index.php/entry_system_con/pf_bank_interest" title="Provident Fund Bank Interest Rate" target="right" id="dp13010" onClick="MakeColoredBack('13010');">PF Bank Interest</a>
-          </div>
+          </div> -->
           
           <div class="document">
             <img src="<?php echo base_url();?>/images/tree_image/utree_data/blank.gif">

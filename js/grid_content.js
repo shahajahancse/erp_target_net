@@ -1,8 +1,81 @@
+function grid_left_letter(i){
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	try{
+	   // Opera 8.0+, Firefox, Safari
+	   ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	   // Internet Explorer Browsers
+	   try{
+	      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	   }catch (e) {
+	      try{
+	         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	      }catch (e){
+	         // Something went wrong
+	         alert("Your browser broke!");
+	         return false;
+	      }
+	   }
+	}
+
+	var firstdate = document.getElementById('firstdate').value;
+	if(firstdate ==''){
+		alert("Please select First Date");
+		return;
+	}
+
+	var seconddate = document.getElementById('seconddate').value;
+	if(seconddate ==''){
+		alert("Please select Second Date");
+		return;
+	}
+
+	var grid_start = document.getElementById('grid_start').value;
+	if(grid_start =='Select')
+	{
+		alert("Please select Category options");
+		return;
+	}
+
+	var grid_status = document.getElementById('grid_status').value;
+	if(grid_status != 3)
+	{
+		alert("Please select Left options");
+		return;
+	}
+
+	$grid  = $("#list1");
+	var id_array = $grid.getGridParam('selarrrow');
+	var selected_id_list = new Array();
+	var spl = (id_array.join('xxx'));
+	if(spl =='')
+	{
+		alert("Please select Employee ID");
+		return;
+	}
+
+	hostname = window.location.hostname;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_left_letter/";
+	var queryString="spl="+spl+"&firstdate="+firstdate+"&seconddate="+seconddate+"&sts="+i;
+
+    ajaxRequest.open("POST", url, true);
+ 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ 	ajaxRequest.send(queryString);
+
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+			continuous_leave_report_old = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1600,height=800');
+			continuous_leave_report_old.document.write(resp);
+			continuous_leave_report_old.stop();
+		}
+	}
+}
+
 function grid_daily_leave_report()
 {
 	
 	var ajaxRequest;  // The variable that makes Ajax possible!
-	
 	try{
 	   // Opera 8.0+, Firefox, Safari
 	   ajaxRequest = new XMLHttpRequest();
@@ -2047,6 +2120,84 @@ var sal_year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
 		
 	hostname = window.location.hostname;
 	url =  "http://"+hostname+"/erp_target_net/index.php/salary_report_con/grid_actual_monthly_salary_sheet/"+sal_year_month+"/"+grid_status+"/"+spl+"/"+grid_section;
+	
+	sal_sheet_actual = window.open(url,'sal_sheet_actual',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
+	sal_sheet_actual.moveTo(0,0);
+
+
+}
+function grid_buyer_monthly_salary_sheet()
+{
+	 var ajaxRequest;  // The variable that makes Ajax possible!
+	
+ try{
+   // Opera 8.0+, Firefox, Safari
+   ajaxRequest = new XMLHttpRequest();
+ }catch (e){
+   // Internet Explorer Browsers
+   try{
+      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+   }catch (e) {
+      try{
+         ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+      }catch (e){
+         // Something went wrong
+         alert("Your browser broke!");
+         return false;
+      }
+   }
+ }
+	var report_month_sal = document.getElementById('report_month_sal').value;
+	if(report_month_sal =='')
+	{
+		alert("Please select month");
+		return;
+	}
+	
+	var report_year_sal = document.getElementById('report_year_sal').value;
+	if(report_year_sal =='')
+	{
+		alert("Please select year");
+		return;
+	}
+	
+	var grid_start = document.getElementById('grid_start').value;
+	if(grid_start =='Select')
+	{
+		alert("Please select Category options");
+		return;
+	}
+	var grid_section = document.getElementById('grid_section').value;
+	if(grid_section =='Select')
+	{
+		alert("Please select Section");
+		return;
+	}
+	var grid_sal_type = document.getElementById('grid_sal_type').value;
+	if(grid_sal_type =='Select' || grid_sal_type =='2' )
+	{
+		alert("Please Select Salary Type Production");
+		return;
+	}
+	
+	var grid_status = document.getElementById('grid_status').value;
+	
+	$grid  = $("#list1");
+	var id_array = $grid.getGridParam('selarrrow');
+	var selected_id_list = new Array();
+	var spl = (id_array.join('xxx'));
+		
+	if(spl =='')
+	{
+		alert("Please select Employee ID");
+		return;
+	}
+
+
+var sal_year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
+		
+	hostname = window.location.hostname;
+	url =  "http://"+hostname+"/erp_target_net/index.php/salary_report_con/grid_buyer_monthly_salary_sheet/"+sal_year_month+"/"+grid_status+"/"+spl+"/"+grid_section;
 	
 	sal_sheet_actual = window.open(url,'sal_sheet_actual',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
 	sal_sheet_actual.moveTo(0,0);

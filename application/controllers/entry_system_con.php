@@ -279,7 +279,7 @@ class Entry_system_con extends CI_Controller {
 		return $query->result_array();
 	}
     function get_emp_id($emp_ids) {
-        $this->db->select('id,emp_id,proxi_id,emp_shift')->where_in("emp_id", $emp_ids);
+        $this->db->select('emp_id,proxi_id,emp_shift')->where_in("emp_id", $emp_ids);
         $ids = $this->db->get("pr_emp_com_info")->result();
         return $ids;
     }
@@ -527,6 +527,76 @@ class Entry_system_con extends CI_Controller {
 		else
 		$this->load->view('form/advance_loan');
 	}
+	//-------------------------------------------------------------------------------------------------------
+	// Advance Loan entry to the Database
+	//-------------------------------------------------------------------------------------------------------
+	function advance_entry()
+	{
+		$first_date  = date('Y-m-d', strtotime($_POST['first_date']));
+		$second_date = date('Y-m-d', strtotime($_POST['second_date']));
+		$pay_type 	 = $_POST['salary'];
+		$pay_month   = date('Y-m-01', strtotime($_POST['second_date']));
+		$sql         = $_POST['emp_id'];
+		$emp_ids     = explode(',', $sql);
+
+		$results = $this->db->where_in('emp_id', $emp_ids)->get('pr_emp_com_info')->result();
+		echo $this->advance_salary_insert($results, $first_date, $second_date, $pay_type, $pay_month);
+		exit;
+	}
+	function advance_salary_insert($results, $first_date, $second_date, $pay_type, $pay_month)
+	{
+		foreach ($results as $key => $row) {
+			$emp_id = $row->emp_id;
+			if ($pay_type == 'gross') {
+				$per_day = round(($row->gross_sal / 30), 2);
+			} else {
+				$salary_structure = $this->common_model->salary_structure($row->gross_sal);
+				$per_day 		  = round(($salary_structure['basic_sal'] / 30), 2);
+			}
+			$amt = $this->get_pay_log($emp_id, $first_date, $second_date, $per_day);
+
+				$data = array(
+						'emp_id'  		=> $emp_id,
+						'loan_amt' 		=> $amt,
+						'pay_amt' 		=> $amt,
+						'loan_date'		=> $pay_month,
+						'loan_status'	=> 1,
+					);
+
+			$this->db->where("emp_id", $emp_id);
+			$this->db->where("loan_date", $pay_month);
+			$this->db->where("loan_status", '1');
+			$query = $this->db->get("pr_advance_loan")->row;
+			
+			if(!empty($query))
+			{
+				$this->db->where("emp_id", $emp_id);
+				$this->db->where("loan_date", $pay_month);
+				$this->db->where("loan_status", '1');
+				$query = $this->db->update("pr_advance_loan", $data);
+			}
+			else
+			{
+				$this->db->insert("pr_advance_loan", $data);
+			}
+		}		
+		return "Advance loan inserted successfully";
+	}
+
+	function get_pay_log($emp_id, $first_date, $second_date, $per_day){
+		$this->db->select("
+			SUM(CASE WHEN present_status = 'P' THEN 1 ELSE 0 END) AS present,
+			SUM(CASE WHEN present_status = 'W' THEN 1 ELSE 0 END) AS weekend,
+			SUM(CASE WHEN present_status = 'H' THEN 1 ELSE 0 END) AS holiday,
+			SUM(CASE WHEN present_status = 'L' THEN 1 ELSE 0 END) AS tleave,
+		");
+		$this->db->from('pr_emp_shift_log');
+        $this->db->where("shift_log_date BETWEEN '$first_date' AND '$second_date'");
+		$this->db->where("emp_id", $emp_id);
+		$row = $this->db->get()->row();
+		return round((($row->present + $row->weekend + $row->holiday + $row->tleave) * $per_day), 2);
+	}
+
 	//-------------------------------------------------------------------------------------------------------
 	// Advance Loan entry to the Database
 	//-------------------------------------------------------------------------------------------------------

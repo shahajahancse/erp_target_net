@@ -27,7 +27,6 @@ class Grid_con extends CI_Controller {
 		}
 	}
 
-
 	function get_employee_list(){
 		$this->load->view('employee');
 	}
@@ -40,7 +39,6 @@ class Grid_con extends CI_Controller {
 	function grid_get_all_data()
 	{
 		
-				
 				$emp_cat_id = array ('0' => 1, '1' => 2, '2' => 5);
 				
 				$this->db->select('pr_emp_per_info.*');
@@ -88,6 +86,27 @@ class Grid_con extends CI_Controller {
 		  exit;
 	}
 	
+	function grid_left_letter(){
+
+		$mod = $this->input->post('sts');
+		$firstdate = $this->input->post('firstdate');
+		$seconddate= $this->input->post('seconddate');
+		$grid_emp_id = explode('xxx', trim($this->input->post('spl')));
+
+		$query['values'] = $this->grid_model->grid_left_letter($grid_emp_id,$firstdate,$seconddate,$mod);
+
+		if(is_string($query['values'])){
+			echo $query['values'];
+		}else{
+			if ($mod==1) {
+				$this->load->view('left_letter',$query);
+			}elseif ($mod==2) {
+				$this->load->view('left_letter2',$query);
+			}elseif ($mod==3) {
+				$this->load->view('left_letter3',$query);
+			}
+		}
+	}
 	
 	function grid_all_search()
 	{

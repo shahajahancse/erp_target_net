@@ -12,133 +12,308 @@
 
 <body bgcolor="#ECE9D8">
 
-    <div align="center" style="margin:0 auto; width:100%; overflow:hidden; ">
+    <div align="center" style="margin:0 auto; width:100%;">
         <fieldset style='width:600px;'>
             <legend>
                 <font size='+1'><b>Employee Data</b></font>
             </legend>
-
-            <form name='leave_holy_days'>
-                <table border='0' style='padding:10px'>
-                    <tr>
-                        <td width='25%'>Employee ID</td>
-                        <td colspan='2'><input name='empid_leave' type='text' id='empid_leave' size='25px' /></td>
-                    </tr>
-                    <tr>
-                        <td width='40%'>Resign Date </td>
-                        <td colspan='2'><input name='start_leave_date' type='text' id='start_leave_date' size='25px' />
-                            <script language="JavaScript">
-                            var o_cal = new tcal({
-                                // form name
-                                'formname': 'leave_holy_days',
-                                // input name
-                                'controlname': 'start_leave_date'
-                            });
-
-                            // individual template parameters can be modified via the calendar variable
-                            o_cal.a_tpl.yearscroll = false;
-                            o_cal.a_tpl.weekstart = 6;
-                            </script>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width='31%'>End Date</td>
-                        <td colspan='2'><input name='end_leave_date' type='text' id='end_leave_date' size='25px' />
-                            <script language="JavaScript">
-                            var o_cal = new tcal({
-                                // form name
-                                'formname': 'leave_holy_days',
-                                // input name
-                                'controlname': 'end_leave_date'
-                            });
-
-                            // individual template parameters can be modified via the calendar variable
-                            o_cal.a_tpl.yearscroll = false;
-                            o_cal.a_tpl.weekstart = 6;
-                            </script>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width='31%'>Leave Type </td>
-                        <td colspan='2'>
-                            <select name='select' id='leave_type'>
-                                <option value='cl'>Casual</option>
-                                <option value='sl'>Sick</option>
-                                <option value='el'>Earn</option>
-                                <option value='pl'>Paternity</option>
-                                <option value='ml'>Maternity</option>
-                                <option value='do'>Dayoff</option>
-                                <option value='wp'>Without Pay</option>
-                                <option value='stl'>Study</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-
-                <table border='0' style='padding:10px'>
-                    <tr>
-                        <td><input type='button' name='add' onclick='enable_leve()' value='NEW' />&nbsp;<input
-                                type='button' name='leave_save' disabled='disabled' onclick='save_leave()'
-                                value='SAVE' />&nbsp;</td>
-                    </tr>
-                </table>
-        </fieldset>
-
-        <fieldset style='width:550px;margin:10px'>
-            <legend>
-                <font size='+1'><b>Leave Balance Check</b></font>
-            </legend>
-            <table width='100%' border='0' align='center' style='padding:10px'>
+            <table border='0' style='padding:10px'>
                 <tr>
-                    <td width='30%'>Employee Status</td>
-                    <td width='20%' style='color: #0000FF'>
-                        <div id='emp_status'></div>
+                    <td width='25%'>Employee ID</td>
+                    <td colspan='2'><input name='empid_resign' type='text' id='empid_resign' size='25px' /></td>
+                </tr>
+                <tr>
+                    <td width='40%'>Resign Date </td>
+                    <td colspan='2'><input name='start_resign_date' type='text' id='start_resign_date' size='25px' />
+                        <script language="JavaScript">
+                        var o_cal = new tcal({
+                            // form name
+                            'formname': 'leave_holy_days',
+                            // input name
+                            'controlname': 'start_resign_date'
+                        });
+                        o_cal.a_tpl.yearscroll = false;
+                        o_cal.a_tpl.weekstart = 6;
+                        </script>
                     </td>
-                </tr>
-                <tr>
-                    <td width='30%'>Casual Leave Entitle</td>
-                    <td width='20%'><input name='c_leave' type='text' id='c_leave' size='10PX' disabled='disabled' />
-                    </td>
-                    <td width='20%'> Balance </td>
-                    <td width='20%'><input name='c_leave_balance' type='text' id='c_leave_balance' size='10PX'
-                            disabled='disabled' /></td>
-                </tr>
-                <tr>
-                    <td>Sick Leave Entitle </td>
-                    <td><input name='s_leave' type='text' id='s_leave' size='10PX' disabled='disabled' /></td>
-                    <td> Balance </td>
-                    <td><input name='s_leave_balance' type='text' id='s_leave_balance' size='10PX'
-                            disabled='disabled' /></td>
-                </tr>
-                <tr>
-                    <td>Earn Leave Entitle </td>
-                    <td><input name='e_leave' type='text' id='e_leave' size='10PX' disabled='disabled' /></td>
-                    <td> Balance </td>
-                    <td><input name='e_leave_balance' type='text' id='e_leave_balance' size='10PX'
-                            disabled='disabled' /></td>
-                </tr>
-                <tr>
-                    <td>Maternity Leave Entitle </td>
-                    <td><input name='m_leave' type='text' id='m_leave' size='10PX' disabled='disabled' /></td>
-                    <td> Balance </td>
-                    <td><input name='m_leave_balance' type='text' id='m_leave_balance' size='10PX'
-                            disabled='disabled' /></td>
-                </tr>
-                <tr>
-                    <td>Paternity Leave Entitle </td>
-                    <td><input name='p_leave' type='text' id='p_leave' size='10PX' disabled=disabled='disabled' /></td>
-                    <td> Balance </td>
-                    <td><input name='p_leave_balance' type='text' id='p_leave_balance' size='10PX'
-                            disabled='disabled' /></td>
-                </tr>
-                <br />
-                <tr>
-                    <td colspan='4' align='center'>Emp ID:<input style='background-color:yellow;' type='text'
-                            size='15px' name='emp_id' id='emp_id'>Year :<input style='background-color:yellow;'
-                            type='text' size='5px' name='find_year' id='find_year' /><input type='button' value='Search'
-                            onclick='search_year()' /></td>
                 </tr>
             </table>
-            </form>
+            <table border='0' style='padding:10px'>
+                <tr>
+                    <td><input type='button' name='add' onclick='get_employee_data()' value='Get Data' />
+                </tr>
+            </table>
         </fieldset>
+
+        <fieldset style='width:600px;'>
+            <legend>
+                <font size='+1'><b>Employee Information</b></font>
+
+            </legend>
+
+            <table border='0' style='padding:10px;width:100%'>
+                <tr>
+                    <td width='25%'>Photo</td>
+                    <td colspan='2'><img name='image' src='' width='100px' height='100px' /></td>
+                </tr>
+			</table>
+			<div style="display: flex;">
+				<table width='50%'>
+						
+					<tr>
+						<td width='25%'>Name</td>
+						<td colspan='2'><input name='name' type='text' id='name' size='25px' readonly /></td>
+					</tr>
+					<tr>
+						<td width='25%'>Father Name</td>
+						<td colspan='2'><input name='fname' type='text' id='fname' size='25px'readonly /></td>
+					</tr>
+					<tr>
+						<td width='25%'>Mother Name</td>
+						<td colspan='2'><input name='mname' type='text' id='mname' size='25px'readonly /></td>
+					</tr>
+					<tr>
+						<td width='25%'>Spouse Name</td>
+						<td colspan='2'><input name='bname' type='text' id='bname' size='25px'readonly /></td>
+					</tr>
+				</table>
+				<table width='50%'>
+						
+	
+					<tr>
+						<td width='25%'>Section</td>
+						<td colspan='2'><input name='section' type='text' id='section' size='25px'readonly /></td>
+					</tr>
+					<!-- <tr>
+							<td width='25%'>Line</td>
+							<td colspan='2'><input name='line' type='text' id='line' size='25px' /></td>
+						</tr> -->
+					<tr>
+						<td width='25%'>Department</td>
+						<td colspan='2'><input name='department' type='text' id='department' size='25px' readonly/></td>
+					</tr>
+					<tr>
+						<td width='25%'>Designation</td>
+						<td colspan='2'><input name='designation' type='text' id='designation' size='25px' readonly/></td>
+					</tr>
+					<tr>
+						<td width='25%'>Joining Date</td>
+						<td colspan='2'><input name='joining_date' type='text' id='joining_date' size='25px' readonly/> </td>
+					</tr>
+					<tr>
+						<td width='25%'>Salary</td>
+						<td colspan='2'><input name='salary' onkeyup='total_calculation()' onchange='total_calculation()' min='0' value='0' type='number' id='salary' size='25px' /> </td>
+					</tr>
+				</table>
+			</div>
+        </fieldset>
+		<fieldset style='width:600px;'>
+			<legend>
+				<font size='+1'><b>Final Satalment</b></font>
+			</legend>
+			<div width='100%' style="display: flex;">
+
+				<table border='0' style='padding:10px;width:33%'>
+					<tr><td style="white-space: nowrap">Present Calculation</td></tr>
+					<tr>
+						<td width='25%' style="white-space: nowrap">Total days in month</td>
+						<td colspan='2'><input onkeyup='total_calculation()' onchange='total_calculation()' name='total_days_year_month' min='0' max='31' value='30' type='text' id='total_days_year_month' size='25px' /> </td>
+					</tr>
+					<tr>
+						<td width='25%' style="white-space: nowrap">Pay Day</td>
+						<td colspan='2'><input onkeyup='total_calculation()' onchange='total_calculation()' name='pay_day_year' min='0' value='0' type='text' id='pay_day_year' size='25px' /> </td>
+					</tr>
+					<tr>
+						<td width='25%' style="white-space: nowrap">Total Amount</td>
+						<td colspan='2'><input readonly name='total_amount_year' min='0' value='0' type='text' id='total_amount_year' size='25px' /> </td>
+					</tr>
+				</table>
+
+				<table border='0' style='padding:10px;width:33%'>
+					<tr><td style="white-space: nowrap">Leave</td></tr>
+					<tr>
+						<td width='25%' style="white-space: nowrap">Total Days</td>
+						<td colspan='2'><input onkeyup='total_calculation()' onchange='total_calculation()' name='total_days_leave' min='0' value='0' type='text' id='total_days_leave' size='25px' /> </td>
+					</tr>
+					
+					<tr>
+						<td width='25%' style="white-space: nowrap">Total Amount</td>
+						<td colspan='2'><input readonly name='total_amount_leave' min='0' value='0' type='text' id='total_amount_leave' size='25px' /> </td>
+					</tr>
+				</table>
+				<table border='0' style='padding:10px;width:33%'>
+					<tr><td style="white-space: nowrap">Present Month Due</td></tr>
+					<tr>
+						<td width='25%' style="white-space: nowrap">Total Days</td>
+						<td colspan='2'><input onkeyup='total_calculation()' onchange='total_calculation()' name='total_days_present' min='0' value='0' type='text' id='total_days_present' size='25px' /> </td>
+					</tr>
+					<tr>
+						<td width='25%' style="white-space: nowrap">Total Amount</td>
+						<td colspan='2'><input readonly name='total_amount_present' min='0' value='0' type='text' id='total_amount_present' size='25px' /> </td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table>
+					<tr><td style="white-space: nowrap">Total Amount</td></tr>
+					<tr>
+						<td colspan='2'><input readonly name='total_amount' min='0' value='0' type='text' id='total_amount' size='25px' /> </td>
+					</tr>
+					<tr><td><input type="button" value="Submit" onclick="submit_final_satalment()"></td></tr>
+				</table>
+
+			</div>
+		</fieldset>
     </div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    function get_employee_data() {
+        var empid = document.getElementById('empid_resign').value;
+        if (empid == "") {
+            alert("Please Enter Employee ID");
+            return false;
+        }
+        var url = "<?php echo site_url('/emp_info_con/com_info_search1'); ?>";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: "empid=" + empid,
+            success: function(resp) {
+                alldata = resp.split("-*-");
+                //alert(alldata);
+                otherinfo = alldata[0].split("=*=");
+                console.log(otherinfo);
+                $('#name').val(otherinfo[0]);
+                $('#bname').val(otherinfo[1]);
+                $('#fname').val(otherinfo[2]);
+                $('#mname').val(otherinfo[3]);
+
+                var img = otherinfo[7];
+                hostname = window.location.hostname;
+                document.image.src = "http://" + hostname + "/erp_target_net/index.php/uploads/photo/" +
+                img;
+                com_info = alldata[1].split("=*=");
+                console.log(com_info);
+                $('#section').val(com_info[3]);
+                // $('#line').val(com_info[1]);
+                $('#department').val(com_info[2]);
+                $('#designation').val(com_info[5]);
+                $('#salary').val(com_info[11]);
+                $('#joining_date').val(com_info[19]);
+
+            }
+        });
+    }
+    </script>
+
+	<script>
+		function total_calculation() {
+			if(yearly_calculation()){
+				if(leave_calculation()){
+					if(present_calculation()){
+						total_calculation_amount()
+					}
+				}
+			}
+		}
+	</script>
+
+	<script>
+		function yearly_calculation() {
+			var salary = document.getElementById('salary').value;
+			var total_days_year_month = document.getElementById('total_days_year_month').value;
+			var pay_day_year = document.getElementById('pay_day_year').value;
+			$('#total_amount_year').val(parseFloat((salary / total_days_year_month) * pay_day_year).toFixed(2));
+            return true;
+
+		}
+
+		function leave_calculation() {
+			var salary = document.getElementById('salary').value;
+			var total_days_year_month = document.getElementById('total_days_year_month').value;
+			var total_days_leave = document.getElementById('total_days_leave').value;
+			$('#total_amount_leave').val(parseFloat((salary/total_days_year_month)*total_days_leave).toFixed(2));
+			return true;
+
+		}
+		function present_calculation() {
+			var salary = document.getElementById('salary').value;
+			var total_days_year_month = document.getElementById('total_days_year_month').value;
+			var total_days_present = document.getElementById('total_days_present').value;
+			$('#total_amount_present').val(parseFloat((salary/total_days_year_month)*total_days_present).toFixed(2));
+			return true;
+
+		}
+
+		function total_calculation_amount(){
+			var total_amount_year = parseFloat(document.getElementById('total_amount_year').value);
+			var total_amount_leave = parseFloat(document.getElementById('total_amount_leave').value);
+			var total_amount_present = parseFloat(document.getElementById('total_amount_present').value);
+			
+			$('#total_amount').val(Math.ceil(total_amount_year+total_amount_leave+total_amount_present));
+			return true;
+		}
+	</script>
+
+	<script>
+		function submit_final_satalment() {
+			var start_resign_date = $('#start_resign_date').val();
+			if (start_resign_date == "") {
+				alert("Please Enter Start Resign Date");
+				return false;
+			}
+
+			var salary = document.getElementById('salary').value;
+			var total_days_year_month = document.getElementById('total_days_year_month').value;
+			var pay_day_year = document.getElementById('pay_day_year').value;
+			var total_days_leave = document.getElementById('total_days_leave').value;
+			var total_days_present = document.getElementById('total_days_present').value;
+			var total_amount_year = parseFloat(document.getElementById('total_amount_year').value);
+			var total_amount_leave = parseFloat(document.getElementById('total_amount_leave').value);
+			var total_amount_present = parseFloat(document.getElementById('total_amount_present').value);
+			var total_amount = parseFloat(document.getElementById('total_amount').value);
+			var empid = document.getElementById('empid_resign').value;
+
+			if (salary == "") {
+				alert("Please Enter Salary");
+				return false;
+			}
+			$.ajax({
+				type: "POST",
+				url: "<?php echo site_url('/entry_con/final_satalment_save'); ?>",
+				data:{
+					start_resign_date:start_resign_date,
+					salary:salary,
+					total_days_year_month:total_days_year_month,
+					pay_day_year:pay_day_year,
+					total_days_leave:total_days_leave,
+					total_days_present:total_days_present,
+					total_amount_year:total_amount_year,
+					total_amount_leave:total_amount_leave,
+					total_amount_present:total_amount_present,
+					total_amount:total_amount,
+					empid:empid
+				},
+				success: function(resp) {
+					alert(resp);
+				}
+			});
+		}
+	</script>

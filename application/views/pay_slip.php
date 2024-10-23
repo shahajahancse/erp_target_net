@@ -2,98 +2,132 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>Pay Slip</title>
 
 </head>
 <body>
+  <!-- < ?php dd($values);?> -->
 <?php
 $i = 0;
-foreach($values as $rows)
-{
-?>	
-<div style="width:800px;margin-bottom:8px; height:360px; border:1px  dashed; padding-top:4px;">
+foreach($values as $row){ $i++;?>	
 
-  <div style="width:25%; float:left; border-right:1px dashed; ">
-      <div style="text-align:center; font-weight:bold; font-size:12px; text-transform:uppercase;"><?php echo $company_name_english = $this->common_model->company_information("company_name_english"); ?><br /><?php echo $company_name_english = $this->common_model->company_information("company_name_bangla"); ?><br /></div>
-      <div>
-      <table align="left" border="1" cellpadding="2" cellspacing="0" style=" width:98%;border-collapse:collapse; font-weight:bold; height:318px; font-size:10px;">
-      <tr><td colspan="2" style="text-align:center;">General Information</td></tr>
-      <tr><td>Card No </td><td><?php echo $rows["emp_id"];   ?></td></tr>
-      <tr><td>Name</td><td><?php echo $rows["emp_full_name"];   ?></td></tr>
-      <tr><td>Desig:</td><td><?php echo $rows["desig_name"];   ?></td></tr>
-      <tr><td>Grade </td><td><?php echo $rows["gr_name"];   ?></td></tr>
-      <tr><td>Section </td><td><?php echo $rows["sec_name"];   ?></td></tr>
-      <tr><td>Line </td><td><?php echo $rows["line_name"];   ?></td></tr>
-      <tr><td>Total </td><td><?php echo  $total_days = $rows["net_pay"] -10;  ?></td></tr>
-      <tr><td>Pay Date</td><td><?php echo date("Y-m-d");   ?></td></tr>
-      <tr><td>Month of</td><td><?php $salary_month = $rows["salary_month"]; echo date("M.Y", strtotime($salary_month));    ?></td></tr>
-      <tr><td>Worker's Sign<br />(শ্রমিকের স্বাক্ষর)</td><td>&nbsp; </td></tr>
-      <tr><td>Accountant Sign<br />(হিসাব রক্ষক)</td><td>&nbsp; </td></tr>
-      </table>
+  <div class='d-flex flex-column' style="width:50%; border:1px solid black;margin-bottom: 15px">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h4>Target Fine Kint Ind Ltd.</h3>
+        <p>Pay Slip For The Month Of September 2024</p>
       </div>
-  </div>
-  <div style="width:74%;float:right;">
-  	<div style="font-weight:bold; font-size:15px; text-align:center;"><?php echo $company_name_english = $this->common_model->company_information("company_name_english"); ?>&nbsp;&nbsp;<?php echo $company_name_english = $this->common_model->company_information("company_name_bangla"); ?>&nbsp;&nbsp;Section : <?php echo $rows["sec_name"];   ?>&nbsp;&nbsp;Print Date: <?php echo date("Y.m.d");   ?>
-    </div> 
-    <div>
-      <table align="left" border="0" cellpadding="1" cellspacing="0" style=" width:98%; border-collapse:collapse;font-size:10px;">
-      <tr>
-      <td>Card No :</td><td><?php echo $rows["emp_id"];?></td>
-      <td>Name :</td><td><?php echo $rows["emp_full_name"]; ?></td>
-      <td>Grade :</td><td><?php echo $rows["gr_name"];?></td>
-      <td>Month :</td><td><?php echo date("Y-m-d");?></td>
-      </tr>
-      </table>
-      </div><br />
-    <div style="float:left; width:30%;">
-      <table align="left" border="1" cellpadding="1" cellspacing="0" style=" width:98%; height:260px;font-size:10px; border-collapse:collapse;">
-      <tr><td colspan="3" style="text-align:center;">Work days and O.T</td></tr>
-      <tr><td colspan="2" >Total Days Of Month :</td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo $rows["total_days"];   ?></td></tr>
-      <tr><td>Days Present</td><td>উপস্থিত :</td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo  $rows["att_days"];   ?></td></tr>
-      <tr><td>Off day</td><td>সাপ্তাহিক বন্ধ :</td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo $rows["weeked"];   ?></td></tr>
-      <tr><td>Festible Leave:</td><td>উৎসব ছুটি :</td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo $absent_days = $rows["holidy"];   ?></td></tr>
-      <tr><td rowspan="2">Leave Status</td><td>পারিবারিক ছুটি:</td><td>&nbsp;</td></tr><tr><td>অসুস্থ্য ছুটি:</td><td><?php echo $rows["s_l"]; ?></td></tr>
-      <tr><td>Absent Days </td><td>পূর্বে অনুপস্থিত:</td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo $rows["absent_days"];   ?></td></tr>
-      <tr><td>After/Before Absent Days</td><td>পরে  অনুপস্থিত:</td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo $rows["before_after_absent"];   ?></td></tr>
+      <table style="width:100%">
+        <tr>
+          <td>নাম</td>
+          <td>:</td>
+          <td style="white-space: nowrap;"><?php echo $row->bangla_nam?></td>
+        </tr>
+        <tr>
+          <td>কার্ড নং</td>
+          <td>:</td>
+          <td><?php echo $row->emp_id?></td>
+          <td>Block</td>
+          <td>:</td>
+          <td><?php echo $row->emp_id?></td>
+        </tr>
+        <tr>
+          <td>সেকশন</td>
+          <td>:</td>
+          <td><?php echo $row->sec_name?></td>
+          <td>পদবী</td>
+          <td>:</td>
+          <td><?php echo $row->desig_name?></td>
+        </tr>
+        <tr>
+          <td>গ্রেড</td>
+          <td>:</td>
+          <td><?php echo $row->gr_name?></td>
+        </tr>
+        <tr>
+          <td>প্রদেয় মজুরী</td>
+          <td>:</td>
+          <td><?php echo $row->net_pay?></td>
+          <td style="width: 150px;">উৎপাদনের মজুরী</td>
+          <td>:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td >উৎপাদন বোনাস</td>
+          <td>:</td>
+          <td>0</td>
+          
+        </tr>
+        <tr>
+          <td>হাজিরা বোনাস</td>
+          <td>:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>উৎসব বোনাস</td>
+          <td>:</td>
+          <td>0</td>
+          <td>উপস্থিতি</td>
+          <td>:</td>
+          <td><?php echo $row->att_days?></td>
+        </tr>
+        <tr>
+          <td>ও.টি. ঘণ্টা</td>
+          <td>:</td>
+          <td>0</td>
+          <td>ছুটি</td>
+          <td>:</td>
+          <td><?php echo $row->holiday_or_weekend?></td>
+        </tr>
+        <tr>
+          <td>ও.টি. টাকা</td>
+          <td>:</td>
+          <td>0</td>
+          <td>অনুপস্থিত</td>
+          <td>:</td>
+          <td><?php echo $row->absent_days?></td>
+        </tr>
+        <tr>
+          <td>ছুতি/নো-ওয়ার্ক</td>
+          <td>:</td>
+          <td><?php echo $row->no_work_amount?></td>
+          <td style="border-top: 1px solid black;">মোট দিন</td>
+          <td style="border-top: 1px solid black;">:</td>
+          <td style="border-top: 1px solid black;"><?php echo ($row->att_days+$row->holiday_or_weekend+$row->absent_days)?></td>
+        </tr>
+        <tr>
+          <td style="border-top: 1px solid black;">মোট টাকা</td>
+          <td style="border-top: 1px solid black;">:</td>
+          <td style="border-top: 1px solid black;">0</td>
+        </tr>
+        <tr>
+          <td>কর্তন</td>
+          <td>:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>কর্তন</td>
+          <td>:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td style='width:150px;border-top: 1px solid black;'>মোট প্রদেয় টাকা</td>
+          <td style="border-top: 1px solid black;">:</td>
+          <td style="border-top: 1px solid black;"><?php echo $row->net_pay?></td>
+        </tr>
       </table>
     </div>
-    <div style="float:left; width:30%;">
-      <table align="left" border="1" cellpadding="1" cellspacing="0" style=" width:98%;height:260px;font-size:10px; border-collapse:collapse;">
-      <tr><td colspan="2" >Wages Calculation</td><td>Amount</td></tr>
-      <tr><td>Monthly Salary</td><td>মাসিক বেতন </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo $rows["pay_wages"];   ?></td></tr>
-      <tr><td>Basic Pay</td><td>মূল বেতন </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["basic_sal"];   ?></td></tr>
-      <tr><td>House Rent</td><td>বাড়ি ভাড়া ৪০% </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["house_r"];   ?></td></tr>
-      <tr><td>Medical </td><td>চিকিৎসা ভাতা </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["medical_a"];   ?></td></tr>
-      <tr><td>Absent Amount</td><td>অনুপস্থিতের টাকা </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["abs_deduction"];   ?></td></tr>
-      <tr><td>Attend. Bonus</td><td>হাজিরা বোনাস </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["att_bonus"];   ?></td></tr>
-      <tr><td>Net Pay Total</td><td>মোট </td><td style="font-family: SutonnyMJ; text-align:right;"><?php  echo $total_days = $rows["pay_wages"] + $rows["att_bonus"];?></td></tr>
-      </table>
-    </div>
-    <div style="float:left; width:38%;">
-      <table align="left" border="1" cellpadding="1" cellspacing="0" style="width:98%; height:260px;font-size:10px; border-collapse:collapse;">
-      <tr><td>Net Payable </td><td colspan="2">সর্বমোট পাওনা টাকা</td><td>Payable Amount</td></tr>
-      <tr><td>TTL O.T Hour</td><td>ও.টি ঘন্টা </td><td style="font-family: SutonnyMJ;text-align:center;"><?php echo $rows["ot_hour"];   ?></td><td></td></tr>
-      <tr><td>O.T Rate</td><td>ও.টি রেট </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["ot_rate"];   ?></td><td></td></tr>
-      <tr><td>Overtime(Amt)</td><td>অতিরিক্ত কাজ </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["ot_amount"];   ?></td><td></td></tr>
-      <tr><td>Hours Deduct </td><td>কর্তন ঘন্টা </td><td style="font-family: SutonnyMJ; text-align:center;"><?php echo  $rows["deduct_hour"];   ?></td><td></td></tr>
-      <tr><td>Hrs. Ded. Amt</td><td>কর্তনকৃত টাকা </td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $rows["deduct_amount"];   ?></td><td></td></tr>
-      <tr><td>Stamp charge</td><td>ষ্ট্যাম্প কর্তন</td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  10; ?></td><td></td></tr>
-      <tr><td>Total</td><td>মোট </td><td></td><td style="font-family: SutonnyMJ; text-align:right;"><?php echo  $total_days = $rows["net_pay"] -10;  ?></td></tr>
-      </table>
-    </div>
-    <div style="font-weight:bold; font-size:15px;">Calculation of Over Time : (Basic x 2) ÷ 208 x Total O.T. Hour
-    <br />অতিরিক্ত কাজের হিসাব : (মূল বেতন * ২) / ২০৮ * মোট ওটি ঘন্টা
-    </div>
-    <div>
-    <table align="left" border="0" cellpadding="1" cellspacing="0" style=" width:98%;border-collapse:collapse;font-size:10px;">
-      <tr><td>Cashier / Accountant Sign :</td><td>&nbsp;</td><td>Worker Sign /শ্রমিকের স্বাক্ষর:</td><td>&nbsp;</td></tr>
-      </table>
-      </div>
   </div>
 
-</div>
-<?php
-}
-?>
+
+  <?php 
+if($i%3 == 0){?>
+  <div style="page-break-after: always;"></div>
+
+<?php }
+
+
+}?>
 </body>
 </html>

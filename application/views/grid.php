@@ -155,8 +155,8 @@ if(!in_array(10,$acl))
 </tr>
 <tr>
 <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Increment Report" onClick="grid_continuous_incre_report()"></td>
-<td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Promotion Report" onClick="grid_continuous_prom_report()"></td>
-<td style="width:20%;"></td>
+<!-- <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Promotion Report" onClick="grid_continuous_prom_report()"></td>
+<td style="width:20%;"></td> -->
 </tr>
 </table>
 
@@ -177,6 +177,13 @@ if(!in_array(10,$acl))
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Resign Report" onClick="grid_resign_report()"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Separation Report" onClick="grid_left_report()"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Genaral Report" onClick="grid_general_info()"></td>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Earn Leave Report" onClick="grid_earn_leave()"></td>
+</tr>
+
+<tr>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Left Letter 1" onClick="grid_left_letter(1)"></td>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Left Letter 2" onClick="grid_left_letter(2)"></td>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Left Letter 3" onClick="grid_left_letter(3)"></td>
 </tr>
 
 <tr>
@@ -190,8 +197,6 @@ if(!in_array(10,$acl))
 <input type="button" style="width:100%; font-size:100%;" value="EOT Job Card" onClick="grid_extra_ot()">
 <?php } ?>
 </td>
-<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Earn Leave Report" onClick="grid_earn_leave()"></td>
-
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Pitch Rate Letter" onClick="new_join_letter_report(1)"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Stuff Appoinment Letter" onClick="new_join_letter_report(2)"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Fixed Appoinment Letter" onClick="new_join_letter_report(3)"></td>
