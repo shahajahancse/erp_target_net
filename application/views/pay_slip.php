@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<title>Pay Slip</title>
+<title>ProductionPay Slip</title>
 
 </head>
 <body>
@@ -118,6 +118,7 @@ foreach($values as $row){ $i++;?>
         </tr>
       </table>
     </div>
+    <p style="border: 1px solid black;text-align:right;">প্রাপক স্বাক্ষর</p>
   </div>
 
 

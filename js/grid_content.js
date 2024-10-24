@@ -1327,9 +1327,17 @@ function grid_app_letter()
 	app_letter.moveTo(0,0);
 }
 
-function grid_pay_slip()
+function grid_pay_slip(type)
 {
-		var report_month_sal = document.getElementById('report_month_sal').value;
+	var worker_type = document.getElementById('grid_sal_type').value;
+	if (type !=3) { 
+		if (type != worker_type) { 
+			alert("Please Select Salary Type " + (type == 1 ? "Fixed" : "Production"));
+			return false;
+		}
+	}
+
+	var report_month_sal = document.getElementById('report_month_sal').value;
 	if(report_month_sal =='')
 	{
 		alert("Please select month");
@@ -1343,7 +1351,7 @@ function grid_pay_slip()
 		return;
 	}
 	
-var year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
+	var year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
 	
 	var grid_start = document.getElementById('grid_start').value;
 	if(grid_start =='Select')
@@ -1364,7 +1372,7 @@ var year_month = report_year_sal+"-"+report_month_sal+"-"+"01";
 	}
 	
 	hostname = window.location.hostname;
-	url =  "http://"+hostname+"/erp_target_net/index.php/salary_report_con/grid_pay_slip"+"/"+year_month+"/"+spl;
+	url =  "http://"+hostname+"/erp_target_net/index.php/salary_report_con/grid_pay_slip"+"/"+year_month+"/"+spl+"/"+type;
 	
 	pay_slip = window.open(url,'pay_slip',"menubar=1,resizable=1,scrollbars=1,width=1600,height=800");
 	pay_slip.moveTo(0,0);
@@ -3335,5 +3343,70 @@ colModel: [
  sortorder: "asc",
  multiselect:true
  }).navGrid('#pager1',{ edit:false, add:false, del: false });
+}
+
+
+
+
+
+function grid_yearly_leave_register(){
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	try{
+	// Opera 8.0+, Firefox, Safari
+	ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	// Internet Explorer Browsers
+	try{
+		ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	}catch (e) {
+		try{
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}catch (e){
+			// Something went wrong
+			alert("Your browser broke!");
+			return false;
+		}
+	}
+	}
+
+	var firstdate = document.getElementById('firstdate').value;
+	var seconddate = document.getElementById('seconddate').value;
+
+	// var unit_id = document.getElementById('unit_id').value;
+	// if(unit_id =='Select')
+	// {
+	// 	alert("Please select unit !");
+	// 	return false;
+	// }
+
+	$grid  = $("#list1");
+	var id_array = $grid.getGridParam('selarrrow');
+	var selected_id_list = new Array();
+	var sql = (id_array.join('xxx'));
+		
+	if(sql =='')
+	{
+		alert("Please select Employee ID");
+		return;
+	}
+
+	// document.getElementById('loaader').style.display = 'flex';
+	var queryString="firstdate="+firstdate+"&seconddate="+seconddate+"&spl="+sql;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_yearly_leave_register/";
+
+	ajaxRequest.open("POST", url, true);
+	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+	ajaxRequest.send(queryString);
+
+	ajaxRequest.onreadystatechange = function(){
+		// document.getElementById('loaader').style.display = 'none';
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+
+			yearly_leave_reister = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1600,height=800');
+			yearly_leave_reister.document.write(resp);
+			//yearly_leave_reister.stop();
+		}
+	}
 }
 

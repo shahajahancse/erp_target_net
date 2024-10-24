@@ -184,6 +184,7 @@ if(!in_array(10,$acl))
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Left Letter 1" onClick="grid_left_letter(1)"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Left Letter 2" onClick="grid_left_letter(2)"></td>
 <td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Left Letter 3" onClick="grid_left_letter(3)"></td>
+<td style="width:20%;"><input type="button" style="width:100%; font-size:100%;" value="Leave Register" onClick="grid_yearly_leave_register()"></td>
 </tr>
 
 <tr>

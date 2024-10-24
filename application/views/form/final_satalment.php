@@ -17,27 +17,29 @@
             <legend>
                 <font size='+1'><b>Employee Data</b></font>
             </legend>
-            <table border='0' style='padding:10px'>
-                <tr>
-                    <td width='25%'>Employee ID</td>
-                    <td colspan='2'><input name='empid_resign' type='text' id='empid_resign' size='25px' /></td>
-                </tr>
-                <tr>
-                    <td width='40%'>Resign Date </td>
-                    <td colspan='2'><input name='start_resign_date' type='text' id='start_resign_date' size='25px' />
-                        <script language="JavaScript">
-                        var o_cal = new tcal({
-                            // form name
-                            'formname': 'leave_holy_days',
-                            // input name
-                            'controlname': 'start_resign_date'
-                        });
-                        o_cal.a_tpl.yearscroll = false;
-                        o_cal.a_tpl.weekstart = 6;
-                        </script>
-                    </td>
-                </tr>
-            </table>
+			<form name='leave_holy_days'>
+				<table border='0' style='padding:10px'>
+					<tr>
+						<td width='25%'>Employee ID</td>
+						<td colspan='2'><input name='empid_resign' type='text' id='empid_resign' size='25px' /></td>
+					</tr>
+					<tr>
+						<td width='40%'>Resign Date </td>
+						<td colspan='2'><input name='start_resign_date' type='text' id='start_resign_date' size='25px' />
+							<script language="JavaScript">
+							var o_cal = new tcal({
+								// form name
+								'formname': 'leave_holy_days',
+								// input name
+								'controlname': 'start_resign_date'
+							});
+							o_cal.a_tpl.yearscroll = false;
+							o_cal.a_tpl.weekstart = 6;
+							</script>
+						</td>
+					</tr>
+				</table>
+			</form>
             <table border='0' style='padding:10px'>
                 <tr>
                     <td><input type='button' name='add' onclick='get_employee_data()' value='Get Data' />

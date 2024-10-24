@@ -163,21 +163,26 @@ class Salary_report_con extends CI_Controller {
 	
 	function grid_pay_slip()
 	{
+
 		$grid_firstdate = $this->uri->segment(3);
 		$grid_data = $this->uri->segment(4);
+		$type = $this->uri->segment(5);
 		$grid_emp_id = explode('xxx', trim($grid_data));
-		
 		$year_month = date("Y-m", strtotime($grid_firstdate)); 
-		
 		$query['values'] = $this->grid_model->grid_pay_slip($year_month, $grid_emp_id);
 		if(is_string($query['values']))
 		{
 			echo $query['values'];
 		}
 		else
-		{
-			$this->load->view('pay_slip',$query);
-			// $this->load->view('pay_slip_old',$query);
+		{	
+			if($type == 1){
+				$this->load->view('fixed_pay_slip',$query);
+			}elseif($type == 2){
+				$this->load->view('pay_slip',$query);
+			}else{
+				$this->load->view('bank',$query);
+			}
 		}
 	}
 	function grid_provident_fund()
