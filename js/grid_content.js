@@ -3372,12 +3372,6 @@ function grid_yearly_leave_register(){
 	var firstdate = document.getElementById('firstdate').value;
 	var seconddate = document.getElementById('seconddate').value;
 
-	// var unit_id = document.getElementById('unit_id').value;
-	// if(unit_id =='Select')
-	// {
-	// 	alert("Please select unit !");
-	// 	return false;
-	// }
 
 	$grid  = $("#list1");
 	var id_array = $grid.getGridParam('selarrrow');
@@ -3393,6 +3387,60 @@ function grid_yearly_leave_register(){
 	// document.getElementById('loaader').style.display = 'flex';
 	var queryString="firstdate="+firstdate+"&seconddate="+seconddate+"&spl="+sql;
 	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/grid_yearly_leave_register/";
+
+	ajaxRequest.open("POST", url, true);
+	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+	ajaxRequest.send(queryString);
+
+	ajaxRequest.onreadystatechange = function(){
+		// document.getElementById('loaader').style.display = 'none';
+		if(ajaxRequest.readyState == 4){
+			var resp = ajaxRequest.responseText;
+
+			yearly_leave_reister = window.open('', '_blank', 'menubar=1,resizable=1,scrollbars=1,width=1600,height=800');
+			yearly_leave_reister.document.write(resp);
+			//yearly_leave_reister.stop();
+		}
+	}
+}
+function leave_form(){
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	try{
+	// Opera 8.0+, Firefox, Safari
+	ajaxRequest = new XMLHttpRequest();
+	}catch (e){
+	// Internet Explorer Browsers
+	try{
+		ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	}catch (e) {
+		try{
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}catch (e){
+			// Something went wrong
+			alert("Your browser broke!");
+			return false;
+		}
+	}
+	}
+
+	var firstdate = document.getElementById('firstdate').value;
+	var seconddate = document.getElementById('seconddate').value;
+
+
+	$grid  = $("#list1");
+	var id_array = $grid.getGridParam('selarrrow');
+	var selected_id_list = new Array();
+	var sql = (id_array.join('xxx'));
+		
+	if(sql =='')
+	{
+		alert("Please select Employee ID");
+		return;
+	}
+
+	// document.getElementById('loaader').style.display = 'flex';
+	var queryString="firstdate="+firstdate+"&seconddate="+seconddate+"&spl="+sql;
+	url =  "http://"+hostname+"/erp_target_net/index.php/grid_con/leave_from/";
 
 	ajaxRequest.open("POST", url, true);
 	ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
