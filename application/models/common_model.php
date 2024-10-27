@@ -260,7 +260,7 @@ class Common_model extends CI_Model{
 		}
 		$this->db->order_by('pr_emp_per_info.emp_id');
 		$query = $this->db->get();
-		//echo $query->num_rows();
+		// dd($query->result());
 		return $query;
 	}
 	

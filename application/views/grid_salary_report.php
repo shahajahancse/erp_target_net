@@ -129,7 +129,9 @@ $(function() {
             </tr>
             <tr>
               <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;"  value="Montly Salary Sheet" onClick="grid_buyer_monthly_salary_sheet()"></td>
-              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Pay Slip" onClick="grid_pay_slip()"></td>
+              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Production Pay Slip" onClick="grid_pay_slip(2)"></td>
+              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Fixed Pay Slip" onClick="grid_pay_slip(1)"></td>
+              <td style="width:20%;"><input type="button" style=" width:100%; font-size:100%;" value="Bank Sheet" onClick="grid_pay_slip(3)"></td>
             </tr>
           </table>
         </fieldset>

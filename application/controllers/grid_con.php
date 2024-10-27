@@ -254,13 +254,13 @@ class Grid_con extends CI_Controller {
 		
 		//$data = $this->common_model->get_all_employee_for_selection($dept,$section,$line,$desig,$sex,$status,$position,$salary_month,$salary_type);
 		
-		if($salary_type == 2 )
-		{
-			$data = $this->common_model->get_all_employee_for_selection($dept,$section,$line,$desig,$sex,$status,$position,$salary_month,$salary_type);
-		}
 		if($salary_type == 1 )
 		{
 			$data = $this->common_model->get_all_employee_for_selection_for_fixed($dept,$section,$line,$desig,$sex,$status,$position,$salary_month,$salary_type);
+		}
+		if($salary_type == 2 )
+		{
+			$data = $this->common_model->get_all_employee_for_selection($dept,$section,$line,$desig,$sex,$status,$position,$salary_month,$salary_type);
 		}
 		
 		
@@ -1171,6 +1171,44 @@ class Grid_con extends CI_Controller {
 			}
 	}
 }
+
+	function grid_yearly_leave_register(){
+		$grid_firstdate = $this->input->post('firstdate');
+		$grid_seconddate = $this->input->post('seconddate');
+		$grid_data = $this->input->post('spl');
+		$grid_emp_id = explode(',', trim($grid_data));
+		$unit_id = $this->input->post('unit_id');
+		$query=$this->grid_model->grid_yearly_leave_register($grid_firstdate, $grid_seconddate,$grid_emp_id);
+		// dd($query);
+		if(is_string($query)){
+			echo $query;
+		}else{
+			$data["values"]		 = $query;
+			$data['unit_id']	 = $unit_id ;
+			$data["first_date"]  = $grid_firstdate;
+			$data["second_date"] = $grid_seconddate;
+			//  dd($this->input->post('seconddate'));
+			$this->load->view('yearly_leave_register',$data);
+		}
+	}
+	function leave_from(){
+		$grid_firstdate = $this->input->post('firstdate');
+		$grid_seconddate = $this->input->post('seconddate');
+		$grid_data = $this->input->post('spl');
+		$grid_emp_id = explode('xxx', trim($grid_data));
+		$query=$this->grid_model->leave_from($grid_firstdate, $grid_seconddate,$grid_emp_id);
+		// dd($query);
+		if(is_string($query)){
+			echo $query;
+		}else{
+			$data["values"]		 = $query;
+			// $data['unit_id']	 = $unit_id ;
+			$data["first_date"]  = $grid_firstdate;
+			$data["second_date"] = $grid_seconddate;
+			//  dd($this->input->post('seconddate'));
+			$this->load->view('leave_form',$data);
+		}
+	}
 	
 }
 ?>
