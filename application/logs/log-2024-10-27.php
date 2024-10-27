@@ -9847,3 +9847,38 @@ DEBUG - 2024-10-27 19:41:05 --> Model Class Initialized
 DEBUG - 2024-10-27 19:41:05 --> File loaded: application/views/leave_form.php
 DEBUG - 2024-10-27 19:41:05 --> Final output sent to browser
 DEBUG - 2024-10-27 19:41:05 --> Total execution time: 0.0938
+DEBUG - 2024-10-27 14:43:51 --> Config Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Hooks Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Utf8 Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> UTF-8 Support Enabled
+DEBUG - 2024-10-27 14:43:51 --> URI Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Router Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Output Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Security Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Input Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-10-27 14:43:51 --> Language Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Loader Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Helper loaded: url_helper
+DEBUG - 2024-10-27 14:43:51 --> Helper loaded: file_helper
+DEBUG - 2024-10-27 14:43:51 --> Helper loaded: form_helper
+DEBUG - 2024-10-27 14:43:51 --> Helper loaded: debug_helper
+DEBUG - 2024-10-27 14:43:51 --> Database Driver Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Session Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Helper loaded: string_helper
+DEBUG - 2024-10-27 14:43:51 --> Encrypt Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Session routines successfully run
+DEBUG - 2024-10-27 14:43:51 --> XML-RPC Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Controller Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 14:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> Model Class Initialized
+DEBUG - 2024-10-27 19:43:51 --> DB Transaction Failure
+ERROR - 2024-10-27 19:43:51 --> Query error: Unknown column 'pr_leave_earn.old_earn_balance' in 'field list'
+DEBUG - 2024-10-27 19:43:51 --> Language file loaded: language/english/db_lang.php
