@@ -368,7 +368,7 @@ class Salary_process_model extends CI_Model{
 						$data = array(
 							'com_gross_sal'  => $com_gross_sal,
 							'basic_sal'  => round(($gross_sal-2450)/1.5,2),
-							'unit_id'    => $row->unit_id,
+							// 'unit_id'    => $row->unit_id,
 							'line_id'    => $row->emp_line_id,
 							'P' 	 	 => isset($present->present)?$present->present:0,
 							'A' 	 	 => isset($present->absent)?$present->absent:0,

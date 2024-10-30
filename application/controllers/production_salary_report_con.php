@@ -24,11 +24,7 @@ class Production_salary_report_con extends CI_Controller {
 		$grid_emp_id = explode('xxx', trim($grid_data));
 		$this->load->model('common_model');
 		$grid_emp_id = array_filter($grid_emp_id);
-		$data["deduct_status"]= $this->common_model->get_setup_attributes(1);
-		/*if (empty($grid_emp_id))
-		{
-			$grid_emp_id = $this->pd_salary_report_model->grid_monthly_salary_sheet_all($sal_year_month, $grid_status,$grid_section,$grid_floor,$grid_block);
-		}	*/			
+		$data["deduct_status"]= $this->common_model->get_setup_attributes(1);			
 		$data["value"] = $this->pd_salary_report_model->grid_monthly_salary_sheet($sal_year_month, $grid_status, $grid_emp_id);
 		$data["salary_month"] = $sal_year_month;
 		$data["grid_status"]  = $grid_status;

@@ -4076,7 +4076,7 @@ class Grid_model extends CI_Model{
 	function grid_earn_leave_report($grid_emp_id)
 	{
 		$data = array();
-		$this->db->select('pr_emp_com_info.emp_id,pr_emp_per_info.emp_full_name,pr_designation.desig_name,pr_emp_com_info.emp_join_date, pr_dept.dept_name, pr_section.sec_name, pr_line_num.line_name, pr_emp_shift.shift_name,pr_emp_com_info.emp_cat_id, pr_emp_com_info.gross_sal,pr_leave_earn.old_earn_balance,pr_leave_earn.current_earn_balance,pr_leave_earn.last_update');
+		$this->db->select('pr_emp_com_info.emp_id,pr_emp_per_info.emp_full_name,pr_designation.desig_name,pr_emp_com_info.emp_join_date, pr_dept.dept_name, pr_section.sec_name, pr_line_num.line_name, pr_emp_shift.shift_name,pr_emp_com_info.emp_cat_id, pr_emp_com_info.gross_sal,pr_leave_earn.*');
 		$this->db->from('pr_emp_com_info');
 		$this->db->from('pr_emp_per_info');
 		$this->db->from('pr_designation');
@@ -4086,7 +4086,7 @@ class Grid_model extends CI_Model{
 		$this->db->from('pr_emp_shift');
 		$this->db->from('pr_leave_earn');
 		$this->db->where_in("pr_emp_com_info.emp_id", $grid_emp_id);
-		//$this->db->where_in("pr_leave_earn.emp_id", $grid_emp_id);
+		$this->db->where_in("pr_leave_earn.emp_id", $grid_emp_id);
 		$this->db->where('pr_emp_com_info.emp_id = pr_leave_earn.emp_id');
 		$this->db->where('pr_emp_per_info.emp_id = pr_emp_com_info.emp_id');
 		$this->db->where('pr_emp_com_info.emp_desi_id = pr_designation.desig_id');
@@ -4096,32 +4096,32 @@ class Grid_model extends CI_Model{
 		$this->db->where('pr_emp_shift.shift_id = pr_emp_com_info.emp_shift');
 		$this->db->order_by("pr_emp_com_info.emp_id","ASC");
 		$query = $this->db->get();
-		dd($query->result());
-		foreach($query->result() as $rows)
-		{
-			$emp_id = $rows->emp_id;
-			$gross_sal = $rows->gross_sal;
-			$data["emp_id"][] 		= $emp_id;
-			$data["emp_name"][] 	= $rows->emp_full_name;
-			$data["doj"][] 			= $rows->emp_join_date;
-			$data["dept_name"][] 	= $rows->dept_name;
-			$data["sec_name"][] 	= $rows->sec_name;
-			$data["desig_name"][] 	= $rows->desig_name;
-			$data["line_name"][]	= $rows->line_name;
-			$data["gross_sal"][] 	= $rows->gross_sal;
-			$data["emp_shift"][] 	= $rows->shift_name;
-			$data["old_earn_balance"][]		= $rows->old_earn_balance;
-			$data["current_earn_balance"][] = $rows->current_earn_balance;
-			$data["last_update"][] 			= $rows->last_update;
+		// dd($query->result());
+		// foreach($query->result() as $rows)
+		// {
+		// 	$emp_id = $rows->emp_id;
+		// 	$gross_sal = $rows->gross_sal;
+		// 	$data["emp_id"][] 		= $emp_id;
+		// 	$data["emp_name"][] 	= $rows->emp_full_name;
+		// 	$data["doj"][] 			= $rows->emp_join_date;
+		// 	$data["dept_name"][] 	= $rows->dept_name;
+		// 	$data["sec_name"][] 	= $rows->sec_name;
+		// 	$data["desig_name"][] 	= $rows->desig_name;
+		// 	$data["line_name"][]	= $rows->line_name;
+		// 	$data["gross_sal"][] 	= $rows->gross_sal;
+		// 	$data["emp_shift"][] 	= $rows->shift_name;
+		// 	// $data["old_earn_balance"][]		= $rows->old_earn_balance;
+		// 	// $data["current_earn_balance"][] = $rows->current_earn_balance;
+		// 	$data["last_update"][] 			= $rows->last_update;
 			
-			$prev_month_info = $this->get_prev_month_info($emp_id);
-			foreach($prev_month_info->result() as $rows)
-			{
-				$data["total_days"][]= $rows->total_days;
-				$data["pay_wages"][] = $rows->pay_wages;
-				$data["pay_days"][] = $rows->pay_days;
-			}
-		}
+		// 	$prev_month_info = $this->get_prev_month_info($emp_id);
+		// 	foreach($prev_month_info->result() as $rows)
+		// 	{
+		// 		$data["total_days"][]= $rows->total_days;
+		// 		// $data["pay_wages"][] = $rows->pay_wages;
+		// 		$data["pay_days"][] = $rows->pay_days;
+		// 	}
+		// }
 		$current_year = date("Y");
 		$start_date = "$current_year-01-01";
 		$end_date = date("Y-m-d");
@@ -4141,9 +4141,8 @@ class Grid_model extends CI_Model{
 		
 		$data["actual_working_days"] = $actual_working_days;
 		
-		//print_r($data);
-		if($data)
-		{
+		// print_r($data);exit;
+		if($data){
 			
 			return $data;
 		}

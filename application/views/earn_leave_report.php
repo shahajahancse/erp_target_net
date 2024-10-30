@@ -74,19 +74,19 @@ for($i=0; $i<$count; $i++ )
 	echo "</td>";
 	
 	echo "<td style='text-align:right'>";
-	echo number_format($values["pay_wages"][$i]);
+	echo "";
 	echo "</td>";
 	
 	echo "<td style='text-align:center'>";
-	echo $values["actual_working_days"];
+	echo "";
 	echo "</td>";
 	
 	echo "<td style='text-align:center'>";
-	echo $values["current_earn_balance"][$i];
+	echo "";
 	echo "</td>";
 	
 	echo "<td style='text-align:center'>";
-	echo $values["old_earn_balance"][$i];
+	echo "";
 	echo "</td>";
 	if($values["pay_days"][$i] == 0)
 	{
